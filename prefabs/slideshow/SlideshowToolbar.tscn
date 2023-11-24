@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://drwd1q1oipqfa"]
+
+[ext_resource type="Script" path="res://scripts/slideshow/SlideshowToolbar.gd" id="1_1n3ms"]
+
+[node name="SlideshowToolbar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1n3ms")
+toolbarAppearThreshold = 100
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 107.0
