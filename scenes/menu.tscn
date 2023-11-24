@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0bnu6i2tkqgn"]
+
+[ext_resource type="PackedScene" uid="uid://bjnltkt4tg7x4" path="res://prefabs/MenuParticles.tscn" id="1_x583m"]
+[ext_resource type="Script" path="res://scripts/menu/menuController.gd" id="2_42kkl"]
+[ext_resource type="PackedScene" uid="uid://b6cf3b6h8e6lt" path="res://scenes/slideshow.tscn" id="3_tlfp7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hinri"]
+font_size = 36
+
+[node name="menu" type="Node"]
+
+[node name="MenuParticles" parent="." instance=ExtResource("1_x583m")]
+
+[node name="ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_42kkl")
+menuScene = ExtResource("3_tlfp7")
+
+[node name="CenterContainer" type="CenterContainer" parent="ui"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1240.0
+offset_bottom = 680.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuContainer" type="VBoxContainer" parent="ui/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 170
+
+[node name="Title" type="Label" parent="ui/CenterContainer/MenuContainer"]
+layout_mode = 2
+text = "Camada de aplicação
+Trabalho de Redes"
+label_settings = SubResource("LabelSettings_hinri")
+horizontal_alignment = 1
+
+[node name="ButtonContainer" type="VBoxContainer" parent="ui/CenterContainer/MenuContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="StartButton" type="Button" parent="ui/CenterContainer/MenuContainer/ButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Começar apresentação"
+
+[node name="ExitButton" type="Button" parent="ui/CenterContainer/MenuContainer/ButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Sair"
+
+[connection signal="pressed" from="ui/CenterContainer/MenuContainer/ButtonContainer/StartButton" to="ui" method="_on_start_button_pressed"]
+[connection signal="pressed" from="ui/CenterContainer/MenuContainer/ButtonContainer/ExitButton" to="ui" method="_on_exit_button_pressed"]
