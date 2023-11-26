@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0bnu6i2tkqgn"]
+[gd_scene load_steps=5 format=3 uid="uid://b0bnu6i2tkqgn"]
 
 [ext_resource type="PackedScene" uid="uid://bjnltkt4tg7x4" path="res://prefabs/menu/MenuParticles.tscn" id="1_x583m"]
 [ext_resource type="Script" path="res://scripts/menu/menuController.gd" id="2_42kkl"]
-[ext_resource type="PackedScene" uid="uid://b6cf3b6h8e6lt" path="res://scenes/slideshow.tscn" id="3_tlfp7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtscc"]
 bg_color = Color(0.215686, 0.215686, 0.215686, 0.537255)
@@ -21,7 +20,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_42kkl")
-menuScene = ExtResource("3_tlfp7")
 
 [node name="Panel" type="Panel" parent="ui"]
 layout_mode = 1

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/slideshow/SlideshowToolbar.gd" id="1_1n3ms"]
 
-[node name="SlideshowToolbar" type="Control"]
+[node name="SlideshowToolbar" type="Control" node_paths=PackedStringArray("slide_label", "slide_slider")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,9 +10,79 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1n3ms")
-toolbarAppearThreshold = 100
+toolbar_appear_threshold = 110
+slide_count = 5
+slide_label = NodePath("PanelContainer/VBoxContainer/BoxContainer/SlideContainer/SlideSliderContainer/SlideLabel")
+slide_slider = NodePath("PanelContainer/VBoxContainer/BoxContainer/SlideContainer/SlideSliderContainer/SlideSlider")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 107.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="BoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 655
+alignment = 1
+
+[node name="ControlButtonsContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/BoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 17
+
+[node name="ReturnButton" type="Button" parent="PanelContainer/VBoxContainer/BoxContainer/ControlButtonsContainer"]
+custom_minimum_size = Vector2(85, 82)
+layout_mode = 2
+text = "Retornar"
+
+[node name="FullscreenButton" type="Button" parent="PanelContainer/VBoxContainer/BoxContainer/ControlButtonsContainer"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "FS"
+
+[node name="SlideContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/BoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 2
+
+[node name="SlideButtonsContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/BoxContainer/SlideContainer"]
+layout_mode = 2
+
+[node name="PreviousButton" type="Button" parent="PanelContainer/VBoxContainer/BoxContainer/SlideContainer/SlideButtonsContainer"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "<"
+
+[node name="NextButton" type="Button" parent="PanelContainer/VBoxContainer/BoxContainer/SlideContainer/SlideButtonsContainer"]
+custom_minimum_size = Vector2(85, 85)
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = ">
+"
+
+[node name="SlideSliderContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/BoxContainer/SlideContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="SlideLabel" type="Label" parent="PanelContainer/VBoxContainer/BoxContainer/SlideContainer/SlideSliderContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "1/16"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SlideSlider" type="HSlider" parent="PanelContainer/VBoxContainer/BoxContainer/SlideContainer/SlideSliderContainer"]
+custom_minimum_size = Vector2(197.23, 0)
+layout_mode = 2
+rounded = true
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/BoxContainer/ControlButtonsContainer/ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/BoxContainer/ControlButtonsContainer/FullscreenButton" to="." method="_on_fullscreen_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/BoxContainer/SlideContainer/SlideButtonsContainer/PreviousButton" to="." method="_on_previous_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/BoxContainer/SlideContainer/SlideButtonsContainer/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="drag_ended" from="PanelContainer/VBoxContainer/BoxContainer/SlideContainer/SlideSliderContainer/SlideSlider" to="." method="_on_slide_slider_drag_ended"]

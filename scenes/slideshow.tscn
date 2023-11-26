@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6cf3b6h8e6lt"]
+[gd_scene load_steps=4 format=3 uid="uid://b6cf3b6h8e6lt"]
 
 [ext_resource type="PackedScene" uid="uid://upvucuou2f1j" path="res://prefabs/slideshow/SlideshowParticles.tscn" id="1_pdjoh"]
 [ext_resource type="PackedScene" uid="uid://b4f6mv66o5eb0" path="res://prefabs/slideshow/SlideshowBlinker.tscn" id="2_n6jdq"]
+[ext_resource type="PackedScene" uid="uid://drwd1q1oipqfa" path="res://prefabs/slideshow/SlideshowToolbar.tscn" id="3_408i4"]
 
 [node name="slideshow" type="Node"]
 
@@ -24,3 +25,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="SlideshowToolbar" parent="Control" instance=ExtResource("3_408i4")]
+visible = false
+layout_mode = 1
