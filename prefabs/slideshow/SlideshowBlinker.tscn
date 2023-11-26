@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4f6mv66o5eb0"]
+
+[ext_resource type="Texture2D" uid="uid://dw068f32oojdp" path="res://images/blinker/blinker.png" id="1_6fifj"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_83veh"]
+graph_offset = Vector2(-133.985, 13.4216)
+nodes/output/position = Vector2(360, 140)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3ykj7"]
+
+[sub_resource type="Animation" id="Animation_5vdxv"]
+resource_name = "blinker_blink"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.290196)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7hbs0"]
+_data = {
+"blinker_blink": SubResource("Animation_5vdxv")
+}
+
+[node name="SlideshowBlinker" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+scale = Vector2(82, 6.5)
+texture = ExtResource("1_6fifj")
+
+[node name="AnimationTree" type="AnimationTree" parent="Sprite2D"]
+tree_root = SubResource("AnimationNodeBlendTree_83veh")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+autoplay = "blinker/blinker_blink"
+libraries = {
+"": SubResource("AnimationLibrary_3ykj7"),
+"blinker": SubResource("AnimationLibrary_7hbs0")
+}
