@@ -10,8 +10,8 @@ signal next_slide
 @export var slide_slider: HSlider
 
 func _ready():
-	slide_slider.max_value = slide_count - 1
-	slide_label.text = str(slide_slider.value + 1) + '/' + str(slide_count)
+	slide_slider.max_value = slide_count
+	update_label(1)
 	pass
 
 func _input(event):
@@ -55,7 +55,7 @@ func _on_previous_button_pressed():
 
 
 func _on_next_button_pressed():
-	if slide_slider.value + 1 > slide_count: return
+	if slide_slider.value + 1 >= slide_count: return
 	
 	slide_slider.value = slide_slider.value + 1
 	update_label(slide_slider.value + 1)

@@ -92,6 +92,7 @@ states/slide_exit_shrink/position = Vector2(954, 44)
 states/slide_idle/node = SubResource("AnimationNodeAnimation_ydiyw")
 states/slide_idle/position = Vector2(693, 100)
 transitions = ["Start", "slide_enter_grow", SubResource("AnimationNodeStateMachineTransition_5s2yp"), "slide_enter_grow", "slide_idle", SubResource("AnimationNodeStateMachineTransition_0l88u"), "slide_idle", "slide_exit_shrink", SubResource("AnimationNodeStateMachineTransition_l80xn"), "slide_exit_shrink", "End", SubResource("AnimationNodeStateMachineTransition_1hie1")]
+graph_offset = Vector2(397, -22)
 
 [node name="Panel" type="Panel"]
 custom_minimum_size = Vector2(900, 600)
@@ -106,6 +107,7 @@ offset_right = 450.0
 offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1, 1e-05)
 pivot_offset = Vector2(450, 300)
 theme_override_styles/panel = SubResource("StyleBoxFlat_sstgy")
 script = ExtResource("1_esd0j")
@@ -126,27 +128,6 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/enter_grow = false
 parameters/conditions/exit_shrink = false
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 896.0
-offset_bottom = 442.0
-text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-autowrap_mode = 2
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 126.0
-offset_right = 900.0
-offset_bottom = 568.0
-text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-autowrap_mode = 2
-
 [connection signal="timeout" from="TextTimer" to="." method="_on_text_timer_timeout"]
+[connection signal="timeout" from="ImageTimer" to="." method="_on_image_timer_timeout"]
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]

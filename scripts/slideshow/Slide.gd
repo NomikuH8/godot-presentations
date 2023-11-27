@@ -18,7 +18,7 @@ enum ExitAnimation {
 @export var image_appear: float = .03
 
 @onready var all_children = self.get_children()
-@onready var images = all_children.filter(func(c): return c is TextureRect)
+@onready var images: Array[Node] = all_children.filter(func(c): return c is TextureRect)
 @onready var labels = all_children.filter(func(c): return c is Label)
 @onready var label_txts = labels.map(func(l: Label): return l.text)
 
@@ -26,6 +26,7 @@ enum ExitAnimation {
 @onready var text_timer = $TextTimer
 @onready var image_timer = $ImageTimer
 
+var current_image_index: int = 0
 var current_label_index: int = 0
 var current_label_txt_index: int = 0
 
@@ -39,7 +40,7 @@ func _ready():
 	animation_tree.active = true
 	
 	for i in images:
-		i.visible = false
+		i.get_child(0).play('slide_image/idle_out')
 	
 	for l in labels:
 		l.text = ''
@@ -58,7 +59,16 @@ func _on_text_timer_timeout():
 		current_label_txt_index = 0
 
 
+func _on_image_timer_timeout():
+	if current_image_index > len(images) - 1:
+		image_timer.stop()
+		return
+	
+	images[current_image_index].get_child(0).play('slide_image/fade_in')
+	current_image_index += 1
+
+
 func _on_animation_tree_animation_finished(anim_name):
-	print(anim_name)
 	if anim_name == 'slide/enter_grow':
 		text_timer.start()
+		image_timer.start()
