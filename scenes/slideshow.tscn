@@ -32,7 +32,7 @@ script = ExtResource("3_wqglq")
 [node name="SlideshowToolbar" parent="Control" instance=ExtResource("3_408i4")]
 visible = false
 layout_mode = 1
-slide_count = 0
+slide_count = 2
 
 [node name="Slides" type="Control" parent="Control"]
 custom_minimum_size = Vector2(1280, 720)
