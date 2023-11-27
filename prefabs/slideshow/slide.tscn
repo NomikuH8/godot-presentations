@@ -1,0 +1,152 @@
+[gd_scene load_steps=16 format=3 uid="uid://c464hdyhdchl6"]
+
+[ext_resource type="Script" path="res://scripts/slideshow/Slide.gd" id="1_esd0j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sstgy"]
+bg_color = Color(0.152941, 0.152941, 0.152941, 0.431373)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a8hss"]
+
+[sub_resource type="Animation" id="Animation_t4v1t"]
+resource_name = "enter_grow"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.466516, 3.605),
+"update": 0,
+"values": [Vector2(1, 0), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tjmmn"]
+resource_name = "exit_shrink"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.153893, 3.605),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_oqrxl"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h0xc7"]
+_data = {
+"enter_grow": SubResource("Animation_t4v1t"),
+"exit_shrink": SubResource("Animation_tjmmn"),
+"idle": SubResource("Animation_oqrxl")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ouiux"]
+animation = &"slide/enter_grow"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cymh4"]
+animation = &"slide/exit_shrink"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ydiyw"]
+animation = &"slide/idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5s2yp"]
+advance_mode = 2
+advance_condition = &"enter_grow"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0l88u"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l80xn"]
+switch_mode = 2
+advance_condition = &"exit_shrink"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1hie1"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_0842f"]
+states/End/position = Vector2(1181, 100)
+states/slide_enter_grow/node = SubResource("AnimationNodeAnimation_ouiux")
+states/slide_enter_grow/position = Vector2(429, 44)
+states/slide_exit_shrink/node = SubResource("AnimationNodeAnimation_cymh4")
+states/slide_exit_shrink/position = Vector2(954, 44)
+states/slide_idle/node = SubResource("AnimationNodeAnimation_ydiyw")
+states/slide_idle/position = Vector2(693, 100)
+transitions = ["Start", "slide_enter_grow", SubResource("AnimationNodeStateMachineTransition_5s2yp"), "slide_enter_grow", "slide_idle", SubResource("AnimationNodeStateMachineTransition_0l88u"), "slide_idle", "slide_exit_shrink", SubResource("AnimationNodeStateMachineTransition_l80xn"), "slide_exit_shrink", "End", SubResource("AnimationNodeStateMachineTransition_1hie1")]
+
+[node name="Panel" type="Panel"]
+custom_minimum_size = Vector2(900, 600)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -300.0
+offset_right = 450.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(450, 300)
+theme_override_styles/panel = SubResource("StyleBoxFlat_sstgy")
+script = ExtResource("1_esd0j")
+
+[node name="TextTimer" type="Timer" parent="."]
+
+[node name="ImageTimer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_a8hss"),
+"slide": SubResource("AnimationLibrary_h0xc7")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_0842f")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/enter_grow = false
+parameters/conditions/exit_shrink = false
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 896.0
+offset_bottom = 442.0
+text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 126.0
+offset_right = 900.0
+offset_bottom = 568.0
+text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+autowrap_mode = 2
+
+[connection signal="timeout" from="TextTimer" to="." method="_on_text_timer_timeout"]
+[connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
