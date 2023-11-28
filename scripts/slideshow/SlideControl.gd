@@ -45,5 +45,5 @@ func update_slide():
 
 
 func _on_slide_disappeared():
-	slides[current_slide_index].can_appear(true)
 	slides[current_slide_index].visible = true
+	slides[current_slide_index].can_appear(true)
