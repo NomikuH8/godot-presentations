@@ -8,15 +8,20 @@ extends Control
 func _ready():
 	slideshow_toolbar.slide_count = len(slides)
 	
-	for slide in slides:
-		slide.visible = false
+	#for slide in slides:
+	#	slide.visible = false
+	
+	update_slide(0)
 
 
 func update_slide(previous_slide: int):
-	if previous_slide != 0:
-		var exit_shrink = slides[previous_slide].animation_tree['parameters/conditions/exit_shrink']
-		if exit_shrink:
-			slides[previous_slide].animation_tree['parameters/playback'].travel('slide_exit_shrink')
+	var exit_shrink = slides[previous_slide].animation_tree['parameters/conditions/exit_shrink']
+	if exit_shrink:
+		slides[previous_slide].animation_tree['parameters/playback'].travel('slide_exit_shrink')
+	
+	var enter_grow = slides[previous_slide].animation_tree['parameters/conditions/enter_grow']
+	if enter_grow:
+		slides[current_slide_index].animation_tree['parameters/playback'].travel('slide_enter_grow')
 
 func _on_slideshow_toolbar_next_slide():
 	if current_slide_index >= len(slides) - 1:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c464hdyhdchl6"]
+[gd_scene load_steps=20 format=3 uid="uid://c464hdyhdchl6"]
 
 [ext_resource type="Script" path="res://scripts/slideshow/Slide.gd" id="1_esd0j"]
 
@@ -59,8 +59,14 @@ _data = {
 "idle": SubResource("Animation_oqrxl")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nrgnw"]
+animation = &"slide/idle"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ouiux"]
 animation = &"slide/enter_grow"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1xsdq"]
+animation = &"slide/idle"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cymh4"]
 animation = &"slide/exit_shrink"
@@ -68,31 +74,43 @@ animation = &"slide/exit_shrink"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ydiyw"]
 animation = &"slide/idle"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5s2yp"]
-advance_mode = 2
-advance_condition = &"enter_grow"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0l88u"]
 switch_mode = 2
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l80xn"]
-switch_mode = 2
-advance_condition = &"exit_shrink"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1hie1"]
 switch_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_it58f"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_18awn"]
+advance_mode = 2
+advance_condition = &"can_enter"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hvns5"]
+advance_mode = 2
+advance_condition = &"can_exit"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xii47"]
+advance_mode = 2
+advance_condition = &"exit_shrink"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_0842f"]
-states/End/position = Vector2(1181, 100)
+states/End/position = Vector2(1380, 100)
+states/Start/position = Vector2(53, 100)
+states/slide_enter/node = SubResource("AnimationNodeAnimation_nrgnw")
+states/slide_enter/position = Vector2(222, 100)
 states/slide_enter_grow/node = SubResource("AnimationNodeAnimation_ouiux")
-states/slide_enter_grow/position = Vector2(429, 44)
+states/slide_enter_grow/position = Vector2(442, 44)
+states/slide_exit/node = SubResource("AnimationNodeAnimation_1xsdq")
+states/slide_exit/position = Vector2(907, 100)
 states/slide_exit_shrink/node = SubResource("AnimationNodeAnimation_cymh4")
-states/slide_exit_shrink/position = Vector2(954, 44)
+states/slide_exit_shrink/position = Vector2(1150, 44)
 states/slide_idle/node = SubResource("AnimationNodeAnimation_ydiyw")
 states/slide_idle/position = Vector2(693, 100)
-transitions = ["Start", "slide_enter_grow", SubResource("AnimationNodeStateMachineTransition_5s2yp"), "slide_enter_grow", "slide_idle", SubResource("AnimationNodeStateMachineTransition_0l88u"), "slide_idle", "slide_exit_shrink", SubResource("AnimationNodeStateMachineTransition_l80xn"), "slide_exit_shrink", "End", SubResource("AnimationNodeStateMachineTransition_1hie1")]
-graph_offset = Vector2(397, -22)
+transitions = ["slide_enter_grow", "slide_idle", SubResource("AnimationNodeStateMachineTransition_0l88u"), "slide_exit_shrink", "End", SubResource("AnimationNodeStateMachineTransition_1hie1"), "Start", "slide_enter", SubResource("AnimationNodeStateMachineTransition_it58f"), "slide_enter", "slide_enter_grow", SubResource("AnimationNodeStateMachineTransition_18awn"), "slide_idle", "slide_exit", SubResource("AnimationNodeStateMachineTransition_hvns5"), "slide_exit", "slide_exit_shrink", SubResource("AnimationNodeStateMachineTransition_xii47")]
+graph_offset = Vector2(-135, 14)
 
 [node name="Panel" type="Panel"]
 custom_minimum_size = Vector2(900, 600)
@@ -125,7 +143,8 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_0842f")
 anim_player = NodePath("../AnimationPlayer")
-parameters/conditions/enter_grow = false
+parameters/conditions/can_enter = false
+parameters/conditions/can_exit = false
 parameters/conditions/exit_shrink = false
 
 [connection signal="timeout" from="TextTimer" to="." method="_on_text_timer_timeout"]

@@ -9,10 +9,11 @@ signal next_slide
 @export var slide_label: Label
 @export var slide_slider: HSlider
 
+
 func _ready():
-	slide_slider.max_value = slide_count
+	slide_slider.max_value = slide_count - 1
 	update_label(1)
-	pass
+
 
 func _input(event):
 	if event is InputEventMouseMotion:

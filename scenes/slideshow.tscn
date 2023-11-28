@@ -29,11 +29,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("3_wqglq")
 
-[node name="SlideshowToolbar" parent="Control" instance=ExtResource("3_408i4")]
-visible = false
-layout_mode = 1
-slide_count = 2
-
 [node name="Slides" type="Control" parent="Control"]
 custom_minimum_size = Vector2(1280, 720)
 anchors_preset = 0
@@ -45,6 +40,19 @@ layout_mode = 1
 
 [node name="Panel2" parent="Control/Slides" instance=ExtResource("4_730rp")]
 layout_mode = 1
+
+[node name="Panel3" parent="Control/Slides" instance=ExtResource("4_730rp")]
+layout_mode = 0
+anchors_preset = 0
+offset_left = -1070.0
+offset_top = -340.003
+offset_right = -170.0
+offset_bottom = 259.997
+
+[node name="SlideshowToolbar" parent="Control" instance=ExtResource("3_408i4")]
+visible = false
+layout_mode = 1
+slide_count = 2
 
 [connection signal="next_slide" from="Control/SlideshowToolbar" to="Control" method="_on_slideshow_toolbar_next_slide"]
 [connection signal="previous_slide" from="Control/SlideshowToolbar" to="Control" method="_on_slideshow_toolbar_previous_slide"]
