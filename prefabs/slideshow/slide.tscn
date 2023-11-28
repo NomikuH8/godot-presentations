@@ -131,7 +131,7 @@ states/slide_exit_shrink/position = Vector2(908, 217)
 states/slide_idle/node = SubResource("AnimationNodeAnimation_ydiyw")
 states/slide_idle/position = Vector2(693, 100)
 transitions = ["slide_enter_grow", "slide_idle", SubResource("AnimationNodeStateMachineTransition_0l88u"), "Start", "slide_enter", SubResource("AnimationNodeStateMachineTransition_it58f"), "slide_enter", "slide_enter_grow", SubResource("AnimationNodeStateMachineTransition_18awn"), "slide_idle", "slide_exit", SubResource("AnimationNodeStateMachineTransition_hvns5"), "slide_exit", "slide_exit_shrink", SubResource("AnimationNodeStateMachineTransition_xii47"), "slide_exit_shrink", "slide_enter", SubResource("AnimationNodeStateMachineTransition_s28dh")]
-graph_offset = Vector2(371.118, 35)
+graph_offset = Vector2(143.118, 31)
 
 [node name="Panel" type="Panel"]
 custom_minimum_size = Vector2(900, 600)

@@ -23,20 +23,20 @@ func _process(_delta: float):
 
 
 func _on_slideshow_toolbar_next_slide():
-	previous_slide_index = current_slide_index
-	current_slide_index += 1
-	update_slide()
+	change_slide(current_slide_index + 1)
 
 
 func _on_slideshow_toolbar_previous_slide():
-	previous_slide_index = current_slide_index
-	current_slide_index -= 1
-	update_slide()
+	change_slide(current_slide_index - 1)
 
 
 func _on_slideshow_toolbar_slider_changed(value: int):
+	change_slide(value)
+
+
+func change_slide(to_index: int):
 	previous_slide_index = current_slide_index
-	current_slide_index = value
+	current_slide_index = to_index
 	update_slide()
 
 
@@ -45,5 +45,6 @@ func update_slide():
 
 
 func _on_slide_disappeared():
+	slides[previous_slide_index].can_disappear(false)
 	slides[current_slide_index].visible = true
 	slides[current_slide_index].can_appear(true)

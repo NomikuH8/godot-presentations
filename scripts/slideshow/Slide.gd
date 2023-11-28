@@ -81,8 +81,10 @@ func _on_animation_tree_animation_finished(anim_name: String):
 		visible = false
 		slide_disappeared.emit()
 
+
 func can_appear(value: bool):
 	animation_tree['parameters/conditions/can_enter'] = value
+
 
 func can_disappear(value: bool):
 	animation_tree['parameters/conditions/can_exit'] = value

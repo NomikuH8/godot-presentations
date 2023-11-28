@@ -31,7 +31,6 @@ func _input(event):
 	
 	if event.is_action_pressed("ui_right"):
 		_on_next_button_pressed()
-		return
 
 
 func _on_slide_slider_drag_ended(value_changed):
