@@ -44,16 +44,25 @@ layout_mode = 1
 [node name="Panel3" parent="Control/Slides" instance=ExtResource("4_730rp")]
 layout_mode = 0
 anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = -1070.0
 offset_top = -340.003
 offset_right = -170.0
 offset_bottom = 259.997
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="SlideshowToolbar" parent="Control" instance=ExtResource("3_408i4")]
 visible = false
 layout_mode = 1
 slide_count = 2
 
+[connection signal="slide_disappeared" from="Control/Slides/Panel" to="Control" method="_on_panel_slide_disappeared"]
+[connection signal="slide_disappeared" from="Control/Slides/Panel2" to="Control" method="_on_panel_slide_disappeared"]
+[connection signal="slide_disappeared" from="Control/Slides/Panel3" to="Control" method="_on_panel_slide_disappeared"]
 [connection signal="next_slide" from="Control/SlideshowToolbar" to="Control" method="_on_slideshow_toolbar_next_slide"]
 [connection signal="previous_slide" from="Control/SlideshowToolbar" to="Control" method="_on_slideshow_toolbar_previous_slide"]
 [connection signal="slider_changed" from="Control/SlideshowToolbar" to="Control" method="_on_slideshow_toolbar_slider_changed"]

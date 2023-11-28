@@ -10,18 +10,11 @@ func _ready():
 	
 	#for slide in slides:
 	#	slide.visible = false
-	
-	update_slide(0)
+	slides[current_slide_index].animation_tree['parameters/conditions/can_enter'] = true
 
 
 func update_slide(previous_slide: int):
-	var exit_shrink = slides[previous_slide].animation_tree['parameters/conditions/exit_shrink']
-	if exit_shrink:
-		slides[previous_slide].animation_tree['parameters/playback'].travel('slide_exit_shrink')
-	
-	var enter_grow = slides[previous_slide].animation_tree['parameters/conditions/enter_grow']
-	if enter_grow:
-		slides[current_slide_index].animation_tree['parameters/playback'].travel('slide_enter_grow')
+	slides[previous_slide].animation_tree['parameters/conditions/can_exit'] = true
 
 func _on_slideshow_toolbar_next_slide():
 	if current_slide_index >= len(slides) - 1:
@@ -45,3 +38,7 @@ func _on_slideshow_toolbar_slider_changed(value: int):
 	var previous_slide: int = current_slide_index
 	current_slide_index = value
 	update_slide(previous_slide)
+
+
+func _on_panel_slide_disappeared():
+	slides[current_slide_index].animation_tree['parameters/conditions/can_enter'] = true

@@ -10,6 +10,8 @@ enum ExitAnimation {
 	PASS_LEFT
 }
 
+signal slide_disappeared
+
 @export var enter_animation: EnterAnimation = EnterAnimation.GROW
 @export var exit_animation: ExitAnimation = ExitAnimation.SHRINK
 @export var interactive_slide: bool = false
@@ -68,7 +70,10 @@ func _on_image_timer_timeout():
 	current_image_index += 1
 
 
-func _on_animation_tree_animation_finished(anim_name):
-	if anim_name == 'slide/enter_grow':
+func _on_animation_tree_animation_finished(anim_name: String):
+	if anim_name.contains('enter'):
 		text_timer.start()
 		image_timer.start()
+	
+	if anim_name.contains('exit'):
+		slide_disappeared.emit()
