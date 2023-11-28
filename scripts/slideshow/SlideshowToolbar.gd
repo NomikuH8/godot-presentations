@@ -9,10 +9,15 @@ signal next_slide
 @export var slide_label: Label
 @export var slide_slider: HSlider
 
+var started: bool = false
 
-func _ready():
+
+func _process(_delta: float):
+	if started: return
+	
 	slide_slider.max_value = slide_count - 1
 	update_label(1)
+	started = true
 
 
 func _input(event):
@@ -32,7 +37,7 @@ func _input(event):
 func _on_slide_slider_drag_ended(value_changed):
 	if (!value_changed): return
 	
-	update_label(slide_slider.value + 1)
+	update_label(int(slide_slider.value) + 1)
 	slider_changed.emit(slide_slider.value)
 
 
@@ -51,7 +56,7 @@ func _on_previous_button_pressed():
 	if slide_slider.value - 1 < 0: return
 	
 	slide_slider.value = slide_slider.value - 1
-	update_label(slide_slider.value + 1)
+	update_label(int(slide_slider.value) + 1)
 	previous_slide.emit()
 
 
@@ -59,7 +64,7 @@ func _on_next_button_pressed():
 	if slide_slider.value + 1 >= slide_count: return
 	
 	slide_slider.value = slide_slider.value + 1
-	update_label(slide_slider.value + 1)
+	update_label(int(slide_slider.value) + 1)
 	next_slide.emit()
 
 func update_label(value: int):

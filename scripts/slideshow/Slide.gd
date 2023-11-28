@@ -72,8 +72,17 @@ func _on_image_timer_timeout():
 
 func _on_animation_tree_animation_finished(anim_name: String):
 	if anim_name.contains('enter'):
+		can_appear(false)
 		text_timer.start()
 		image_timer.start()
 	
 	if anim_name.contains('exit'):
+		can_disappear(false)
+		visible = false
 		slide_disappeared.emit()
+
+func can_appear(value: bool):
+	animation_tree['parameters/conditions/can_enter'] = value
+
+func can_disappear(value: bool):
+	animation_tree['parameters/conditions/can_exit'] = value

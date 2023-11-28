@@ -11,7 +11,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1n3ms")
 toolbar_appear_threshold = 110
-slide_count = 5
 slide_label = NodePath("PanelContainer/VBoxContainer/BoxContainer/SlideContainer/SlideSliderContainer/SlideLabel")
 slide_slider = NodePath("PanelContainer/VBoxContainer/BoxContainer/SlideContainer/SlideSliderContainer/SlideSlider")
 

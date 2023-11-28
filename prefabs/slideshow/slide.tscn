@@ -9,6 +9,7 @@ bg_color = Color(0.152941, 0.152941, 0.152941, 0.431373)
 
 [sub_resource type="Animation" id="Animation_t4v1t"]
 resource_name = "enter_grow"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -16,7 +17,7 @@ tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 2
 tracks/0/loop_wrap = false
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(0.466516, 3.605),
 "update": 0,
 "values": [Vector2(1, 0), Vector2(1, 1)]
@@ -24,6 +25,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_tjmmn"]
 resource_name = "exit_shrink"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -31,7 +33,7 @@ tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(0.153893, 3.605),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1, 0)]
@@ -94,9 +96,6 @@ animation = &"slide/idle"
 switch_mode = 2
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1hie1"]
-switch_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_it58f"]
 advance_mode = 2
 advance_condition = &"can_enter"
@@ -113,6 +112,11 @@ advance_condition = &"can_exit"
 advance_mode = 2
 advance_condition = &"exit_shrink"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s28dh"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"can_enter"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_0842f"]
 states/End/position = Vector2(1380, 100)
 states/Start/position = Vector2(53, 100)
@@ -121,13 +125,13 @@ states/slide_enter/position = Vector2(222, 100)
 states/slide_enter_grow/node = SubResource("AnimationNodeAnimation_ouiux")
 states/slide_enter_grow/position = Vector2(442, 44)
 states/slide_exit/node = SubResource("AnimationNodeAnimation_1xsdq")
-states/slide_exit/position = Vector2(907, 100)
+states/slide_exit/position = Vector2(908, 100)
 states/slide_exit_shrink/node = SubResource("AnimationNodeAnimation_cymh4")
-states/slide_exit_shrink/position = Vector2(1150, 44)
+states/slide_exit_shrink/position = Vector2(908, 217)
 states/slide_idle/node = SubResource("AnimationNodeAnimation_ydiyw")
 states/slide_idle/position = Vector2(693, 100)
-transitions = ["slide_enter_grow", "slide_idle", SubResource("AnimationNodeStateMachineTransition_0l88u"), "slide_exit_shrink", "End", SubResource("AnimationNodeStateMachineTransition_1hie1"), "Start", "slide_enter", SubResource("AnimationNodeStateMachineTransition_it58f"), "slide_enter", "slide_enter_grow", SubResource("AnimationNodeStateMachineTransition_18awn"), "slide_idle", "slide_exit", SubResource("AnimationNodeStateMachineTransition_hvns5"), "slide_exit", "slide_exit_shrink", SubResource("AnimationNodeStateMachineTransition_xii47")]
-graph_offset = Vector2(395, -16)
+transitions = ["slide_enter_grow", "slide_idle", SubResource("AnimationNodeStateMachineTransition_0l88u"), "Start", "slide_enter", SubResource("AnimationNodeStateMachineTransition_it58f"), "slide_enter", "slide_enter_grow", SubResource("AnimationNodeStateMachineTransition_18awn"), "slide_idle", "slide_exit", SubResource("AnimationNodeStateMachineTransition_hvns5"), "slide_exit", "slide_exit_shrink", SubResource("AnimationNodeStateMachineTransition_xii47"), "slide_exit_shrink", "slide_enter", SubResource("AnimationNodeStateMachineTransition_s28dh")]
+graph_offset = Vector2(371.118, 35)
 
 [node name="Panel" type="Panel"]
 custom_minimum_size = Vector2(900, 600)
