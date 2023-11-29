@@ -2,12 +2,12 @@ extends Panel
 
 enum EnterAnimation {
 	GROW,
-	PASS_RIGHT
+	PASS_LEFT
 }
 
 enum ExitAnimation {
 	SHRINK,
-	PASS_LEFT
+	PASS_RIGHT
 }
 
 signal slide_disappeared
@@ -38,6 +38,7 @@ func _ready():
 	image_timer.wait_time = image_appear
 	
 	animation_tree['parameters/conditions/enter_grow'] = enter_animation == EnterAnimation.GROW
+	animation_tree['parameters/conditions/enter_pass_left'] = enter_animation == EnterAnimation.PASS_LEFT
 	animation_tree['parameters/conditions/exit_shrink'] = exit_animation == ExitAnimation.SHRINK
 	animation_tree.active = true
 	

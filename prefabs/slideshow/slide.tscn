@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c464hdyhdchl6"]
+[gd_scene load_steps=25 format=3 uid="uid://c464hdyhdchl6"]
 
 [ext_resource type="Script" path="res://scripts/slideshow/Slide.gd" id="1_esd0j"]
 
@@ -69,9 +69,38 @@ tracks/0/keys = {
 "values": [Vector2(1, 1e-05)]
 }
 
+[sub_resource type="Animation" id="Animation_vkvnw"]
+resource_name = "enter_pass_left"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(190, 60), Vector2(-1110, 60)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h0xc7"]
 _data = {
 "enter_grow": SubResource("Animation_t4v1t"),
+"enter_pass_left": SubResource("Animation_vkvnw"),
 "exit_shrink": SubResource("Animation_tjmmn"),
 "idle": SubResource("Animation_oqrxl"),
 "idle_out": SubResource("Animation_1o56s")
@@ -82,6 +111,9 @@ animation = &"slide/idle_out"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ouiux"]
 animation = &"slide/enter_grow"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iyro2"]
+animation = &"slide/enter_pass_left"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1xsdq"]
 animation = &"slide/idle"
@@ -117,6 +149,14 @@ switch_mode = 2
 advance_mode = 2
 advance_condition = &"can_enter"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4e428"]
+advance_mode = 2
+advance_condition = &"enter_pass_left"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_v0o1m"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_0842f"]
 states/End/position = Vector2(1380, 100)
 states/Start/position = Vector2(53, 100)
@@ -124,29 +164,30 @@ states/slide_enter/node = SubResource("AnimationNodeAnimation_nrgnw")
 states/slide_enter/position = Vector2(222, 100)
 states/slide_enter_grow/node = SubResource("AnimationNodeAnimation_ouiux")
 states/slide_enter_grow/position = Vector2(442, 44)
+states/slide_enter_pass_left/node = SubResource("AnimationNodeAnimation_iyro2")
+states/slide_enter_pass_left/position = Vector2(442, -16)
 states/slide_exit/node = SubResource("AnimationNodeAnimation_1xsdq")
 states/slide_exit/position = Vector2(908, 100)
 states/slide_exit_shrink/node = SubResource("AnimationNodeAnimation_cymh4")
 states/slide_exit_shrink/position = Vector2(908, 217)
 states/slide_idle/node = SubResource("AnimationNodeAnimation_ydiyw")
 states/slide_idle/position = Vector2(693, 100)
-transitions = ["slide_enter_grow", "slide_idle", SubResource("AnimationNodeStateMachineTransition_0l88u"), "Start", "slide_enter", SubResource("AnimationNodeStateMachineTransition_it58f"), "slide_enter", "slide_enter_grow", SubResource("AnimationNodeStateMachineTransition_18awn"), "slide_idle", "slide_exit", SubResource("AnimationNodeStateMachineTransition_hvns5"), "slide_exit", "slide_exit_shrink", SubResource("AnimationNodeStateMachineTransition_xii47"), "slide_exit_shrink", "slide_enter", SubResource("AnimationNodeStateMachineTransition_s28dh")]
-graph_offset = Vector2(143.118, 31)
+transitions = ["slide_enter_grow", "slide_idle", SubResource("AnimationNodeStateMachineTransition_0l88u"), "Start", "slide_enter", SubResource("AnimationNodeStateMachineTransition_it58f"), "slide_enter", "slide_enter_grow", SubResource("AnimationNodeStateMachineTransition_18awn"), "slide_idle", "slide_exit", SubResource("AnimationNodeStateMachineTransition_hvns5"), "slide_exit", "slide_exit_shrink", SubResource("AnimationNodeStateMachineTransition_xii47"), "slide_exit_shrink", "slide_enter", SubResource("AnimationNodeStateMachineTransition_s28dh"), "slide_enter", "slide_enter_pass_left", SubResource("AnimationNodeStateMachineTransition_4e428"), "slide_enter_pass_left", "slide_idle", SubResource("AnimationNodeStateMachineTransition_v0o1m")]
+graph_offset = Vector2(96.118, -37)
 
-[node name="Panel" type="Panel"]
+[node name="Slide" type="Panel"]
 custom_minimum_size = Vector2(900, 600)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -450.0
+offset_left = -1750.0
 offset_top = -300.0
-offset_right = 450.0
+offset_right = -850.0
 offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1, 1e-05)
 pivot_offset = Vector2(450, 300)
 theme_override_styles/panel = SubResource("StyleBoxFlat_sstgy")
 script = ExtResource("1_esd0j")
@@ -167,6 +208,7 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/can_enter = false
 parameters/conditions/can_exit = false
 parameters/conditions/enter_grow = false
+parameters/conditions/enter_pass_left = false
 parameters/conditions/exit_shrink = false
 
 [connection signal="timeout" from="TextTimer" to="." method="_on_text_timer_timeout"]
