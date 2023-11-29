@@ -2,12 +2,16 @@ extends Panel
 
 enum EnterAnimation {
 	GROW,
-	PASS_LEFT
+	PASS_LEFT,
+	ROTATE_LEFT,
+	ROTATE_RIGHT
 }
 
 enum ExitAnimation {
 	SHRINK,
-	PASS_RIGHT
+	PASS_RIGHT,
+	ROTATE_LEFT,
+	ROTATE_RIGHT
 }
 
 signal slide_disappeared
@@ -39,7 +43,12 @@ func _ready():
 	
 	animation_tree['parameters/conditions/enter_grow'] = enter_animation == EnterAnimation.GROW
 	animation_tree['parameters/conditions/enter_pass_left'] = enter_animation == EnterAnimation.PASS_LEFT
+	animation_tree['parameters/conditions/enter_rotate_left'] = enter_animation == EnterAnimation.ROTATE_LEFT
+	animation_tree['parameters/conditions/enter_rotate_right'] = enter_animation == EnterAnimation.ROTATE_RIGHT
 	animation_tree['parameters/conditions/exit_shrink'] = exit_animation == ExitAnimation.SHRINK
+	animation_tree['parameters/conditions/exit_pass_right'] = exit_animation == ExitAnimation.PASS_RIGHT
+	animation_tree['parameters/conditions/exit_rotate_left'] = exit_animation == ExitAnimation.ROTATE_LEFT
+	animation_tree['parameters/conditions/exit_rotate_right'] = exit_animation == ExitAnimation.ROTATE_RIGHT
 	animation_tree.active = true
 	
 	for i in images:

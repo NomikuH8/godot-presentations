@@ -40,6 +40,8 @@ offset_bottom = 720.0
 
 [node name="Panel" parent="Control/Slides" instance=ExtResource("4_730rp")]
 layout_mode = 1
+enter_animation = 2
+exit_animation = 3
 
 [node name="d" type="Label" parent="Control/Slides/Panel"]
 layout_mode = 1
@@ -55,7 +57,8 @@ vertical_alignment = 1
 [node name="Panel2" parent="Control/Slides" instance=ExtResource("4_730rp")]
 visible = false
 layout_mode = 1
-enter_animation = 1
+enter_animation = 3
+exit_animation = 2
 
 [node name="d2" type="Label" parent="Control/Slides/Panel2"]
 layout_mode = 1
