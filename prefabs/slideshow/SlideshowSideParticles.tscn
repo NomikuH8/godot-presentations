@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd7cfcaq6e1ru"]
+
+[ext_resource type="Texture2D" uid="uid://b0v1q33nrr6do" path="res://images/particles/particle.png" id="1_p4t5o"]
+
+[sub_resource type="Gradient" id="Gradient_mk2wq"]
+offsets = PackedFloat32Array(0.511111, 1)
+colors = PackedColorArray(1, 1, 1, 0.686275, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sejlm"]
+gradient = SubResource("Gradient_mk2wq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1atgw"]
+emission_shape = 3
+emission_box_extents = Vector3(0.06, 300, 1)
+particle_flag_disable_z = true
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 10.53
+initial_velocity_max = 10.53
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = 45.5
+angle_max = 45.5
+scale_min = 4.0
+scale_max = 4.0
+color_ramp = SubResource("GradientTexture1D_sejlm")
+attractor_interaction_enabled = false
+
+[node name="SlideshowSideParticles" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+texture_filter = 1
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_1atgw")
+texture = ExtResource("1_p4t5o")
+lifetime = 3.5
+preprocess = 6.06
+collision_base_size = 61.77
+visibility_rect = Rect2(0, -300, 50, 600)

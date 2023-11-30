@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6cf3b6h8e6lt"]
+[gd_scene load_steps=8 format=3 uid="uid://b6cf3b6h8e6lt"]
 
 [ext_resource type="PackedScene" uid="uid://upvucuou2f1j" path="res://prefabs/slideshow/SlideshowParticles.tscn" id="1_pdjoh"]
 [ext_resource type="PackedScene" uid="uid://b4f6mv66o5eb0" path="res://prefabs/slideshow/SlideshowBlinker.tscn" id="2_n6jdq"]
 [ext_resource type="PackedScene" uid="uid://drwd1q1oipqfa" path="res://prefabs/slideshow/SlideshowToolbar.tscn" id="3_408i4"]
+[ext_resource type="PackedScene" uid="uid://bd7cfcaq6e1ru" path="res://prefabs/slideshow/SlideshowSideParticles.tscn" id="3_w41wi"]
 [ext_resource type="Script" path="res://scripts/slideshow/SlideControl.gd" id="3_wqglq"]
 [ext_resource type="PackedScene" uid="uid://c464hdyhdchl6" path="res://prefabs/slideshow/slide.tscn" id="4_730rp"]
 
@@ -24,6 +25,13 @@ rotation = -6.28319
 [node name="SlideshowParticles" parent="background" instance=ExtResource("1_pdjoh")]
 position = Vector2(1320, 357)
 scale = Vector2(0.9, 0.9)
+
+[node name="SlideshowLeftParticles" parent="background" instance=ExtResource("3_w41wi")]
+position = Vector2(-11, 359)
+
+[node name="SlideshowRightParticles" parent="background" instance=ExtResource("3_w41wi")]
+position = Vector2(1295, 359)
+rotation = 3.14159
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
