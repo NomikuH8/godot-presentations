@@ -1,14 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6cf3b6h8e6lt"]
+[gd_scene load_steps=6 format=3 uid="uid://b6cf3b6h8e6lt"]
 
 [ext_resource type="PackedScene" uid="uid://upvucuou2f1j" path="res://prefabs/slideshow/SlideshowParticles.tscn" id="1_pdjoh"]
 [ext_resource type="PackedScene" uid="uid://b4f6mv66o5eb0" path="res://prefabs/slideshow/SlideshowBlinker.tscn" id="2_n6jdq"]
 [ext_resource type="PackedScene" uid="uid://drwd1q1oipqfa" path="res://prefabs/slideshow/SlideshowToolbar.tscn" id="3_408i4"]
 [ext_resource type="PackedScene" uid="uid://bd7cfcaq6e1ru" path="res://prefabs/slideshow/SlideshowSideParticles.tscn" id="3_w41wi"]
 [ext_resource type="Script" path="res://scripts/slideshow/SlideControl.gd" id="3_wqglq"]
-[ext_resource type="PackedScene" uid="uid://c464hdyhdchl6" path="res://prefabs/slideshow/slide.tscn" id="4_730rp"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_u7jc6"]
-font_size = 40
 
 [node name="slideshow" type="Node"]
 
@@ -46,62 +42,10 @@ anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 
-[node name="Panel" parent="Control/Slides" instance=ExtResource("4_730rp")]
-layout_mode = 1
-enter_animation = 2
-exit_animation = 3
-interactive_slide = true
-
-[node name="d" type="Label" parent="Control/Slides/Panel"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 88.0
-grow_horizontal = 2
-text = "abluble titulo"
-label_settings = SubResource("LabelSettings_u7jc6")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Panel2" parent="Control/Slides" instance=ExtResource("4_730rp")]
-visible = false
-layout_mode = 1
-enter_animation = 3
-exit_animation = 2
-
-[node name="d2" type="Label" parent="Control/Slides/Panel2"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 88.0
-grow_horizontal = 2
-text = "titulo 2 aaaaaaayoay"
-label_settings = SubResource("LabelSettings_u7jc6")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Panel3" parent="Control/Slides" instance=ExtResource("4_730rp")]
-visible = false
-layout_mode = 1
-
-[node name="d3" type="Label" parent="Control/Slides/Panel3"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 88.0
-grow_horizontal = 2
-text = "AAAAAAAAAAAAA"
-label_settings = SubResource("LabelSettings_u7jc6")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="SlideshowToolbar" parent="Control" instance=ExtResource("3_408i4")]
 visible = false
 layout_mode = 1
 
-[connection signal="slide_disappeared" from="Control/Slides/Panel" to="Control" method="_on_slide_disappeared"]
-[connection signal="slide_disappeared" from="Control/Slides/Panel2" to="Control" method="_on_slide_disappeared"]
-[connection signal="slide_disappeared" from="Control/Slides/Panel3" to="Control" method="_on_slide_disappeared"]
 [connection signal="next_slide" from="Control/SlideshowToolbar" to="Control" method="_on_slideshow_toolbar_next_slide"]
 [connection signal="previous_slide" from="Control/SlideshowToolbar" to="Control" method="_on_slideshow_toolbar_previous_slide"]
 [connection signal="slider_changed" from="Control/SlideshowToolbar" to="Control" method="_on_slideshow_toolbar_slider_changed"]
