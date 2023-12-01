@@ -50,6 +50,7 @@ offset_bottom = 720.0
 layout_mode = 1
 enter_animation = 2
 exit_animation = 3
+interactive_slide = true
 
 [node name="d" type="Label" parent="Control/Slides/Panel"]
 layout_mode = 1

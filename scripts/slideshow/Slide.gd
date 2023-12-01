@@ -41,14 +41,14 @@ func _ready():
 	text_timer.wait_time = text_appear
 	image_timer.wait_time = image_appear
 	
-	animation_tree['parameters/conditions/enter_grow'] = enter_animation == EnterAnimation.GROW
-	animation_tree['parameters/conditions/enter_pass_left'] = enter_animation == EnterAnimation.PASS_LEFT
-	animation_tree['parameters/conditions/enter_rotate_left'] = enter_animation == EnterAnimation.ROTATE_LEFT
-	animation_tree['parameters/conditions/enter_rotate_right'] = enter_animation == EnterAnimation.ROTATE_RIGHT
-	animation_tree['parameters/conditions/exit_shrink'] = exit_animation == ExitAnimation.SHRINK
-	animation_tree['parameters/conditions/exit_pass_right'] = exit_animation == ExitAnimation.PASS_RIGHT
-	animation_tree['parameters/conditions/exit_rotate_left'] = exit_animation == ExitAnimation.ROTATE_LEFT
-	animation_tree['parameters/conditions/exit_rotate_right'] = exit_animation == ExitAnimation.ROTATE_RIGHT
+	equal_animation_condition('enter_grow', true, EnterAnimation.GROW)
+	equal_animation_condition('enter_pass_left', true, EnterAnimation.PASS_LEFT)
+	equal_animation_condition('enter_rotate_left', true, EnterAnimation.ROTATE_LEFT)
+	equal_animation_condition('enter_rotate_right', true, EnterAnimation.ROTATE_RIGHT)
+	equal_animation_condition('exit_shrink', false, ExitAnimation.SHRINK)
+	equal_animation_condition('exit_pass_right', false, ExitAnimation.PASS_RIGHT)
+	equal_animation_condition('exit_rotate_left', false, ExitAnimation.ROTATE_LEFT)
+	equal_animation_condition('exit_rotate_right', false, ExitAnimation.ROTATE_RIGHT)
 	animation_tree.active = true
 	
 	for i in images:
@@ -90,6 +90,13 @@ func _on_animation_tree_animation_finished(anim_name: String):
 		can_disappear(false)
 		visible = false
 		slide_disappeared.emit()
+
+
+func equal_animation_condition(condition: String, is_enter: bool, to_equal):
+	if is_enter:
+		animation_tree['parameters/conditions/' + condition] = enter_animation == to_equal
+	else:
+		animation_tree['parameters/conditions/' + condition] = exit_animation == to_equal
 
 
 func can_appear(value: bool):
