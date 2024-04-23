@@ -13,6 +13,7 @@ font_size = 36
 [node name="menu" type="Node"]
 
 [node name="MenuParticles" parent="." instance=ExtResource("1_x583m")]
+position = Vector2(611, 0)
 
 [node name="ui" type="Control" parent="."]
 layout_mode = 3
@@ -50,8 +51,8 @@ theme_override_constants/separation = 170
 
 [node name="Title" type="Label" parent="ui/Panel/CenterContainer/MenuContainer"]
 layout_mode = 2
-text = "Camada de aplicação
-Trabalho de Redes"
+text = "Quanto dinheiro os jogos
+na Steam fazem?"
 label_settings = SubResource("LabelSettings_hinri")
 horizontal_alignment = 1
 

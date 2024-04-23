@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/slideshow/Slide.gd" id="1_esd0j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sstgy"]
-bg_color = Color(0.152941, 0.152941, 0.152941, 0.431373)
+bg_color = Color(0.625597, 0.625597, 0.625597, 0.431373)
 
 [sub_resource type="Animation" id="Animation_t4v1t"]
 resource_name = "enter_grow"
@@ -467,7 +467,7 @@ states/slide_exit_shrink/position = Vector2(829, 243)
 states/slide_idle/node = SubResource("AnimationNodeAnimation_ydiyw")
 states/slide_idle/position = Vector2(693, 100)
 transitions = ["slide_enter_grow", "slide_idle", SubResource("AnimationNodeStateMachineTransition_0l88u"), "Start", "slide_enter", SubResource("AnimationNodeStateMachineTransition_it58f"), "slide_enter", "slide_enter_grow", SubResource("AnimationNodeStateMachineTransition_18awn"), "slide_idle", "slide_exit", SubResource("AnimationNodeStateMachineTransition_hvns5"), "slide_exit", "slide_exit_shrink", SubResource("AnimationNodeStateMachineTransition_xii47"), "slide_exit_shrink", "slide_enter", SubResource("AnimationNodeStateMachineTransition_s28dh"), "slide_enter", "slide_enter_pass_left", SubResource("AnimationNodeStateMachineTransition_4e428"), "slide_enter_pass_left", "slide_idle", SubResource("AnimationNodeStateMachineTransition_v0o1m"), "slide_exit", "slide_exit_pass_right", SubResource("AnimationNodeStateMachineTransition_khxha"), "slide_exit_pass_right", "slide_enter", SubResource("AnimationNodeStateMachineTransition_frijf"), "slide_enter", "slide_enter_rotate_left", SubResource("AnimationNodeStateMachineTransition_mvbo6"), "slide_enter", "slide_enter_rotate_right", SubResource("AnimationNodeStateMachineTransition_eetp0"), "slide_enter_rotate_left", "slide_idle", SubResource("AnimationNodeStateMachineTransition_o0x3n"), "slide_enter_rotate_right", "slide_idle", SubResource("AnimationNodeStateMachineTransition_rywv3"), "slide_exit", "slide_exit_rotate_left", SubResource("AnimationNodeStateMachineTransition_e6chn"), "slide_exit_rotate_left", "slide_enter", SubResource("AnimationNodeStateMachineTransition_ft4jn"), "slide_exit", "slide_exit_rotate_right", SubResource("AnimationNodeStateMachineTransition_cew78"), "slide_exit_rotate_right", "slide_enter", SubResource("AnimationNodeStateMachineTransition_561hv")]
-graph_offset = Vector2(129.118, 58)
+graph_offset = Vector2(-107.882, -33)
 
 [node name="Slide" type="Panel"]
 custom_minimum_size = Vector2(900, 600)
@@ -482,8 +482,6 @@ offset_right = 450.0
 offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
-rotation = -3.14159
-scale = Vector2(1e-05, 1e-05)
 pivot_offset = Vector2(450, 300)
 theme_override_styles/panel = SubResource("StyleBoxFlat_sstgy")
 script = ExtResource("1_esd0j")
@@ -498,6 +496,7 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+active = false
 tree_root = SubResource("AnimationNodeStateMachine_0842f")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/can_enter = false
