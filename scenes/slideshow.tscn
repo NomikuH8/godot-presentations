@@ -68,13 +68,16 @@ rotation = 3.14159
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("3_wqglq")
 
 [node name="Slides" type="Control" parent="Control"]
 custom_minimum_size = Vector2(1280, 720)
+layout_mode = 1
 anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
@@ -128,10 +131,9 @@ offset_bottom = 555.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Alunos:
 Graziela Torres
-Henrique Maia Cardosa
 João Miguel de Castro Menna
 Ricardo Gabriel Fialho Santos
-Sophia Eggert"
+Sophia Eggert Freire da Rocha"
 label_settings = SubResource("LabelSettings_8m7q1")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -526,6 +528,7 @@ text = "Google Colab"
 uri = "https://colab.research.google.com/drive/1-jsHgS3PDjc0UNmWeaXC8lTEy1gJbnLI?usp=sharing"
 
 [node name="Slide12" parent="Control/Slides" instance=ExtResource("5_p84bp")]
+visible = false
 layout_mode = 1
 theme_override_styles/panel = SubResource("StyleBoxEmpty_b1cii")
 
@@ -541,7 +544,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SlideshowToolbar" parent="Control" instance=ExtResource("3_408i4")]
-visible = false
 layout_mode = 1
 
 [connection signal="next_slide" from="Control/SlideshowToolbar" to="Control" method="_on_slideshow_toolbar_next_slide"]
