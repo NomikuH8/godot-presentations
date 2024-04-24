@@ -143,6 +143,7 @@ visible = false
 layout_mode = 1
 enter_animation = 1
 exit_animation = 1
+text_appear = 0.01
 
 [node name="Label" type="Label" parent="Control/Slides/Slide2"]
 layout_mode = 0
@@ -544,6 +545,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SlideshowToolbar" parent="Control" instance=ExtResource("3_408i4")]
+visible = false
 layout_mode = 1
 
 [connection signal="next_slide" from="Control/SlideshowToolbar" to="Control" method="_on_slideshow_toolbar_next_slide"]

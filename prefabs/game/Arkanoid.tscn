@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://b6p2bbmgff661"]
+[gd_scene load_steps=2 format=3 uid="uid://b6p2bbmgff661"]
+
+[ext_resource type="PackedScene" uid="uid://bph11hqwqv4ou" path="res://prefabs/game/paddle.tscn" id="1_h2ud0"]
 
 [node name="Arkanoid" type="Node2D"]
+
+[node name="Paddle" parent="." instance=ExtResource("1_h2ud0")]
+position = Vector2(620, 609)
+is_player = true

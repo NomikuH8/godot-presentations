@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bph11hqwqv4ou"]
+
+[ext_resource type="Script" path="res://scripts/game/arkanoid/paddle.gd" id="1_yd12i"]
+[ext_resource type="Texture2D" uid="uid://dmup1mb5621g7" path="res://images/arkanoid/paddle.png" id="2_enj4k"]
+
+[node name="Paddle" type="Node2D"]
+scale = Vector2(3.21083, 3.21083)
+script = ExtResource("1_yd12i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -19)
+rotation = -1.5708
+scale = Vector2(3.125, 3.125)
+texture = ExtResource("2_enj4k")
