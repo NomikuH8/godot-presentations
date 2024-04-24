@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2q7dsaajxcnv"
-path="res://.godot/imported/logo_catolica.png-e74a574b19ab34844efdf483925ad849.ctex"
+path="res://.godot/imported/logo_catolica.png-38016e7d49ea55028ddefe13b82a8f64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/logo_catolica.png"
-dest_files=["res://.godot/imported/logo_catolica.png-e74a574b19ab34844efdf483925ad849.ctex"]
+source_file="res://images/presentation/logo_catolica.png"
+dest_files=["res://.godot/imported/logo_catolica.png-38016e7d49ea55028ddefe13b82a8f64.ctex"]
 
 [params]
 
