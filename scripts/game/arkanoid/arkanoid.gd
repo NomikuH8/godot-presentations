@@ -19,6 +19,12 @@ func _process(_delta: float):
 		create_playfield()
 
 func _input(event):
+	if event.is_action_pressed("activate"):
+		paddle.is_player = !paddle.is_player
+		paddle.going_left = false
+		paddle.going_right = false
+		return
+	
 	if event.is_action_pressed("reset_game"):
 		for i in blocks.get_children():
 			blocks.remove_child(i)

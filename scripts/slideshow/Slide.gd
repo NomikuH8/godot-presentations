@@ -92,6 +92,11 @@ func _on_animation_tree_animation_finished(anim_name: String):
 		slide_disappeared.emit()
 
 
+func _input(event: InputEvent):
+	if event.is_action_pressed("activate"):
+		visible = !visible
+
+
 func equal_animation_condition(condition: String, is_enter: bool, to_equal):
 	if is_enter:
 		animation_tree['parameters/conditions/' + condition] = enter_animation == to_equal

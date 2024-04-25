@@ -11,10 +11,6 @@ var going_right: bool = false
 var ball: Node2D
 
 
-func _ready():
-	pass
-
-
 func _physics_process(delta: float):
 	if not is_player:
 		ai_play(delta)
@@ -45,8 +41,8 @@ func _input(event: InputEvent):
 
 
 func ai_play(delta: float):
-	going_left = ball.position.x < position.x + (randf() * 70)
-	going_right = ball.position.x > position.x - (randf() * 70)
+	going_left = ball.position.x < position.x + (randf() * 50)
+	going_right = ball.position.x > position.x - (randf() * 50)
 	
 	if ball.position.y > position.y:
 		return
