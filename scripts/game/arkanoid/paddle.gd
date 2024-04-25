@@ -1,4 +1,5 @@
 extends Node2D
+class_name Paddle
 
 
 @export var is_player: bool = false
