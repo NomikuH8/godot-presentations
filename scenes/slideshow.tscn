@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://b6cf3b6h8e6lt"]
+[gd_scene load_steps=19 format=3 uid="uid://b6cf3b6h8e6lt"]
 
 [ext_resource type="PackedScene" uid="uid://upvucuou2f1j" path="res://prefabs/slideshow/SlideshowParticles.tscn" id="1_pdjoh"]
 [ext_resource type="PackedScene" uid="uid://b4f6mv66o5eb0" path="res://prefabs/slideshow/SlideshowBlinker.tscn" id="2_n6jdq"]
 [ext_resource type="PackedScene" uid="uid://drwd1q1oipqfa" path="res://prefabs/slideshow/SlideshowToolbar.tscn" id="3_408i4"]
 [ext_resource type="PackedScene" uid="uid://bd7cfcaq6e1ru" path="res://prefabs/slideshow/SlideshowSideParticles.tscn" id="3_w41wi"]
 [ext_resource type="Script" path="res://scripts/slideshow/SlideControl.gd" id="3_wqglq"]
+[ext_resource type="PackedScene" uid="uid://b6p2bbmgff661" path="res://prefabs/game/Arkanoid.tscn" id="4_daue3"]
 [ext_resource type="PackedScene" uid="uid://c464hdyhdchl6" path="res://prefabs/slideshow/slide.tscn" id="5_p84bp"]
 [ext_resource type="PackedScene" uid="uid://bckxllfl2iaih" path="res://prefabs/slideshow/SlideImage.tscn" id="6_h23tw"]
 [ext_resource type="Texture2D" uid="uid://d2q7dsaajxcnv" path="res://images/presentation/logo_catolica.png" id="7_wu8gi"]
@@ -46,6 +47,9 @@ outline_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
 [node name="slideshow" type="Node"]
 
 [node name="background" type="Node2D" parent="."]
+
+[node name="Arkanoid" parent="background" instance=ExtResource("4_daue3")]
+modulate = Color(1, 1, 1, 0.352941)
 
 [node name="TopBlinker" parent="background" instance=ExtResource("2_n6jdq")]
 position = Vector2(635, 37)

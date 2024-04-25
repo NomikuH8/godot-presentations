@@ -6,15 +6,17 @@ extends Node2D
 @export var grid_offset: Vector2 = Vector2(80, 40)
 
 @onready var blocks := $Blocks
+@onready var paddle := $Paddle
+@onready var ball := $Ball
 
 
 func _ready():
+	paddle.ball = ball
 	create_playfield()
 
-
-func _process(delta):
-	pass
-
+func _process(_delta: float):
+	if blocks.get_child_count() == 0:
+		create_playfield()
 
 func _input(event):
 	if event.is_action_pressed("reset_game"):

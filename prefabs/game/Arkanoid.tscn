@@ -13,8 +13,8 @@ grid_size = Vector2(160, 80)
 [node name="Blocks" type="Node2D" parent="."]
 
 [node name="Paddle" parent="." instance=ExtResource("1_h2ud0")]
-position = Vector2(620, 609)
-is_player = true
+position = Vector2(620, 624)
+ai_movement_speed = 45.0
 
 [node name="Ball" parent="." instance=ExtResource("4_kegl6")]
 position = Vector2(620, 502)

@@ -8,13 +8,14 @@ class_name Paddle
 
 var going_left: bool = false
 var going_right: bool = false
+var ball: Node2D
 
 
 func _ready():
 	pass
 
 
-func _process(delta: float):
+func _physics_process(delta: float):
 	if not is_player:
 		ai_play(delta)
 		return
@@ -44,4 +45,16 @@ func _input(event: InputEvent):
 
 
 func ai_play(delta: float):
-	pass
+	going_left = ball.position.x < position.x + (randf() * 70)
+	going_right = ball.position.x > position.x - (randf() * 70)
+	
+	if ball.position.y > position.y:
+		return
+	
+	if going_left:
+		position.x -= ai_movement_speed * 10.0 * delta
+	
+	if going_right:
+		position.x += ai_movement_speed * 10.0 * delta
+	
+	position.x = clamp(position.x, 90, 1190)
