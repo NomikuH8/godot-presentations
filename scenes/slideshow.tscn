@@ -175,7 +175,7 @@ offset_left = 130.0
 offset_top = 180.0
 offset_right = 557.0
 offset_bottom = 225.0
-text = "01- Informações sobre os dados"
+text = "01- Introdução"
 label_settings = SubResource("LabelSettings_vsyg5")
 vertical_alignment = 1
 
@@ -230,7 +230,6 @@ label_settings = SubResource("LabelSettings_vsyg5")
 vertical_alignment = 1
 
 [node name="Slide3" parent="Control/Slides" instance=ExtResource("5_p84bp")]
-visible = false
 layout_mode = 1
 enter_animation = 1
 
@@ -240,7 +239,7 @@ offset_left = 82.0
 offset_top = 47.0
 offset_right = 260.0
 offset_bottom = 108.0
-text = "Informações sobre os dados"
+text = "Introdução"
 label_settings = SubResource("LabelSettings_vu7gd")
 vertical_alignment = 1
 
