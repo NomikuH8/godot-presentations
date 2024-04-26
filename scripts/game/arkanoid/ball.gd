@@ -13,7 +13,7 @@ func _physics_process(delta: float):
 		acceleration_y
 	) * 10 * delta
 	
-	if position.x < 90 or position.x > 1190:
+	if position.x < 24 or position.x > 1260:
 		acceleration_x = -acceleration_x
 	
 	if position.y < 30:

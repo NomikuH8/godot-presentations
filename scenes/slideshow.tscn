@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://drwd1q1oipqfa" path="res://prefabs/slideshow/SlideshowToolbar.tscn" id="3_408i4"]
 [ext_resource type="PackedScene" uid="uid://bd7cfcaq6e1ru" path="res://prefabs/slideshow/SlideshowSideParticles.tscn" id="3_w41wi"]
 [ext_resource type="Script" path="res://scripts/slideshow/SlideControl.gd" id="3_wqglq"]
-[ext_resource type="PackedScene" uid="uid://b6p2bbmgff661" path="res://prefabs/game/arkanoid.tscn" id="4_daue3"]
+[ext_resource type="PackedScene" uid="uid://b6p2bbmgff661" path="res://prefabs/game/Arkanoid.tscn" id="4_daue3"]
 [ext_resource type="PackedScene" uid="uid://c464hdyhdchl6" path="res://prefabs/slideshow/slide.tscn" id="5_p84bp"]
 [ext_resource type="PackedScene" uid="uid://bckxllfl2iaih" path="res://prefabs/slideshow/SlideImage.tscn" id="6_h23tw"]
 [ext_resource type="Texture2D" uid="uid://d2q7dsaajxcnv" path="res://images/presentation/logo_catolica.png" id="7_wu8gi"]
@@ -500,7 +500,7 @@ text = "Node 18:
 - getGames
 - getGamesRevenue
 
-Python
+Python (NumPy):
 - clear_free_games
 - calculate"
 label_settings = SubResource("LabelSettings_bx7a1")

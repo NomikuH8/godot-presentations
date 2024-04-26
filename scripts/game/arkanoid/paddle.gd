@@ -4,7 +4,7 @@ class_name Paddle
 
 @export var is_player: bool = false
 @export var player_movement_speed: float = 100.0
-@export var ai_movement_speed: float = 80.0
+@export var ai_movement_speed: float = 40.0
 
 var going_left: bool = false
 var going_right: bool = false
@@ -44,8 +44,8 @@ func ai_play(delta: float):
 	going_left = ball.position.x < position.x + (randf() * 50)
 	going_right = ball.position.x > position.x - (randf() * 50)
 	
-	if ball.position.y > position.y:
-		return
+	#if ball.position.y > position.y:
+		#return
 	
 	if going_left:
 		position.x -= ai_movement_speed * 10.0 * delta
