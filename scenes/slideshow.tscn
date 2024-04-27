@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b6cf3b6h8e6lt"]
+[gd_scene load_steps=25 format=3 uid="uid://b6cf3b6h8e6lt"]
 
 [ext_resource type="PackedScene" uid="uid://upvucuou2f1j" path="res://prefabs/slideshow/SlideshowParticles.tscn" id="1_pdjoh"]
 [ext_resource type="PackedScene" uid="uid://b4f6mv66o5eb0" path="res://prefabs/slideshow/SlideshowBlinker.tscn" id="2_n6jdq"]
@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://d2q7dsaajxcnv" path="res://images/presentation/logo_catolica.png" id="7_wu8gi"]
 [ext_resource type="Texture2D" uid="uid://cn67qr8au5ns4" path="res://images/presentation/bitblasterxl.jpg" id="8_mfrav"]
 [ext_resource type="Texture2D" uid="uid://7yevrhptv8a4" path="res://images/presentation/gtav.jpg" id="9_3es6q"]
+[ext_resource type="Texture2D" uid="uid://c3tf530i3u483" path="res://images/presentation/steam.png" id="9_65ajh"]
+[ext_resource type="Texture2D" uid="uid://cxoi8cft364b2" path="res://images/presentation/ninjago.png" id="12_eb2po"]
+[ext_resource type="Texture2D" uid="uid://gvclpwb4mt3w" path="res://images/presentation/streamer_life_simulator.png" id="13_4ubfm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mo4q6"]
 font_size = 36
@@ -39,6 +42,21 @@ outline_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_vsyg5"]
 font_size = 28
+outline_size = 5
+outline_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hgse4"]
+bg_color = Color(0.834614, 0.834614, 0.834614, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gkamm"]
+font_size = 32
+font_color = Color(1, 0.756863, 0.509804, 1)
+outline_size = 5
+outline_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sqvr5"]
+font_size = 32
+font_color = Color(1, 0.756863, 0.509804, 1)
 outline_size = 5
 outline_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
 
@@ -229,7 +247,58 @@ text = "06 - Como manipular os dados"
 label_settings = SubResource("LabelSettings_vsyg5")
 vertical_alignment = 1
 
+[node name="Slide13" parent="Control/Slides" instance=ExtResource("5_p84bp")]
+visible = false
+layout_mode = 1
+enter_animation = 1
+exit_animation = 1
+text_appear = 0.01
+
+[node name="Label" type="Label" parent="Control/Slides/Slide13"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 47.0
+offset_right = 260.0
+offset_bottom = 108.0
+text = "Introdução"
+label_settings = SubResource("LabelSettings_vu7gd")
+vertical_alignment = 1
+
+[node name="SlideImage" parent="Control/Slides/Slide13" instance=ExtResource("6_h23tw")]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 108.0
+offset_right = 676.0
+offset_bottom = 558.0
+texture = ExtResource("9_65ajh")
+
+[node name="Slide9" parent="Control/Slides" instance=ExtResource("5_p84bp")]
+visible = false
+layout_mode = 1
+
+[node name="Label" type="Label" parent="Control/Slides/Slide9"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 47.0
+offset_right = 676.0
+offset_bottom = 108.0
+text = "Introdução"
+label_settings = SubResource("LabelSettings_vu7gd")
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/Slides/Slide9"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 125.0
+offset_right = 797.0
+offset_bottom = 558.0
+text = "Método Boxleiter"
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Slide3" parent="Control/Slides" instance=ExtResource("5_p84bp")]
+visible = false
 layout_mode = 1
 enter_animation = 1
 
@@ -297,16 +366,112 @@ text = "Calculando os dados"
 label_settings = SubResource("LabelSettings_vu7gd")
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Control/Slides/Slide4"]
+[node name="Panel" type="Panel" parent="Control/Slides/Slide4"]
 layout_mode = 0
-offset_left = 82.0
+offset_left = 74.0
 offset_top = 125.0
-offset_right = 797.0
-offset_bottom = 170.0
-text = "Mínimo: $31.141,24
-Máximo: $640.894.286,51
-Amplitude: $640.863.145,27"
+offset_right = 338.0
+offset_bottom = 189.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgse4")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide4/Panel"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 264.0
+offset_bottom = 64.0
+text = "Mínimo"
 label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="Control/Slides/Slide4"]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 125.0
+offset_right = 827.0
+offset_bottom = 189.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgse4")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide4/Panel2"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 480.0
+offset_bottom = 64.0
+text = "$31.141,24 (161 mil reais)"
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel3" type="Panel" parent="Control/Slides/Slide4"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 196.0
+offset_right = 338.0
+offset_bottom = 260.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgse4")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide4/Panel3"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 264.0
+offset_bottom = 64.0
+text = "Máximo"
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel4" type="Panel" parent="Control/Slides/Slide4"]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 196.0
+offset_right = 827.0
+offset_bottom = 260.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgse4")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide4/Panel4"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 480.0
+offset_bottom = 64.0
+text = "$640.894.286,51 (3 bi reais)"
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel5" type="Panel" parent="Control/Slides/Slide4"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 266.0
+offset_right = 338.0
+offset_bottom = 330.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgse4")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide4/Panel5"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 264.0
+offset_bottom = 64.0
+text = "Amplitude"
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel6" type="Panel" parent="Control/Slides/Slide4"]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 266.0
+offset_right = 827.0
+offset_bottom = 330.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgse4")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide4/Panel6"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 480.0
+offset_bottom = 64.0
+text = "$640.863.145,27 (3 bi reais)"
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Slide5" parent="Control/Slides" instance=ExtResource("5_p84bp")]
@@ -350,9 +515,17 @@ offset_top = 428.0
 offset_right = 860.0
 offset_bottom = 569.0
 text = "Total feito pelo jogo: $105.563,52
-Descontos: $74.422,28
-Quanto receberam: $31.141,24"
+Descontos: $74.422,28"
 label_settings = SubResource("LabelSettings_bx7a1")
+
+[node name="Label4" type="Label" parent="Control/Slides/Slide5"]
+layout_mode = 0
+offset_left = 354.0
+offset_top = 524.0
+offset_right = 860.0
+offset_bottom = 569.0
+text = "Quanto receberam: $31.141,24"
+label_settings = SubResource("LabelSettings_gkamm")
 vertical_alignment = 1
 
 [node name="Slide6" parent="Control/Slides" instance=ExtResource("5_p84bp")]
@@ -389,12 +562,19 @@ Preço Atual: $29,98
 Total feito pelo jogo:
     $2.172.523.005,00
 Descontos:
-    $1.531.628.718,49
-Quanto receberam:
+    $1.531.628.718,49"
+label_settings = SubResource("LabelSettings_bx7a1")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide6"]
+layout_mode = 0
+offset_left = 442.0
+offset_top = 455.0
+offset_right = 767.0
+offset_bottom = 564.0
+text = "Quanto receberam:
     $640.894.286,51
 "
-label_settings = SubResource("LabelSettings_bx7a1")
-vertical_alignment = 1
+label_settings = SubResource("LabelSettings_sqvr5")
 
 [node name="Slide7" parent="Control/Slides" instance=ExtResource("5_p84bp")]
 visible = false
@@ -410,17 +590,152 @@ text = "Calculando os dados"
 label_settings = SubResource("LabelSettings_vu7gd")
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Control/Slides/Slide7"]
+[node name="Panel" type="Panel" parent="Control/Slides/Slide7"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 125.0
+offset_right = 338.0
+offset_bottom = 189.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgse4")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide7/Panel"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 264.0
+offset_bottom = 64.0
+text = "Moda (2)"
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="Control/Slides/Slide7"]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 125.0
+offset_right = 827.0
+offset_bottom = 189.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgse4")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide7/Panel2"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 480.0
+offset_bottom = 64.0
+text = "$1.196.912,44 (6 mi reais)"
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel3" type="Panel" parent="Control/Slides/Slide7"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 195.0
+offset_right = 338.0
+offset_bottom = 259.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgse4")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide7/Panel3"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 264.0
+offset_bottom = 64.0
+text = "Média"
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel4" type="Panel" parent="Control/Slides/Slide7"]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 195.0
+offset_right = 827.0
+offset_bottom = 259.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgse4")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide7/Panel4"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 480.0
+offset_bottom = 64.0
+text = "$14.421.442,35 (74 mi reais)"
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel5" type="Panel" parent="Control/Slides/Slide7"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 265.0
+offset_right = 338.0
+offset_bottom = 329.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgse4")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide7/Panel5"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 264.0
+offset_bottom = 64.0
+text = "Mediana"
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel6" type="Panel" parent="Control/Slides/Slide7"]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 265.0
+offset_right = 827.0
+offset_bottom = 329.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgse4")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide7/Panel6"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 480.0
+offset_bottom = 64.0
+text = "$3.440.838,33 (17 mi reais)"
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slide14" parent="Control/Slides" instance=ExtResource("5_p84bp")]
+layout_mode = 1
+
+[node name="Label" type="Label" parent="Control/Slides/Slide14"]
 layout_mode = 0
 offset_left = 82.0
-offset_top = 125.0
-offset_right = 797.0
-offset_bottom = 170.0
-text = "Moda (2 ocorrências): $1.196.912,44
-Média: $14.421.442,35
-Mediana: $3.440.838,33"
+offset_top = 47.0
+offset_right = 676.0
+offset_bottom = 108.0
+text = "Calculando os dados"
+label_settings = SubResource("LabelSettings_vu7gd")
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide14"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 124.0
+offset_right = 461.0
+offset_bottom = 169.0
+text = "Jogos com valores iguais (moda):"
 label_settings = SubResource("LabelSettings_bx7a1")
 vertical_alignment = 1
+
+[node name="SlideImage" parent="Control/Slides/Slide14" instance=ExtResource("6_h23tw")]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 189.0
+offset_right = 376.0
+offset_bottom = 539.0
+texture = ExtResource("12_eb2po")
+
+[node name="SlideImage2" parent="Control/Slides/Slide14" instance=ExtResource("6_h23tw")]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 236.0
+offset_right = 842.0
+offset_bottom = 486.0
+texture = ExtResource("13_4ubfm")
 
 [node name="Slide8" parent="Control/Slides" instance=ExtResource("5_p84bp")]
 visible = false
@@ -448,30 +763,6 @@ Desvio padrão amostral: $41.232.069,03
 Desvio padrão populacional: $41.219.781,12
 Coeficiente de variação amostral: 285,91%
 Coeficiente de variação populacional: 285,82%"
-label_settings = SubResource("LabelSettings_bx7a1")
-vertical_alignment = 1
-
-[node name="Slide9" parent="Control/Slides" instance=ExtResource("5_p84bp")]
-visible = false
-layout_mode = 1
-
-[node name="Label" type="Label" parent="Control/Slides/Slide9"]
-layout_mode = 0
-offset_left = 82.0
-offset_top = 47.0
-offset_right = 676.0
-offset_bottom = 108.0
-text = "Como é feito o cálculo"
-label_settings = SubResource("LabelSettings_vu7gd")
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="Control/Slides/Slide9"]
-layout_mode = 0
-offset_left = 82.0
-offset_top = 125.0
-offset_right = 797.0
-offset_bottom = 170.0
-text = "Método Boxleiter"
 label_settings = SubResource("LabelSettings_bx7a1")
 vertical_alignment = 1
 
