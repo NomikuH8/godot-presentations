@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b6cf3b6h8e6lt"]
+[gd_scene load_steps=29 format=3 uid="uid://b6cf3b6h8e6lt"]
 
 [ext_resource type="PackedScene" uid="uid://upvucuou2f1j" path="res://prefabs/slideshow/SlideshowParticles.tscn" id="1_pdjoh"]
 [ext_resource type="PackedScene" uid="uid://b4f6mv66o5eb0" path="res://prefabs/slideshow/SlideshowBlinker.tscn" id="2_n6jdq"]
@@ -14,6 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://c3tf530i3u483" path="res://images/presentation/steam.png" id="9_65ajh"]
 [ext_resource type="Texture2D" uid="uid://cxoi8cft364b2" path="res://images/presentation/ninjago.png" id="12_eb2po"]
 [ext_resource type="Texture2D" uid="uid://gvclpwb4mt3w" path="res://images/presentation/streamer_life_simulator.png" id="13_4ubfm"]
+[ext_resource type="Texture2D" uid="uid://bvx71nbg67rlg" path="res://images/presentation/battlefield3.jpg" id="14_qqiqf"]
+[ext_resource type="Texture2D" uid="uid://c1yv5tw3i4mdn" path="res://images/presentation/cloudpunk.jpg" id="15_b3x5y"]
+[ext_resource type="Texture2D" uid="uid://bkj3xhqe34d4j" path="res://images/presentation/menoresJogos.png" id="16_udkea"]
+[ext_resource type="Texture2D" uid="uid://lb1cw7rhs0md" path="res://images/presentation/maioresJogos.png" id="17_0niuq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mo4q6"]
 font_size = 36
@@ -227,23 +231,33 @@ text = "04 - Variâncias, desvios padrões e CVs"
 label_settings = SubResource("LabelSettings_vsyg5")
 vertical_alignment = 1
 
-[node name="Label7" type="Label" parent="Control/Slides/Slide2"]
+[node name="Label9" type="Label" parent="Control/Slides/Slide2"]
 layout_mode = 0
 offset_left = 130.0
 offset_top = 360.0
-offset_right = 505.0
+offset_right = 634.0
 offset_bottom = 405.0
-text = "05 - Como adquirir os dados"
+text = "05 - Gráficos"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="Control/Slides/Slide2"]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 402.0
+offset_right = 505.0
+offset_bottom = 447.0
+text = "06 - Como adquirir os dados"
 label_settings = SubResource("LabelSettings_vsyg5")
 vertical_alignment = 1
 
 [node name="Label8" type="Label" parent="Control/Slides/Slide2"]
 layout_mode = 0
 offset_left = 130.0
-offset_top = 405.0
+offset_top = 447.0
 offset_right = 537.0
-offset_bottom = 450.0
-text = "06 - Como manipular os dados"
+offset_bottom = 492.0
+text = "07 - Como manipular os dados"
 label_settings = SubResource("LabelSettings_vsyg5")
 vertical_alignment = 1
 
@@ -251,7 +265,6 @@ vertical_alignment = 1
 visible = false
 layout_mode = 1
 enter_animation = 1
-exit_animation = 1
 text_appear = 0.01
 
 [node name="Label" type="Label" parent="Control/Slides/Slide13"]
@@ -300,7 +313,7 @@ vertical_alignment = 1
 [node name="Slide3" parent="Control/Slides" instance=ExtResource("5_p84bp")]
 visible = false
 layout_mode = 1
-enter_animation = 1
+exit_animation = 1
 
 [node name="Label" type="Label" parent="Control/Slides/Slide3"]
 layout_mode = 0
@@ -355,6 +368,7 @@ vertical_alignment = 1
 [node name="Slide4" parent="Control/Slides" instance=ExtResource("5_p84bp")]
 visible = false
 layout_mode = 1
+enter_animation = 1
 
 [node name="Label" type="Label" parent="Control/Slides/Slide4"]
 layout_mode = 0
@@ -531,6 +545,7 @@ vertical_alignment = 1
 [node name="Slide6" parent="Control/Slides" instance=ExtResource("5_p84bp")]
 visible = false
 layout_mode = 1
+exit_animation = 1
 
 [node name="SlideImage" parent="Control/Slides/Slide6" instance=ExtResource("6_h23tw")]
 layout_mode = 0
@@ -579,6 +594,7 @@ label_settings = SubResource("LabelSettings_sqvr5")
 [node name="Slide7" parent="Control/Slides" instance=ExtResource("5_p84bp")]
 visible = false
 layout_mode = 1
+enter_animation = 1
 
 [node name="Label" type="Label" parent="Control/Slides/Slide7"]
 layout_mode = 0
@@ -699,6 +715,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Slide14" parent="Control/Slides" instance=ExtResource("5_p84bp")]
+visible = false
 layout_mode = 1
 
 [node name="Label" type="Label" parent="Control/Slides/Slide14"]
@@ -733,13 +750,80 @@ texture = ExtResource("12_eb2po")
 layout_mode = 0
 offset_left = 394.0
 offset_top = 236.0
-offset_right = 842.0
+offset_right = 838.0
 offset_bottom = 486.0
 texture = ExtResource("13_4ubfm")
+
+[node name="Slide15" parent="Control/Slides" instance=ExtResource("5_p84bp")]
+visible = false
+layout_mode = 1
+exit_animation = 1
+
+[node name="Label" type="Label" parent="Control/Slides/Slide15"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 47.0
+offset_right = 676.0
+offset_bottom = 108.0
+text = "Calculando os dados"
+label_settings = SubResource("LabelSettings_vu7gd")
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide15"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 124.0
+offset_right = 461.0
+offset_bottom = 169.0
+text = "Jogos no meio do conjunto (mediana):"
+label_settings = SubResource("LabelSettings_bx7a1")
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Slides/Slide15"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 537.0
+offset_right = 417.0
+offset_bottom = 582.0
+text = "$3.451.486,51"
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Control/Slides/Slide15"]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 537.0
+offset_right = 818.0
+offset_bottom = 582.0
+text = "3.430.190,15"
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SlideImage" parent="Control/Slides/Slide15" instance=ExtResource("6_h23tw")]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 188.0
+offset_right = 418.0
+offset_bottom = 524.0
+texture = ExtResource("14_qqiqf")
+expand_mode = 1
+
+[node name="SlideImage2" parent="Control/Slides/Slide15" instance=ExtResource("6_h23tw")]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 189.0
+offset_right = 818.0
+offset_bottom = 525.0
+texture = ExtResource("15_b3x5y")
+expand_mode = 1
 
 [node name="Slide8" parent="Control/Slides" instance=ExtResource("5_p84bp")]
 visible = false
 layout_mode = 1
+enter_animation = 1
+exit_animation = 1
 
 [node name="Label" type="Label" parent="Control/Slides/Slide8"]
 layout_mode = 0
@@ -751,24 +835,262 @@ text = "Calculando os dados"
 label_settings = SubResource("LabelSettings_vu7gd")
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Control/Slides/Slide8"]
+[node name="Panel" type="Panel" parent="Control/Slides/Slide8"]
+offset_left = 74.0
+offset_top = 125.0
+offset_right = 338.0
+offset_bottom = 189.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgse4")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide8/Panel"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 264.0
+offset_bottom = 64.0
+text = "Variância Am."
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="Control/Slides/Slide8"]
+offset_left = 346.0
+offset_top = 125.0
+offset_right = 827.0
+offset_bottom = 189.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgse4")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide8/Panel2"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 480.0
+offset_bottom = 64.0
+text = "$1.7001 X 10^15"
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel3" type="Panel" parent="Control/Slides/Slide8"]
+offset_left = 74.0
+offset_top = 195.0
+offset_right = 338.0
+offset_bottom = 259.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgse4")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide8/Panel3"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 264.0
+offset_bottom = 64.0
+text = "Varância Pop."
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel4" type="Panel" parent="Control/Slides/Slide8"]
+offset_left = 346.0
+offset_top = 195.0
+offset_right = 827.0
+offset_bottom = 259.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgse4")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide8/Panel4"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 480.0
+offset_bottom = 64.0
+text = "$1.6991 X 10^15"
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel5" type="Panel" parent="Control/Slides/Slide8"]
+offset_left = 74.0
+offset_top = 265.0
+offset_right = 338.0
+offset_bottom = 329.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgse4")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide8/Panel5"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 264.0
+offset_bottom = 64.0
+text = "Desvio P. Am."
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel6" type="Panel" parent="Control/Slides/Slide8"]
+offset_left = 346.0
+offset_top = 265.0
+offset_right = 827.0
+offset_bottom = 329.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgse4")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide8/Panel6"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 480.0
+offset_bottom = 64.0
+text = "$41.232.069,03"
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel7" type="Panel" parent="Control/Slides/Slide8"]
+offset_left = 74.0
+offset_top = 333.0
+offset_right = 338.0
+offset_bottom = 397.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgse4")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide8/Panel7"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 264.0
+offset_bottom = 64.0
+text = "Desvio P. Pop."
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel8" type="Panel" parent="Control/Slides/Slide8"]
+offset_left = 346.0
+offset_top = 333.0
+offset_right = 827.0
+offset_bottom = 397.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgse4")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide8/Panel8"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 480.0
+offset_bottom = 64.0
+text = "$41.219.781,12"
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel9" type="Panel" parent="Control/Slides/Slide8"]
+offset_left = 74.0
+offset_top = 403.0
+offset_right = 338.0
+offset_bottom = 467.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgse4")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide8/Panel9"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 264.0
+offset_bottom = 64.0
+text = "Coe. Var. Am."
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel10" type="Panel" parent="Control/Slides/Slide8"]
+offset_left = 346.0
+offset_top = 403.0
+offset_right = 827.0
+offset_bottom = 467.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgse4")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide8/Panel10"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 480.0
+offset_bottom = 64.0
+text = "285,91%"
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel11" type="Panel" parent="Control/Slides/Slide8"]
+offset_left = 74.0
+offset_top = 473.0
+offset_right = 338.0
+offset_bottom = 537.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgse4")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide8/Panel11"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 264.0
+offset_bottom = 64.0
+text = "Coe. Var. Pop."
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel12" type="Panel" parent="Control/Slides/Slide8"]
+offset_left = 346.0
+offset_top = 473.0
+offset_right = 827.0
+offset_bottom = 537.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgse4")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide8/Panel12"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 480.0
+offset_bottom = 64.0
+text = "285,82%"
+label_settings = SubResource("LabelSettings_bx7a1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slide16" parent="Control/Slides" instance=ExtResource("5_p84bp")]
+visible = false
+layout_mode = 1
+enter_animation = 1
+
+[node name="Label" type="Label" parent="Control/Slides/Slide16"]
 layout_mode = 0
 offset_left = 82.0
-offset_top = 125.0
-offset_right = 797.0
-offset_bottom = 170.0
-text = "Variância amostral: $1.700.083.516.558.941,80
-Variância populacional: $1.699.070.355.941.207,00
-Desvio padrão amostral: $41.232.069,03
-Desvio padrão populacional: $41.219.781,12
-Coeficiente de variação amostral: 285,91%
-Coeficiente de variação populacional: 285,82%"
-label_settings = SubResource("LabelSettings_bx7a1")
+offset_top = 47.0
+offset_right = 676.0
+offset_bottom = 108.0
+text = "Gráficos"
+label_settings = SubResource("LabelSettings_vu7gd")
 vertical_alignment = 1
+
+[node name="SlideImage" parent="Control/Slides/Slide16" instance=ExtResource("6_h23tw")]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 125.0
+offset_right = 737.0
+offset_bottom = 548.0
+texture = ExtResource("16_udkea")
+expand_mode = 1
+
+[node name="Slide17" parent="Control/Slides" instance=ExtResource("5_p84bp")]
+visible = false
+layout_mode = 1
+exit_animation = 1
+
+[node name="Label" type="Label" parent="Control/Slides/Slide17"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 47.0
+offset_right = 676.0
+offset_bottom = 108.0
+text = "Gráficos"
+label_settings = SubResource("LabelSettings_vu7gd")
+vertical_alignment = 1
+
+[node name="SlideImage" parent="Control/Slides/Slide17" instance=ExtResource("6_h23tw")]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 125.0
+offset_right = 735.0
+offset_bottom = 549.0
+texture = ExtResource("17_0niuq")
+expand_mode = 1
 
 [node name="Slide10" parent="Control/Slides" instance=ExtResource("5_p84bp")]
 visible = false
 layout_mode = 1
+enter_animation = 1
 
 [node name="Label" type="Label" parent="Control/Slides/Slide10"]
 layout_mode = 0
@@ -799,6 +1121,7 @@ vertical_alignment = 1
 [node name="Slide11" parent="Control/Slides" instance=ExtResource("5_p84bp")]
 visible = false
 layout_mode = 1
+exit_animation = 3
 
 [node name="Label" type="Label" parent="Control/Slides/Slide11"]
 layout_mode = 0
