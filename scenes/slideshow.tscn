@@ -489,6 +489,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Slide5" parent="Control/Slides" instance=ExtResource("5_p84bp")]
+visible = false
 layout_mode = 1
 
 [node name="SlideImage" parent="Control/Slides/Slide5" instance=ExtResource("6_h23tw")]
@@ -753,7 +754,6 @@ offset_bottom = 486.0
 texture = ExtResource("13_4ubfm")
 
 [node name="Slide15" parent="Control/Slides" instance=ExtResource("5_p84bp")]
-visible = false
 layout_mode = 1
 exit_animation = 1
 
@@ -794,7 +794,7 @@ offset_left = 482.0
 offset_top = 537.0
 offset_right = 818.0
 offset_bottom = 582.0
-text = "3.430.190,15"
+text = "$3.430.190,15"
 label_settings = SubResource("LabelSettings_bx7a1")
 horizontal_alignment = 1
 vertical_alignment = 1
