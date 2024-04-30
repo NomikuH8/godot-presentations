@@ -489,7 +489,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Slide5" parent="Control/Slides" instance=ExtResource("5_p84bp")]
-visible = false
 layout_mode = 1
 
 [node name="SlideImage" parent="Control/Slides/Slide5" instance=ExtResource("6_h23tw")]
@@ -513,14 +512,13 @@ vertical_alignment = 1
 [node name="Label2" type="Label" parent="Control/Slides/Slide5"]
 layout_mode = 0
 offset_left = 42.0
-offset_top = 404.0
+offset_top = 428.0
 offset_right = 318.0
-offset_bottom = 593.0
+offset_bottom = 569.0
 text = "Bit Blaster XL
 Avaliações: 6.109
 Preço Atual: $0,48"
 label_settings = SubResource("LabelSettings_bx7a1")
-vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="Control/Slides/Slide5"]
 layout_mode = 0
@@ -836,6 +834,7 @@ label_settings = SubResource("LabelSettings_vu7gd")
 vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="Control/Slides/Slide8"]
+layout_mode = 0
 offset_left = 74.0
 offset_top = 125.0
 offset_right = 338.0
@@ -853,6 +852,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel2" type="Panel" parent="Control/Slides/Slide8"]
+layout_mode = 0
 offset_left = 346.0
 offset_top = 125.0
 offset_right = 827.0
@@ -870,6 +870,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel3" type="Panel" parent="Control/Slides/Slide8"]
+layout_mode = 0
 offset_left = 74.0
 offset_top = 195.0
 offset_right = 338.0
@@ -887,6 +888,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel4" type="Panel" parent="Control/Slides/Slide8"]
+layout_mode = 0
 offset_left = 346.0
 offset_top = 195.0
 offset_right = 827.0
@@ -904,6 +906,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel5" type="Panel" parent="Control/Slides/Slide8"]
+layout_mode = 0
 offset_left = 74.0
 offset_top = 265.0
 offset_right = 338.0
@@ -921,6 +924,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel6" type="Panel" parent="Control/Slides/Slide8"]
+layout_mode = 0
 offset_left = 346.0
 offset_top = 265.0
 offset_right = 827.0
@@ -938,6 +942,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel7" type="Panel" parent="Control/Slides/Slide8"]
+layout_mode = 0
 offset_left = 74.0
 offset_top = 333.0
 offset_right = 338.0
@@ -955,6 +960,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel8" type="Panel" parent="Control/Slides/Slide8"]
+layout_mode = 0
 offset_left = 346.0
 offset_top = 333.0
 offset_right = 827.0
@@ -972,6 +978,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel9" type="Panel" parent="Control/Slides/Slide8"]
+layout_mode = 0
 offset_left = 74.0
 offset_top = 403.0
 offset_right = 338.0
@@ -989,6 +996,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel10" type="Panel" parent="Control/Slides/Slide8"]
+layout_mode = 0
 offset_left = 346.0
 offset_top = 403.0
 offset_right = 827.0
@@ -1006,6 +1014,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel11" type="Panel" parent="Control/Slides/Slide8"]
+layout_mode = 0
 offset_left = 74.0
 offset_top = 473.0
 offset_right = 338.0
@@ -1023,6 +1032,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Panel12" type="Panel" parent="Control/Slides/Slide8"]
+layout_mode = 0
 offset_left = 346.0
 offset_top = 473.0
 offset_right = 827.0
