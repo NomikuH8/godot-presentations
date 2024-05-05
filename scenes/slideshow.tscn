@@ -104,14 +104,13 @@ script = ExtResource("3_wqglq")
 [node name="Slides" type="Control" parent="Control"]
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 1
-anchors_preset = 0
-offset_left = 54.0
-offset_top = -39.0
-offset_right = 1334.0
-offset_bottom = 681.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Slide" parent="Control/Slides" instance=ExtResource("5_p84bp")]
-visible = false
 layout_mode = 1
 exit_animation = 1
 text_appear = 0.01
