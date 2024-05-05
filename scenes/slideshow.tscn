@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b6cf3b6h8e6lt"]
+[gd_scene load_steps=30 format=3 uid="uid://b6cf3b6h8e6lt"]
 
 [ext_resource type="PackedScene" uid="uid://upvucuou2f1j" path="res://prefabs/slideshow/SlideshowParticles.tscn" id="1_pdjoh"]
 [ext_resource type="PackedScene" uid="uid://b4f6mv66o5eb0" path="res://prefabs/slideshow/SlideshowBlinker.tscn" id="2_n6jdq"]
@@ -61,6 +61,11 @@ outline_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_sqvr5"]
 font_size = 32
 font_color = Color(1, 0.756863, 0.509804, 1)
+outline_size = 5
+outline_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ielg5"]
+font_size = 28
 outline_size = 5
 outline_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
 
@@ -866,7 +871,7 @@ layout_mode = 0
 offset_top = -1.0
 offset_right = 480.0
 offset_bottom = 64.0
-text = "$1.7001 X 10^15"
+text = "$1,70 X 10^15"
 label_settings = SubResource("LabelSettings_bx7a1")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -902,7 +907,7 @@ layout_mode = 0
 offset_top = -1.0
 offset_right = 480.0
 offset_bottom = 64.0
-text = "$1.6991 X 10^15"
+text = "$1,69 X 10^15"
 label_settings = SubResource("LabelSettings_bx7a1")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1088,6 +1093,17 @@ offset_right = 676.0
 offset_bottom = 108.0
 text = "Gráficos"
 label_settings = SubResource("LabelSettings_vu7gd")
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="Control/Slides/Slide17"]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 555.0
+offset_right = 606.0
+offset_bottom = 594.0
+text = "1e8 = $100.000.000,00"
+label_settings = SubResource("LabelSettings_ielg5")
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SlideImage" parent="Control/Slides/Slide17" instance=ExtResource("6_h23tw")]
