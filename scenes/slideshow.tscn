@@ -343,10 +343,10 @@ vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="Control/Slides/Slide3"]
 layout_mode = 0
-offset_left = 128.0
-offset_top = 235.0
-offset_right = 795.0
-offset_bottom = 280.0
+offset_left = 130.0
+offset_top = 204.0
+offset_right = 797.0
+offset_bottom = 249.0
 text = "2082"
 label_settings = SubResource("LabelSettings_bx7a1")
 vertical_alignment = 1
