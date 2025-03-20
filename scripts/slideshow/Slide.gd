@@ -51,6 +51,18 @@ func _ready():
 	equal_animation_condition('exit_rotate_right', false, ExitAnimation.ROTATE_RIGHT)
 	animation_tree.active = true
 	
+	var fixed_label_txts: Array[String] = []
+	
+	for l in label_txts:
+		l = l.c_escape()
+		print(l)
+		l = l.replace("\\r\\n", "\\n")
+		print(l)
+		l = l.c_unescape()
+		fixed_label_txts.append(l)
+	
+	label_txts = fixed_label_txts
+	
 	for i in images:
 		i.get_child(0).play('slide_image/idle_out')
 	
@@ -90,6 +102,11 @@ func _on_animation_tree_animation_finished(anim_name: String):
 		can_disappear(false)
 		visible = false
 		slide_disappeared.emit()
+
+
+func _input(event: InputEvent):
+	if event.is_action_pressed("activate"):
+		visible = !visible
 
 
 func equal_animation_condition(condition: String, is_enter: bool, to_equal):

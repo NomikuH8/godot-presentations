@@ -4,84 +4,90 @@
 
 [node name="SlideshowToolbar" type="Control" node_paths=PackedStringArray("slide_label", "slide_slider")]
 layout_mode = 3
-anchors_preset = 15
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
 grow_horizontal = 2
-grow_vertical = 2
 script = ExtResource("1_1n3ms")
 toolbar_appear_threshold = 110
-slide_label = NodePath("PanelContainer/VBoxContainer/BoxContainer/SlideContainer/SlideSliderContainer/SlideLabel")
-slide_slider = NodePath("PanelContainer/VBoxContainer/BoxContainer/SlideContainer/SlideSliderContainer/SlideSlider")
+slide_label = NodePath("PanelContainer/VBoxContainer/MarginContainer/BoxContainer/SlideContainer/SlideSliderContainer/SlideLabel")
+slide_slider = NodePath("PanelContainer/VBoxContainer/MarginContainer/BoxContainer/SlideContainer/SlideSliderContainer/SlideSlider")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 107.0
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 115.0
+grow_horizontal = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="BoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 655
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="BoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
 alignment = 1
 
-[node name="ControlButtonsContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/BoxContainer"]
+[node name="ControlButtonsContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/BoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/separation = 17
 
-[node name="ReturnButton" type="Button" parent="PanelContainer/VBoxContainer/BoxContainer/ControlButtonsContainer"]
-custom_minimum_size = Vector2(85, 82)
+[node name="ReturnButton" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/BoxContainer/ControlButtonsContainer"]
+custom_minimum_size = Vector2(85, 85)
 layout_mode = 2
 text = "Retornar"
 
-[node name="FullscreenButton" type="Button" parent="PanelContainer/VBoxContainer/BoxContainer/ControlButtonsContainer"]
+[node name="FullscreenButton" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/BoxContainer/ControlButtonsContainer"]
 custom_minimum_size = Vector2(85, 85)
 layout_mode = 2
 theme_override_font_sizes/font_size = 42
 text = "FS"
 
-[node name="SlideContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/BoxContainer"]
+[node name="SlideContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/BoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 30
 alignment = 2
 
-[node name="SlideButtonsContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/BoxContainer/SlideContainer"]
+[node name="SlideButtonsContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/BoxContainer/SlideContainer"]
 layout_mode = 2
 
-[node name="PreviousButton" type="Button" parent="PanelContainer/VBoxContainer/BoxContainer/SlideContainer/SlideButtonsContainer"]
+[node name="PreviousButton" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/BoxContainer/SlideContainer/SlideButtonsContainer"]
 custom_minimum_size = Vector2(85, 85)
 layout_mode = 2
 theme_override_font_sizes/font_size = 56
 text = "<"
 
-[node name="NextButton" type="Button" parent="PanelContainer/VBoxContainer/BoxContainer/SlideContainer/SlideButtonsContainer"]
+[node name="NextButton" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/BoxContainer/SlideContainer/SlideButtonsContainer"]
 custom_minimum_size = Vector2(85, 85)
 layout_mode = 2
 theme_override_font_sizes/font_size = 56
-text = ">
-"
+text = ">"
 
-[node name="SlideSliderContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/BoxContainer/SlideContainer"]
+[node name="SlideSliderContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer/BoxContainer/SlideContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="SlideLabel" type="Label" parent="PanelContainer/VBoxContainer/BoxContainer/SlideContainer/SlideSliderContainer"]
+[node name="SlideLabel" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer/BoxContainer/SlideContainer/SlideSliderContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "1/16"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SlideSlider" type="HSlider" parent="PanelContainer/VBoxContainer/BoxContainer/SlideContainer/SlideSliderContainer"]
+[node name="SlideSlider" type="HSlider" parent="PanelContainer/VBoxContainer/MarginContainer/BoxContainer/SlideContainer/SlideSliderContainer"]
 custom_minimum_size = Vector2(197.23, 0)
 layout_mode = 2
 rounded = true
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/BoxContainer/ControlButtonsContainer/ReturnButton" to="." method="_on_return_button_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/BoxContainer/ControlButtonsContainer/FullscreenButton" to="." method="_on_fullscreen_button_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/BoxContainer/SlideContainer/SlideButtonsContainer/PreviousButton" to="." method="_on_previous_button_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/BoxContainer/SlideContainer/SlideButtonsContainer/NextButton" to="." method="_on_next_button_pressed"]
-[connection signal="drag_ended" from="PanelContainer/VBoxContainer/BoxContainer/SlideContainer/SlideSliderContainer/SlideSlider" to="." method="_on_slide_slider_drag_ended"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer/BoxContainer/ControlButtonsContainer/ReturnButton" to="." method="_on_return_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer/BoxContainer/ControlButtonsContainer/FullscreenButton" to="." method="_on_fullscreen_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer/BoxContainer/SlideContainer/SlideButtonsContainer/PreviousButton" to="." method="_on_previous_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer/BoxContainer/SlideContainer/SlideButtonsContainer/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="drag_ended" from="PanelContainer/VBoxContainer/MarginContainer/BoxContainer/SlideContainer/SlideSliderContainer/SlideSlider" to="." method="_on_slide_slider_drag_ended"]

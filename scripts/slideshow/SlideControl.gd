@@ -15,6 +15,7 @@ func _process(_delta: float):
 	if started: return
 	
 	for slide in slides:
+		slide.connect('slide_disappeared', _on_slide_disappeared)
 		slide.visible = false
 	
 	slides[current_slide_index].visible = true

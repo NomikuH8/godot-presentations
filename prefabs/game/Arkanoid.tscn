@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6p2bbmgff661"]
+
+[ext_resource type="Script" path="res://scripts/game/arkanoid/arkanoid.gd" id="1_6sctm"]
+[ext_resource type="PackedScene" uid="uid://bph11hqwqv4ou" path="res://prefabs/game/paddle.tscn" id="1_h2ud0"]
+[ext_resource type="PackedScene" uid="uid://bvc6p7u8elir5" path="res://prefabs/game/block.tscn" id="2_ylxv5"]
+[ext_resource type="PackedScene" uid="uid://eslngtnyvuqa" path="res://prefabs/game/ball.tscn" id="4_kegl6"]
+
+[node name="Arkanoid" type="Node2D"]
+script = ExtResource("1_6sctm")
+block_scene = ExtResource("2_ylxv5")
+grid_size = Vector2(160, 80)
+
+[node name="Blocks" type="Node2D" parent="."]
+
+[node name="Paddle" parent="." instance=ExtResource("1_h2ud0")]
+position = Vector2(620, 624)
+ai_movement_speed = 45.0
+
+[node name="Ball" parent="." instance=ExtResource("4_kegl6")]
+position = Vector2(620, 502)

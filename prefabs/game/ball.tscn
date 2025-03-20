@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://eslngtnyvuqa"]
+
+[ext_resource type="Texture2D" uid="uid://c4nohr68n1srf" path="res://images/arkanoid/ball.png" id="1_e3yaa"]
+[ext_resource type="Script" path="res://scripts/game/arkanoid/ball.gd" id="1_yhd2w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4imx"]
+size = Vector2(26, 26)
+
+[node name="Ball" type="Area2D"]
+script = ExtResource("1_yhd2w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(6.5, 6.5)
+texture = ExtResource("1_e3yaa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_v4imx")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

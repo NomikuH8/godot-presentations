@@ -1,27 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjnltkt4tg7x4"]
+[gd_scene load_steps=5 format=3 uid="uid://bjnltkt4tg7x4"]
 
 [ext_resource type="Texture2D" uid="uid://b0v1q33nrr6do" path="res://images/particles/particle.png" id="1_k4510"]
 
+[sub_resource type="Gradient" id="Gradient_gqn3f"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5hsw6"]
+gradient = SubResource("Gradient_gqn3f")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6bwee"]
-emission_shape = 3
-emission_box_extents = Vector3(1600, 1, 1)
 particle_flag_disable_z = true
-gravity = Vector3(0, 98, 0)
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
+emission_shape = 3
+emission_box_extents = Vector3(981, 1, 1)
 angle_min = -720.0
 angle_max = 720.0
+gravity = Vector3(0, 98, 0)
 scale_min = 0.0
 scale_max = 5.72
+color_ramp = SubResource("GradientTexture1D_5hsw6")
 turbulence_enabled = true
 
 [node name="MenuParticles" type="Node2D"]
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 texture_filter = 1
-position = Vector2(1104, -15)
 amount = 50
 process_material = SubResource("ParticleProcessMaterial_6bwee")
 texture = ExtResource("1_k4510")
 lifetime = 5.33
 randomness = 0.54
+local_coords = true

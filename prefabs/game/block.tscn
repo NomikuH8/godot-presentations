@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvc6p7u8elir5"]
+
+[ext_resource type="Texture2D" uid="uid://oi6vhaa5sqcm" path="res://images/arkanoid/block.png" id="1_02542"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_87ps1"]
+size = Vector2(153, 38)
+
+[node name="Block" type="StaticBody2D"]
+scale = Vector2(0.919999, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4.765, 3.125)
+texture = ExtResource("1_02542")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_87ps1")
