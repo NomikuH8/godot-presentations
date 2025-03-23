@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gvclpwb4mt3w"
-path="res://.godot/imported/streamer_life_simulator.png-cdba69c5017b60ac31d60157591d6db9.ctex"
+uid="uid://dg1ssghu485mm"
+path="res://.godot/imported/unecessary_comments.png-9aca494d069a5b7e27dd81f48d85fd69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/presentation/streamer_life_simulator.png"
-dest_files=["res://.godot/imported/streamer_life_simulator.png-cdba69c5017b60ac31d60157591d6db9.ctex"]
+source_file="res://images/presentation/clean_code/unecessary_comments.png"
+dest_files=["res://.godot/imported/unecessary_comments.png-9aca494d069a5b7e27dd81f48d85fd69.ctex"]
 
 [params]
 

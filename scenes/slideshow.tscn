@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b6cf3b6h8e6lt"]
+[gd_scene load_steps=27 format=3 uid="uid://b6cf3b6h8e6lt"]
 
 [ext_resource type="PackedScene" uid="uid://upvucuou2f1j" path="res://prefabs/slideshow/SlideshowParticles.tscn" id="1_pdjoh"]
 [ext_resource type="PackedScene" uid="uid://b4f6mv66o5eb0" path="res://prefabs/slideshow/SlideshowBlinker.tscn" id="2_n6jdq"]
@@ -10,37 +10,53 @@
 [ext_resource type="PackedScene" uid="uid://bckxllfl2iaih" path="res://prefabs/slideshow/SlideImage.tscn" id="6_h23tw"]
 [ext_resource type="Texture2D" uid="uid://d2q7dsaajxcnv" path="res://images/presentation/logo_catolica.png" id="7_wu8gi"]
 [ext_resource type="Texture2D" uid="uid://b5qpt17bntu4j" path="res://images/presentation/clean_code/clean_code_book.jpg" id="9_2ed47"]
-[ext_resource type="Texture2D" uid="uid://movxx7vtm8ia" path="res://prefabs/game/code_never_perfect.png" id="10_b861v"]
+[ext_resource type="Texture2D" uid="uid://drdxuox22igxf" path="res://images/presentation/clean_code/meaningful_names.png" id="10_3jqto"]
+[ext_resource type="Texture2D" uid="uid://movxx7vtm8ia" path="res://images/presentation/clean_code/code_never_perfect.png" id="10_b861v"]
+[ext_resource type="Texture2D" uid="uid://dg1ssghu485mm" path="res://images/presentation/clean_code/unecessary_comments.png" id="11_1let4"]
+[ext_resource type="Texture2D" uid="uid://3rydnm7lxhow" path="res://images/presentation/clean_code/bad_unneeded_context.png" id="12_mc46b"]
+[ext_resource type="Texture2D" uid="uid://cu3oapk1xl44x" path="res://images/presentation/clean_code/good_unneeded_context.png" id="13_y3lwy"]
+[ext_resource type="Texture2D" uid="uid://cg0wmge2mnc8q" path="res://images/presentation/clean_code/clean_sql.png" id="14_y3lwy"]
+[ext_resource type="Texture2D" uid="uid://b1q314qtvqpaj" path="res://images/presentation/clean_code/condition_inversion.png" id="15_ciuri"]
+[ext_resource type="Texture2D" uid="uid://bo2j37xhri1p5" path="res://images/presentation/clean_code/magic_numbers.png" id="16_2ed47"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mo4q6"]
 font_size = 36
+font_color = Color(0.881937, 0.881937, 0.881937, 1)
 outline_size = 5
 outline_color = Color(0.270222, 0.270222, 0.270222, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_lt220"]
 font_size = 26
+font_color = Color(0.882353, 0.882353, 0.882353, 1)
 outline_size = 5
 outline_color = Color(0.270222, 0.270222, 0.270222, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_8m7q1"]
 font_size = 26
+font_color = Color(0.882353, 0.882353, 0.882353, 1)
 outline_size = 5
 outline_color = Color(0.270222, 0.270222, 0.270222, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_vu7gd"]
 font_size = 44
+font_color = Color(0.882353, 0.882353, 0.882353, 1)
 outline_size = 5
 outline_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_bx7a1"]
 font_size = 32
+font_color = Color(0.882353, 0.882353, 0.882353, 1)
 outline_size = 5
 outline_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_vsyg5"]
 font_size = 28
+font_color = Color(0.882353, 0.882353, 0.882353, 1)
 outline_size = 5
 outline_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ed47"]
+bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b1cii"]
 
@@ -89,7 +105,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Slide" parent="Control/Slides" instance=ExtResource("5_p84bp")]
-visible = false
 layout_mode = 1
 exit_animation = 1
 text_appear = 0.01
@@ -136,7 +151,7 @@ offset_right = 822.0
 offset_bottom = 555.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Alunos:
-Gustavo Cachoeira
+Gustavo Felipe Cachoeira
 Henrique Maia Cardosa
 João Miguel de Castro Menna
 Ricardo Gabriel Fialho Santos"
@@ -211,33 +226,23 @@ text = "04 - Alguns princípios do Clean Code"
 label_settings = SubResource("LabelSettings_vsyg5")
 vertical_alignment = 1
 
-[node name="Label9" type="Label" parent="Control/Slides/Slide2"]
-layout_mode = 0
-offset_left = 130.0
-offset_top = 360.0
-offset_right = 634.0
-offset_bottom = 405.0
-text = "05 - Ferramentas para implementar o Clean Code"
-label_settings = SubResource("LabelSettings_vsyg5")
-vertical_alignment = 1
-
 [node name="Label7" type="Label" parent="Control/Slides/Slide2"]
 layout_mode = 0
 offset_left = 130.0
-offset_top = 402.0
-offset_right = 505.0
-offset_bottom = 447.0
-text = "06 - Exemplos de código sujo e limpo"
+offset_top = 360.0
+offset_right = 617.0
+offset_bottom = 405.0
+text = "05 - Técnicas gerais que ajudam o Clean Code"
 label_settings = SubResource("LabelSettings_vsyg5")
 vertical_alignment = 1
 
-[node name="Label8" type="Label" parent="Control/Slides/Slide2"]
+[node name="Label10" type="Label" parent="Control/Slides/Slide2"]
 layout_mode = 0
 offset_left = 130.0
-offset_top = 447.0
+offset_top = 407.0
 offset_right = 537.0
-offset_bottom = 492.0
-text = "07 - Onde posso ver mais sobre?"
+offset_bottom = 452.0
+text = "06 - Conclusão"
 label_settings = SubResource("LabelSettings_vsyg5")
 vertical_alignment = 1
 
@@ -245,6 +250,7 @@ vertical_alignment = 1
 visible = false
 layout_mode = 1
 enter_animation = 1
+exit_animation = 1
 text_appear = 0.01
 
 [node name="Label" type="Label" parent="Control/Slides/Slide13"]
@@ -293,6 +299,8 @@ vertical_alignment = 1
 visible = false
 layout_mode = 1
 enter_animation = 1
+exit_animation = 1
+text_appear = 0.01
 
 [node name="Label" type="Label" parent="Control/Slides/Slide16"]
 layout_mode = 0
@@ -321,6 +329,8 @@ label_settings = SubResource("LabelSettings_vsyg5")
 visible = false
 layout_mode = 1
 enter_animation = 1
+exit_animation = 1
+text_appear = 0.01
 
 [node name="Label" type="Label" parent="Control/Slides/Slide19"]
 layout_mode = 0
@@ -348,6 +358,7 @@ label_settings = SubResource("LabelSettings_vsyg5")
 visible = false
 layout_mode = 1
 enter_animation = 1
+text_appear = 0.01
 
 [node name="Label" type="Label" parent="Control/Slides/Slide20"]
 layout_mode = 0
@@ -382,7 +393,7 @@ uri = "https://github.com/ryanmcdermott/clean-code-javascript"
 [node name="Slide21" parent="Control/Slides" instance=ExtResource("5_p84bp")]
 visible = false
 layout_mode = 1
-enter_animation = 1
+text_appear = 0.01
 
 [node name="Label" type="Label" parent="Control/Slides/Slide21"]
 layout_mode = 0
@@ -402,14 +413,330 @@ offset_right = 754.0
 offset_bottom = 407.0
 text = "Nomeação significativa:
 - Os nomes de variáveis, funções e classes devem ser
-expressivos
+expressivos.
 - Não tenha medo de nomes grandes!"
 label_settings = SubResource("LabelSettings_vsyg5")
+
+[node name="SlideImage" parent="Control/Slides/Slide21" instance=ExtResource("6_h23tw")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -384.0
+offset_top = 0.0
+offset_right = 384.0
+offset_bottom = 265.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_3jqto")
+expand_mode = 1
+
+[node name="Slide22" parent="Control/Slides" instance=ExtResource("5_p84bp")]
+visible = false
+layout_mode = 1
+text_appear = 0.01
+
+[node name="Label" type="Label" parent="Control/Slides/Slide22"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 47.0
+offset_right = 676.0
+offset_bottom = 108.0
+text = "Alguns princípios do Clean Code"
+label_settings = SubResource("LabelSettings_vu7gd")
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/Slides/Slide22"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 116.0
+offset_right = 754.0
+offset_bottom = 407.0
+text = "Comentários desnecessários:
+- Evite comentários que falam o óbvio.
+- O código deve ser autoexplicativo, se precisa de
+comentários para entender, é hora de refatorar."
+label_settings = SubResource("LabelSettings_vsyg5")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide22"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -432.0
+offset_top = -77.0
+offset_right = -44.0
+offset_bottom = -38.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Exemplo no próximo slide >>"
+label_settings = SubResource("LabelSettings_vsyg5")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Slide23" parent="Control/Slides" instance=ExtResource("5_p84bp")]
+visible = false
+layout_mode = 1
+text_appear = 0.01
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Slides/Slide23"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 46.0
+offset_top = 32.0
+offset_right = -45.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control/Slides/Slide23/ScrollContainer"]
+layout_mode = 2
+texture = ExtResource("11_1let4")
+
+[node name="Slide24" parent="Control/Slides" instance=ExtResource("5_p84bp")]
+visible = false
+layout_mode = 1
+text_appear = 0.01
+
+[node name="Label" type="Label" parent="Control/Slides/Slide24"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 47.0
+offset_right = 676.0
+offset_bottom = 108.0
+text = "Alguns princípios do Clean Code"
+label_settings = SubResource("LabelSettings_vu7gd")
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/Slides/Slide24"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 116.0
+offset_right = 796.0
+offset_bottom = 239.0
+text = "Não adicione contexto desnecessário:
+- Se uma classe ou objeto te diz algo, não a repita
+no nome da variável."
+label_settings = SubResource("LabelSettings_vsyg5")
+
+[node name="SlideImage" parent="Control/Slides/Slide24" instance=ExtResource("6_h23tw")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -443.0
+offset_top = -55.0
+offset_right = 16.0
+offset_bottom = 289.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_mc46b")
+
+[node name="SlideImage2" parent="Control/Slides/Slide24" instance=ExtResource("6_h23tw")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 0.0
+offset_top = -55.0
+offset_right = 445.0
+offset_bottom = 289.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_y3lwy")
+
+[node name="Label3" type="Label" parent="Control/Slides/Slide24"]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 258.0
+offset_right = 426.0
+offset_bottom = 297.0
+text = "Ruim"
+label_settings = SubResource("LabelSettings_vsyg5")
+
+[node name="Label4" type="Label" parent="Control/Slides/Slide24"]
+layout_mode = 0
+offset_left = 812.0
+offset_top = 258.0
+offset_right = 874.0
+offset_bottom = 297.0
+text = "Bom"
+label_settings = SubResource("LabelSettings_vsyg5")
+
+[node name="Panel" type="Panel" parent="Control/Slides/Slide24"]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 245.0
+offset_right = 448.0
+offset_bottom = 589.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2ed47")
+
+[node name="Slide25" parent="Control/Slides" instance=ExtResource("5_p84bp")]
+visible = false
+layout_mode = 1
+exit_animation = 1
+text_appear = 0.01
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Slides/Slide25"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 46.0
+offset_top = 32.0
+offset_right = -45.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Slides/Slide25/ScrollContainer"]
+layout_mode = 2
+texture = ExtResource("14_y3lwy")
+
+[node name="Slide26" parent="Control/Slides" instance=ExtResource("5_p84bp")]
+visible = false
+layout_mode = 1
+enter_animation = 1
+text_appear = 0.01
+
+[node name="Label" type="Label" parent="Control/Slides/Slide26"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 47.0
+offset_right = 676.0
+offset_bottom = 108.0
+text = "Técnicas gerais que ajudam o CC"
+label_settings = SubResource("LabelSettings_vu7gd")
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/Slides/Slide26"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 116.0
+offset_right = 796.0
+offset_bottom = 197.0
+text = "Inversão de condição:
+- Diminui o aninhamento de condições."
+label_settings = SubResource("LabelSettings_vsyg5")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Slides/Slide26"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 46.0
+offset_top = 209.0
+offset_right = -45.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control/Slides/Slide26/ScrollContainer"]
+layout_mode = 2
+texture = ExtResource("15_ciuri")
+
+[node name="Slide27" parent="Control/Slides" instance=ExtResource("5_p84bp")]
+visible = false
+layout_mode = 1
+text_appear = 0.01
+
+[node name="Label" type="Label" parent="Control/Slides/Slide27"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 47.0
+offset_right = 676.0
+offset_bottom = 108.0
+text = "Técnicas gerais que ajudam o CC"
+label_settings = SubResource("LabelSettings_vu7gd")
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/Slides/Slide27"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 116.0
+offset_right = 796.0
+offset_bottom = 197.0
+text = "Extração de função:
+- Separe grandes funções em funções menores."
+label_settings = SubResource("LabelSettings_vsyg5")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Slides/Slide27"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 46.0
+offset_top = 209.0
+offset_right = -45.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control/Slides/Slide27/ScrollContainer"]
+layout_mode = 2
+texture = ExtResource("15_ciuri")
+
+[node name="Slide28" parent="Control/Slides" instance=ExtResource("5_p84bp")]
+visible = false
+layout_mode = 1
+text_appear = 0.01
+
+[node name="Label" type="Label" parent="Control/Slides/Slide28"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 47.0
+offset_right = 676.0
+offset_bottom = 108.0
+text = "Técnicas gerais que ajudam o CC"
+label_settings = SubResource("LabelSettings_vu7gd")
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/Slides/Slide28"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 116.0
+offset_right = 796.0
+offset_bottom = 197.0
+text = "Evite números mágicos:
+- Deixam o código enigmatico."
+label_settings = SubResource("LabelSettings_vsyg5")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Slides/Slide28"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 132.0
+offset_top = 209.0
+offset_right = -132.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="Control/Slides/Slide28/ScrollContainer"]
+layout_mode = 2
+texture = ExtResource("16_2ed47")
 
 [node name="Slide17" parent="Control/Slides" instance=ExtResource("5_p84bp")]
 visible = false
 layout_mode = 1
 enter_animation = 1
+exit_animation = 1
+text_appear = 0.01
 
 [node name="Label" type="Label" parent="Control/Slides/Slide17"]
 layout_mode = 0
@@ -425,15 +752,16 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 82.0
 offset_top = 116.0
-offset_right = 754.0
-offset_bottom = 407.0
-text = "- Nenhum código é perfeito, por mais que siga o livro"
+offset_right = 795.0
+offset_bottom = 155.0
+text = "- Nenhum código é perfeito, por mais que siga o livro."
 label_settings = SubResource("LabelSettings_vsyg5")
 
 [node name="Slide18" parent="Control/Slides" instance=ExtResource("5_p84bp")]
 visible = false
 layout_mode = 1
-enter_animation = 1
+exit_animation = 3
+text_appear = 0.01
 
 [node name="Label" type="Label" parent="Control/Slides/Slide18"]
 layout_mode = 0
@@ -458,6 +786,7 @@ expand_mode = 1
 visible = false
 layout_mode = 1
 theme_override_styles/panel = SubResource("StyleBoxEmpty_b1cii")
+text_appear = 0.01
 
 [node name="Label" type="Label" parent="Control/Slides/Slide12"]
 layout_mode = 0

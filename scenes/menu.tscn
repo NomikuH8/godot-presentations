@@ -51,8 +51,7 @@ theme_override_constants/separation = 170
 
 [node name="Title" type="Label" parent="ui/Panel/CenterContainer/MenuContainer"]
 layout_mode = 2
-text = "Quanto dinheiro os jogos
-na Steam fazem?"
+text = "Clean Code"
 label_settings = SubResource("LabelSettings_hinri")
 horizontal_alignment = 1
 

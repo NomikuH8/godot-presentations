@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxoi8cft364b2"
-path="res://.godot/imported/ninjago.png-55dfa402528bbd9538691fbb05d4cf16.ctex"
+uid="uid://movxx7vtm8ia"
+path="res://.godot/imported/code_never_perfect.png-215241c0488b9f7a38ada85313656b2f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/presentation/ninjago.png"
-dest_files=["res://.godot/imported/ninjago.png-55dfa402528bbd9538691fbb05d4cf16.ctex"]
+source_file="res://images/presentation/clean_code/code_never_perfect.png"
+dest_files=["res://.godot/imported/code_never_perfect.png-215241c0488b9f7a38ada85313656b2f.ctex"]
 
 [params]
 

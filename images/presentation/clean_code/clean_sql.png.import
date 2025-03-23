@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn67qr8au5ns4"
-path="res://.godot/imported/bitblasterxl.jpg-b7e354e9b8bf18d3a3419db18987fa60.ctex"
+uid="uid://cg0wmge2mnc8q"
+path="res://.godot/imported/clean_sql.png-9027027ccdafa74ca95c8a8fab18265e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/presentation/bitblasterxl.jpg"
-dest_files=["res://.godot/imported/bitblasterxl.jpg-b7e354e9b8bf18d3a3419db18987fa60.ctex"]
+source_file="res://images/presentation/clean_code/clean_sql.png"
+dest_files=["res://.godot/imported/clean_sql.png-9027027ccdafa74ca95c8a8fab18265e.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

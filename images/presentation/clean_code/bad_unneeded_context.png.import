@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1yv5tw3i4mdn"
-path="res://.godot/imported/cloudpunk.jpg-806be7b2d5bf3a33a5acc19377087fd6.ctex"
+uid="uid://3rydnm7lxhow"
+path="res://.godot/imported/bad_unneeded_context.png-457a6447abe4426f4d7e1c32a5a2a011.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/presentation/cloudpunk.jpg"
-dest_files=["res://.godot/imported/cloudpunk.jpg-806be7b2d5bf3a33a5acc19377087fd6.ctex"]
+source_file="res://images/presentation/clean_code/bad_unneeded_context.png"
+dest_files=["res://.godot/imported/bad_unneeded_context.png-457a6447abe4426f4d7e1c32a5a2a011.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkj3xhqe34d4j"
-path="res://.godot/imported/menoresJogos.png-2b1ba46ce4ade910022f203c18e5fe07.ctex"
+uid="uid://b1q314qtvqpaj"
+path="res://.godot/imported/condition_inversion.png-15a43e66277962cddd929a9c003f9bb7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/presentation/menoresJogos.png"
-dest_files=["res://.godot/imported/menoresJogos.png-2b1ba46ce4ade910022f203c18e5fe07.ctex"]
+source_file="res://images/presentation/clean_code/condition_inversion.png"
+dest_files=["res://.godot/imported/condition_inversion.png-15a43e66277962cddd929a9c003f9bb7.ctex"]
 
 [params]
 

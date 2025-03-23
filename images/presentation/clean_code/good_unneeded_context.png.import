@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lb1cw7rhs0md"
-path="res://.godot/imported/maioresJogos.png-5033ae01b61a4faed728c97bfa00b099.ctex"
+uid="uid://cu3oapk1xl44x"
+path="res://.godot/imported/good_unneeded_context.png-df1fa3676924747eb3e7611785045de5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/presentation/maioresJogos.png"
-dest_files=["res://.godot/imported/maioresJogos.png-5033ae01b61a4faed728c97bfa00b099.ctex"]
+source_file="res://images/presentation/clean_code/good_unneeded_context.png"
+dest_files=["res://.godot/imported/good_unneeded_context.png-df1fa3676924747eb3e7611785045de5.ctex"]
 
 [params]
 

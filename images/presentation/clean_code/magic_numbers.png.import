@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7yevrhptv8a4"
-path="res://.godot/imported/gtav.jpg-e9a234d1033fb4c7ae7a517d621382e4.ctex"
+uid="uid://bo2j37xhri1p5"
+path="res://.godot/imported/magic_numbers.png-014649aab44161188ed03163906c4956.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/presentation/gtav.jpg"
-dest_files=["res://.godot/imported/gtav.jpg-e9a234d1033fb4c7ae7a517d621382e4.ctex"]
+source_file="res://images/presentation/clean_code/magic_numbers.png"
+dest_files=["res://.godot/imported/magic_numbers.png-014649aab44161188ed03163906c4956.ctex"]
 
 [params]
 
