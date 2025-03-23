@@ -10,21 +10,19 @@ colors = PackedColorArray(1, 1, 1, 0.686275, 1, 1, 1, 0)
 gradient = SubResource("Gradient_mk2wq")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1atgw"]
+particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(0.06, 300, 1)
-particle_flag_disable_z = true
-spread = 0.0
-gravity = Vector3(0, 0, 0)
-initial_velocity_min = 10.53
-initial_velocity_max = 10.53
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
 angle_min = 45.5
 angle_max = 45.5
+spread = 0.0
+initial_velocity_min = 10.53
+initial_velocity_max = 10.53
+gravity = Vector3(0, 0, 0)
+attractor_interaction_enabled = false
 scale_min = 4.0
 scale_max = 4.0
 color_ramp = SubResource("GradientTexture1D_sejlm")
-attractor_interaction_enabled = false
 
 [node name="SlideshowSideParticles" type="Node2D"]
 

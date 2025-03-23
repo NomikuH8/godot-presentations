@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b0bnu6i2tkqgn"]
 
 [ext_resource type="PackedScene" uid="uid://bjnltkt4tg7x4" path="res://prefabs/menu/MenuParticles.tscn" id="1_x583m"]
-[ext_resource type="Script" path="res://scripts/menu/menuController.gd" id="2_42kkl"]
+[ext_resource type="Script" uid="uid://my8n2psu3g4u" path="res://scripts/menu/menuController.gd" id="2_42kkl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtscc"]
 bg_color = Color(0.215686, 0.215686, 0.215686, 0.537255)

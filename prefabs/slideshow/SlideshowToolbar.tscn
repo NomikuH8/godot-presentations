@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://drwd1q1oipqfa"]
 
-[ext_resource type="Script" path="res://scripts/slideshow/SlideshowToolbar.gd" id="1_1n3ms"]
+[ext_resource type="Script" uid="uid://c2avh86nkg1nk" path="res://scripts/slideshow/SlideshowToolbar.gd" id="1_1n3ms"]
 
 [node name="SlideshowToolbar" type="Control" node_paths=PackedStringArray("slide_label", "slide_slider")]
 layout_mode = 3

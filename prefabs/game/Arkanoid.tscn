@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b6p2bbmgff661"]
 
-[ext_resource type="Script" path="res://scripts/game/arkanoid/arkanoid.gd" id="1_6sctm"]
+[ext_resource type="Script" uid="uid://dvof5adiyccpu" path="res://scripts/game/arkanoid/arkanoid.gd" id="1_6sctm"]
 [ext_resource type="PackedScene" uid="uid://bph11hqwqv4ou" path="res://prefabs/game/paddle.tscn" id="1_h2ud0"]
 [ext_resource type="PackedScene" uid="uid://bvc6p7u8elir5" path="res://prefabs/game/block.tscn" id="2_ylxv5"]
 [ext_resource type="PackedScene" uid="uid://eslngtnyvuqa" path="res://prefabs/game/ball.tscn" id="4_kegl6"]

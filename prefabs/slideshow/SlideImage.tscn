@@ -49,9 +49,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xcgyu"]
 _data = {
-"fade_in": SubResource("Animation_2c53v"),
-"idle": SubResource("Animation_xxjlm"),
-"idle_out": SubResource("Animation_dcjfr")
+&"fade_in": SubResource("Animation_2c53v"),
+&"idle": SubResource("Animation_xxjlm"),
+&"idle_out": SubResource("Animation_dcjfr")
 }
 
 [node name="SlideImage" type="TextureRect"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=44 format=3 uid="uid://c464hdyhdchl6"]
 
-[ext_resource type="Script" path="res://scripts/slideshow/Slide.gd" id="1_esd0j"]
+[ext_resource type="Script" uid="uid://dexaq5lnqvi48" path="res://scripts/slideshow/Slide.gd" id="1_esd0j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sstgy"]
 bg_color = Color(1, 1, 1, 0.54902)
@@ -320,16 +320,16 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h0xc7"]
 _data = {
-"enter_grow": SubResource("Animation_t4v1t"),
-"enter_pass_left": SubResource("Animation_hypkk"),
-"enter_rotate_left": SubResource("Animation_8vsbb"),
-"enter_rotate_right": SubResource("Animation_yx05n"),
-"exit_pass_right": SubResource("Animation_vkvnw"),
-"exit_rotate_left": SubResource("Animation_msbgt"),
-"exit_rotate_right": SubResource("Animation_jmx62"),
-"exit_shrink": SubResource("Animation_tjmmn"),
-"idle": SubResource("Animation_oqrxl"),
-"idle_out": SubResource("Animation_1o56s")
+&"enter_grow": SubResource("Animation_t4v1t"),
+&"enter_pass_left": SubResource("Animation_hypkk"),
+&"enter_rotate_left": SubResource("Animation_8vsbb"),
+&"enter_rotate_right": SubResource("Animation_yx05n"),
+&"exit_pass_right": SubResource("Animation_vkvnw"),
+&"exit_rotate_left": SubResource("Animation_msbgt"),
+&"exit_rotate_right": SubResource("Animation_jmx62"),
+&"exit_shrink": SubResource("Animation_tjmmn"),
+&"idle": SubResource("Animation_oqrxl"),
+&"idle_out": SubResource("Animation_1o56s")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nrgnw"]

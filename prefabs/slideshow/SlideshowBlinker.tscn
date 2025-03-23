@@ -27,7 +27,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7hbs0"]
 _data = {
-"blinker_blink": SubResource("Animation_5vdxv")
+&"blinker_blink": SubResource("Animation_5vdxv")
 }
 
 [node name="SlideshowBlinker" type="Node2D"]
