@@ -14,7 +14,8 @@ enum ExitAnimation {
 	ROTATE_RIGHT
 }
 
-signal slide_disappeared
+signal slide_disappeared()
+signal interactive_started()
 
 @export var enter_animation: EnterAnimation = EnterAnimation.GROW
 @export var exit_animation: ExitAnimation = ExitAnimation.SHRINK
@@ -55,9 +56,7 @@ func _ready():
 	
 	for l in label_txts:
 		l = l.c_escape()
-		print(l)
 		l = l.replace("\\r\\n", "\\n")
-		print(l)
 		l = l.c_unescape()
 		fixed_label_txts.append(l)
 	
@@ -97,6 +96,7 @@ func _on_animation_tree_animation_finished(anim_name: String):
 		can_appear(false)
 		text_timer.start()
 		image_timer.start()
+		interactive_started.emit()
 	
 	if anim_name.contains('exit'):
 		can_disappear(false)

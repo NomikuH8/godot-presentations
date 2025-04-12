@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxwrvad0c5dj4"]
+
+[ext_resource type="Script" uid="uid://dijd3py523v5f" path="res://scripts/interactive/terminal.gd" id="1_yr55t"]
+[ext_resource type="Script" uid="uid://2nn0f5gd7j5r" path="res://scripts/interactive/terminal_input_container.gd" id="2_ksdpa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14kv1"]
+bg_color = Color(0.176471, 0.176471, 0.176471, 0.960784)
+
+[node name="Terminal" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_14kv1")
+script = ExtResource("1_yr55t")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+draw_focus_border = true
+horizontal_scroll_mode = 0
+
+[node name="Container" type="VBoxContainer" parent="ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_ksdpa")

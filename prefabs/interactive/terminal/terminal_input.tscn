@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://d33x8rlrsm85d"]
+
+[ext_resource type="Script" uid="uid://cpwjy44ubivax" path="res://scripts/interactive/terminal_input.gd" id="1_ovjbb"]
+
+[sub_resource type="SystemFont" id="SystemFont_7gob1"]
+font_names = PackedStringArray("Noto Mono")
+subpixel_positioning = 0
+
+[node name="TerminalInput" type="RichTextLabel"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = SubResource("SystemFont_7gob1")
+theme_override_font_sizes/normal_font_size = 42
+bbcode_enabled = true
+text = "[bgcolor=white] [/bgcolor]"
+fit_content = true
+scroll_active = false
+script = ExtResource("1_ovjbb")

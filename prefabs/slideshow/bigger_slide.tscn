@@ -1,11 +1,9 @@
-[gd_scene load_steps=44 format=3 uid="uid://c464hdyhdchl6"]
+[gd_scene load_steps=44 format=3 uid="uid://bo0ye11d1y0jn"]
 
-[ext_resource type="Script" uid="uid://dexaq5lnqvi48" path="res://scripts/slideshow/Slide.gd" id="1_esd0j"]
+[ext_resource type="Script" uid="uid://dexaq5lnqvi48" path="res://scripts/slideshow/Slide.gd" id="1_34tie"]
+[ext_resource type="StyleBox" uid="uid://cggf1ns7v35qs" path="res://resources/slides/slide_style.tres" id="1_k2jhe"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sstgy"]
-bg_color = Color(1, 1, 1, 0.54902)
-
-[sub_resource type="Animation" id="Animation_t4v1t"]
+[sub_resource type="Animation" id="Animation_o08lw"]
 resource_name = "enter_grow"
 length = 0.5
 tracks/0/type = "value"
@@ -13,10 +11,10 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 2
-tracks/0/loop_wrap = false
+tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.466516, 3.605),
+"transitions": PackedFloat32Array(0.450625, 3.605),
 "update": 0,
 "values": [Vector2(1, 0), Vector2(1, 1)]
 }
@@ -30,117 +28,10 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(190, 60)]
+"values": [Vector2(73, 41)]
 }
 
-[sub_resource type="Animation" id="Animation_hypkk"]
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.420448, 1),
-"update": 0,
-"values": [Vector2(1450, 60), Vector2(190, 60)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_8vsbb"]
-resource_name = "enter_rotate_left"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.420448, 1),
-"update": 0,
-"values": [3.14159, 0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.420448, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(190, 60)]
-}
-
-[sub_resource type="Animation" id="Animation_yx05n"]
-resource_name = "enter_rotate_right"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.420448, 1),
-"update": 0,
-"values": [-3.14159, 0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.420448, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(190, 60)]
-}
-
-[sub_resource type="Animation" id="Animation_vkvnw"]
+[sub_resource type="Animation" id="Animation_7pgtm"]
 resource_name = "enter_pass_left"
 length = 0.5
 tracks/0/type = "value"
@@ -151,9 +42,9 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.420448, 2),
+"transitions": PackedFloat32Array(0.420448, 1),
 "update": 0,
-"values": [Vector2(190, 60), Vector2(-1110, 60)]
+"values": [Vector2(1450, 41), Vector2(73, 41)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -168,32 +59,32 @@ tracks/1/keys = {
 "values": [Vector2(1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_msbgt"]
+[sub_resource type="Animation" id="Animation_7agdv"]
 resource_name = "enter_rotate_left"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
+tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.420448, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, -3.14159]
+"values": [Vector2(0, 0), Vector2(1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
+tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.420448, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(0, 0)]
+"values": [3.14159, 0.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -205,35 +96,35 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(190, 60)]
+"values": [Vector2(73, 41)]
 }
 
-[sub_resource type="Animation" id="Animation_jmx62"]
-resource_name = "exit_rotate_right"
+[sub_resource type="Animation" id="Animation_ew2f1"]
+resource_name = "enter_rotate_left"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
+tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.420448, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 3.14159]
+"values": [Vector2(0, 0), Vector2(1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale")
+tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.420448, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(0, 0)]
+"values": [-3.14159, 0.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -245,21 +136,141 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(190, 60)]
+"values": [Vector2(73, 41)]
 }
 
-[sub_resource type="Animation" id="Animation_tjmmn"]
+[sub_resource type="Animation" id="Animation_wdv45"]
+resource_name = "exit_pass_right"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.42, 1),
+"update": 0,
+"values": [Vector2(73, 41), Vector2(-1320, 41)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_wfq16"]
+resource_name = "exit_rotate_left"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.42, 1),
+"update": 0,
+"values": [0.0, -3.14159]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(73, 41)]
+}
+
+[sub_resource type="Animation" id="Animation_fsc7x"]
+resource_name = "exit_rotate_left"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.42, 1),
+"update": 0,
+"values": [0.0, 3.14159]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(73, 41)]
+}
+
+[sub_resource type="Animation" id="Animation_no6eu"]
 resource_name = "exit_shrink"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 2
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.153893, 3.605),
+"transitions": PackedFloat32Array(0.450625, 2),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1, 0)]
 }
@@ -273,11 +284,12 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(190, 60)]
+"values": [Vector2(73, 41)]
 }
 
-[sub_resource type="Animation" id="Animation_oqrxl"]
+[sub_resource type="Animation" id="Animation_8pnvq"]
 resource_name = "idle"
+length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -300,11 +312,24 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(190, 60)]
+"values": [Vector2(73, 41)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_1o56s"]
-resource_name = "idle_out"
+[sub_resource type="Animation" id="Animation_u6hp0"]
+resource_name = "idle"
+length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -315,21 +340,21 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1e-05)]
+"values": [Vector2(1, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_h0xc7"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8pnvq"]
 _data = {
-&"enter_grow": SubResource("Animation_t4v1t"),
-&"enter_pass_left": SubResource("Animation_hypkk"),
-&"enter_rotate_left": SubResource("Animation_8vsbb"),
-&"enter_rotate_right": SubResource("Animation_yx05n"),
-&"exit_pass_right": SubResource("Animation_vkvnw"),
-&"exit_rotate_left": SubResource("Animation_msbgt"),
-&"exit_rotate_right": SubResource("Animation_jmx62"),
-&"exit_shrink": SubResource("Animation_tjmmn"),
-&"idle": SubResource("Animation_oqrxl"),
-&"idle_out": SubResource("Animation_1o56s")
+&"enter_grow": SubResource("Animation_o08lw"),
+&"enter_pass_left": SubResource("Animation_7pgtm"),
+&"enter_rotate_left": SubResource("Animation_7agdv"),
+&"enter_rotate_right": SubResource("Animation_ew2f1"),
+&"exit_pass_right": SubResource("Animation_wdv45"),
+&"exit_rotate_left": SubResource("Animation_wfq16"),
+&"exit_rotate_right": SubResource("Animation_fsc7x"),
+&"exit_shrink": SubResource("Animation_no6eu"),
+&"idle": SubResource("Animation_8pnvq"),
+&"idle_out": SubResource("Animation_u6hp0")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nrgnw"]
@@ -441,7 +466,7 @@ switch_mode = 2
 advance_mode = 2
 advance_condition = &"can_enter"
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_0842f"]
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_7agdv"]
 states/End/position = Vector2(1380, 100)
 states/Start/position = Vector2(53, 100)
 states/slide_enter/node = SubResource("AnimationNodeAnimation_nrgnw")
@@ -467,25 +492,25 @@ states/slide_exit_shrink/position = Vector2(829, 243)
 states/slide_idle/node = SubResource("AnimationNodeAnimation_ydiyw")
 states/slide_idle/position = Vector2(693, 100)
 transitions = ["slide_enter_grow", "slide_idle", SubResource("AnimationNodeStateMachineTransition_0l88u"), "Start", "slide_enter", SubResource("AnimationNodeStateMachineTransition_it58f"), "slide_enter", "slide_enter_grow", SubResource("AnimationNodeStateMachineTransition_18awn"), "slide_idle", "slide_exit", SubResource("AnimationNodeStateMachineTransition_hvns5"), "slide_exit", "slide_exit_shrink", SubResource("AnimationNodeStateMachineTransition_xii47"), "slide_exit_shrink", "slide_enter", SubResource("AnimationNodeStateMachineTransition_s28dh"), "slide_enter", "slide_enter_pass_left", SubResource("AnimationNodeStateMachineTransition_4e428"), "slide_enter_pass_left", "slide_idle", SubResource("AnimationNodeStateMachineTransition_v0o1m"), "slide_exit", "slide_exit_pass_right", SubResource("AnimationNodeStateMachineTransition_khxha"), "slide_exit_pass_right", "slide_enter", SubResource("AnimationNodeStateMachineTransition_frijf"), "slide_enter", "slide_enter_rotate_left", SubResource("AnimationNodeStateMachineTransition_mvbo6"), "slide_enter", "slide_enter_rotate_right", SubResource("AnimationNodeStateMachineTransition_eetp0"), "slide_enter_rotate_left", "slide_idle", SubResource("AnimationNodeStateMachineTransition_o0x3n"), "slide_enter_rotate_right", "slide_idle", SubResource("AnimationNodeStateMachineTransition_rywv3"), "slide_exit", "slide_exit_rotate_left", SubResource("AnimationNodeStateMachineTransition_e6chn"), "slide_exit_rotate_left", "slide_enter", SubResource("AnimationNodeStateMachineTransition_ft4jn"), "slide_exit", "slide_exit_rotate_right", SubResource("AnimationNodeStateMachineTransition_cew78"), "slide_exit_rotate_right", "slide_enter", SubResource("AnimationNodeStateMachineTransition_561hv")]
-graph_offset = Vector2(-375.882, -25)
+graph_offset = Vector2(-304.882, 41)
 
-[node name="Slide" type="Panel"]
-custom_minimum_size = Vector2(900, 600)
+[node name="BiggerSlide" type="Panel"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -450.0
-offset_top = -300.0
-offset_right = 450.0
-offset_bottom = 300.0
+offset_left = -567.0
+offset_top = -319.0
+offset_right = 567.0
+offset_bottom = 319.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1, 1e-05)
-pivot_offset = Vector2(450, 300)
-theme_override_styles/panel = SubResource("StyleBoxFlat_sstgy")
-script = ExtResource("1_esd0j")
+pivot_offset = Vector2(567, 319)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("1_k2jhe")
+script = ExtResource("1_34tie")
 
 [node name="TextTimer" type="Timer" parent="."]
 
@@ -493,12 +518,12 @@ script = ExtResource("1_esd0j")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"slide": SubResource("AnimationLibrary_h0xc7")
+&"": SubResource("AnimationLibrary_8pnvq")
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 active = false
-tree_root = SubResource("AnimationNodeStateMachine_0842f")
+tree_root = SubResource("AnimationNodeStateMachine_7agdv")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/can_enter = false
 parameters/conditions/can_exit = false

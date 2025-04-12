@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b6cf3b6h8e6lt"]
+[gd_scene load_steps=31 format=3 uid="uid://b6cf3b6h8e6lt"]
 
 [ext_resource type="PackedScene" uid="uid://upvucuou2f1j" path="res://prefabs/slideshow/SlideshowParticles.tscn" id="1_pdjoh"]
 [ext_resource type="PackedScene" uid="uid://b4f6mv66o5eb0" path="res://prefabs/slideshow/SlideshowBlinker.tscn" id="2_n6jdq"]
@@ -8,11 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://b6p2bbmgff661" path="res://prefabs/game/Arkanoid.tscn" id="4_daue3"]
 [ext_resource type="PackedScene" uid="uid://c464hdyhdchl6" path="res://prefabs/slideshow/slide.tscn" id="5_p84bp"]
 [ext_resource type="PackedScene" uid="uid://bckxllfl2iaih" path="res://prefabs/slideshow/SlideImage.tscn" id="6_h23tw"]
+[ext_resource type="PackedScene" uid="uid://bo0ye11d1y0jn" path="res://prefabs/slideshow/bigger_slide.tscn" id="6_m0vo0"]
 [ext_resource type="Texture2D" uid="uid://d2q7dsaajxcnv" path="res://images/presentation/logo_catolica.png" id="7_wu8gi"]
-[ext_resource type="Texture2D" uid="uid://b5qpt17bntu4j" path="res://images/presentation/clean_code/clean_code_book.jpg" id="9_2ed47"]
+[ext_resource type="PackedScene" uid="uid://dlqmffopmus3b" path="res://prefabs/interactive/terminal/terminal_install_pytest.tscn" id="9_m0vo0"]
+[ext_resource type="Texture2D" uid="uid://dye27ll6wn6r4" path="res://images/presentation/pytest/test_soma.png" id="10_02wvv"]
 [ext_resource type="Texture2D" uid="uid://drdxuox22igxf" path="res://images/presentation/clean_code/meaningful_names.png" id="10_3jqto"]
 [ext_resource type="Texture2D" uid="uid://movxx7vtm8ia" path="res://images/presentation/clean_code/code_never_perfect.png" id="10_b861v"]
 [ext_resource type="Texture2D" uid="uid://dg1ssghu485mm" path="res://images/presentation/clean_code/unecessary_comments.png" id="11_1let4"]
+[ext_resource type="PackedScene" uid="uid://cgi8sy6pfy882" path="res://prefabs/interactive/terminal/terminal_run_pytest.tscn" id="11_jjoou"]
 [ext_resource type="Texture2D" uid="uid://3rydnm7lxhow" path="res://images/presentation/clean_code/bad_unneeded_context.png" id="12_mc46b"]
 [ext_resource type="Texture2D" uid="uid://cu3oapk1xl44x" path="res://images/presentation/clean_code/good_unneeded_context.png" id="13_y3lwy"]
 [ext_resource type="Texture2D" uid="uid://cg0wmge2mnc8q" path="res://images/presentation/clean_code/clean_sql.png" id="14_y3lwy"]
@@ -20,37 +23,43 @@
 [ext_resource type="Texture2D" uid="uid://bo2j37xhri1p5" path="res://images/presentation/clean_code/magic_numbers.png" id="16_2ed47"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mo4q6"]
-font_size = 36
+font_size = 66
+font_color = Color(0.881937, 0.881937, 0.881937, 1)
+outline_size = 5
+outline_color = Color(0.270222, 0.270222, 0.270222, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_02wvv"]
+font_size = 42
 font_color = Color(0.881937, 0.881937, 0.881937, 1)
 outline_size = 5
 outline_color = Color(0.270222, 0.270222, 0.270222, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_lt220"]
-font_size = 26
+font_size = 36
 font_color = Color(0.882353, 0.882353, 0.882353, 1)
 outline_size = 5
 outline_color = Color(0.270222, 0.270222, 0.270222, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_8m7q1"]
-font_size = 26
+font_size = 36
 font_color = Color(0.882353, 0.882353, 0.882353, 1)
 outline_size = 5
 outline_color = Color(0.270222, 0.270222, 0.270222, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_vu7gd"]
-font_size = 44
+font_size = 56
 font_color = Color(0.882353, 0.882353, 0.882353, 1)
 outline_size = 5
 outline_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_bx7a1"]
-font_size = 32
+font_size = 40
 font_color = Color(0.882353, 0.882353, 0.882353, 1)
 outline_size = 5
 outline_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_vsyg5"]
-font_size = 28
+font_size = 36
 font_color = Color(0.882353, 0.882353, 0.882353, 1)
 outline_size = 5
 outline_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
@@ -104,291 +113,548 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Slide" parent="Control/Slides" instance=ExtResource("5_p84bp")]
-layout_mode = 1
-exit_animation = 1
+[node name="BiggerSlide" parent="Control/Slides" instance=ExtResource("6_m0vo0")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 73.0
+offset_top = 41.0
+offset_right = 1207.0
+offset_bottom = 679.0
+grow_horizontal = 1
+grow_vertical = 1
 text_appear = 0.01
 
-[node name="SlideImage" parent="Control/Slides/Slide" instance=ExtResource("6_h23tw")]
-layout_mode = 0
+[node name="SlideImage" parent="Control/Slides/BiggerSlide" instance=ExtResource("6_h23tw")]
+layout_mode = 1
 offset_left = 0.0
-offset_top = 20.0
+offset_top = 23.0
 offset_right = 1376.0
-offset_bottom = 478.0
+offset_bottom = 481.0
 scale = Vector2(0.22892, 0.22892)
 texture = ExtResource("7_wu8gi")
 
-[node name="Label" type="Label" parent="Control/Slides/Slide"]
+[node name="Label" type="Label" parent="Control/Slides/BiggerSlide"]
 layout_mode = 0
-offset_left = 88.0
-offset_top = 92.0
-offset_right = 828.0
-offset_bottom = 245.0
+offset_left = 471.0
+offset_top = 83.0
+offset_right = 680.0
+offset_bottom = 174.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Clean Code"
+text = "PyTest"
 label_settings = SubResource("LabelSettings_mo4q6")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Control/Slides/Slide"]
-layout_mode = 0
-offset_left = 82.0
-offset_top = 180.0
-offset_right = 822.0
-offset_bottom = 333.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Professora: Janaína Fontana Biffi Duarte
-Curso: Engenharia de Software 5ª fase"
-label_settings = SubResource("LabelSettings_lt220")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="Control/Slides/Slide"]
-layout_mode = 0
-offset_left = 82.0
-offset_top = 324.0
-offset_right = 822.0
-offset_bottom = 555.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Alunos:
-Gustavo Felipe Cachoeira
-Henrique Maia Cardosa
-João Miguel de Castro Menna
-Ricardo Gabriel Fialho Santos"
-label_settings = SubResource("LabelSettings_8m7q1")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Slide2" parent="Control/Slides" instance=ExtResource("5_p84bp")]
-visible = false
-layout_mode = 1
-enter_animation = 1
-exit_animation = 1
-text_appear = 0.01
-
-[node name="Label" type="Label" parent="Control/Slides/Slide2"]
-layout_mode = 0
-offset_left = 82.0
-offset_top = 47.0
-offset_right = 260.0
-offset_bottom = 108.0
-text = "Sumário"
-label_settings = SubResource("LabelSettings_vu7gd")
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="Control/Slides/Slide2"]
-layout_mode = 0
-offset_left = 82.0
-offset_top = 125.0
-offset_right = 714.0
-offset_bottom = 170.0
-text = "Assuntos abordados nesta apresentação:"
-label_settings = SubResource("LabelSettings_bx7a1")
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="Control/Slides/Slide2"]
-layout_mode = 0
-offset_left = 130.0
-offset_top = 180.0
-offset_right = 557.0
-offset_bottom = 225.0
-text = "01- Introdução"
-label_settings = SubResource("LabelSettings_vsyg5")
-vertical_alignment = 1
-
-[node name="Label4" type="Label" parent="Control/Slides/Slide2"]
-layout_mode = 0
-offset_left = 130.0
-offset_top = 225.0
-offset_right = 581.0
-offset_bottom = 270.0
-text = "02 - O que é Clean Code?"
-label_settings = SubResource("LabelSettings_vsyg5")
-vertical_alignment = 1
-
-[node name="Label5" type="Label" parent="Control/Slides/Slide2"]
-layout_mode = 0
-offset_left = 130.0
-offset_top = 270.0
-offset_right = 507.0
-offset_bottom = 315.0
-text = "03 - Importância do Clean Code"
-label_settings = SubResource("LabelSettings_vsyg5")
-vertical_alignment = 1
-
-[node name="Label6" type="Label" parent="Control/Slides/Slide2"]
-layout_mode = 0
-offset_left = 130.0
-offset_top = 315.0
-offset_right = 505.0
-offset_bottom = 360.0
-text = "04 - Alguns princípios do Clean Code"
-label_settings = SubResource("LabelSettings_vsyg5")
-vertical_alignment = 1
-
-[node name="Label7" type="Label" parent="Control/Slides/Slide2"]
-layout_mode = 0
-offset_left = 130.0
-offset_top = 360.0
-offset_right = 617.0
-offset_bottom = 405.0
-text = "05 - Técnicas gerais que ajudam o Clean Code"
-label_settings = SubResource("LabelSettings_vsyg5")
-vertical_alignment = 1
-
-[node name="Label10" type="Label" parent="Control/Slides/Slide2"]
-layout_mode = 0
-offset_left = 130.0
-offset_top = 407.0
-offset_right = 537.0
-offset_bottom = 452.0
-text = "06 - Conclusão"
-label_settings = SubResource("LabelSettings_vsyg5")
-vertical_alignment = 1
-
-[node name="Slide13" parent="Control/Slides" instance=ExtResource("5_p84bp")]
-visible = false
-layout_mode = 1
-enter_animation = 1
-exit_animation = 1
-text_appear = 0.01
-
-[node name="Label" type="Label" parent="Control/Slides/Slide13"]
-layout_mode = 0
-offset_left = 82.0
-offset_top = 47.0
-offset_right = 260.0
-offset_bottom = 108.0
-text = "Introdução"
-label_settings = SubResource("LabelSettings_vu7gd")
-vertical_alignment = 1
-
-[node name="SlideImage" parent="Control/Slides/Slide13" instance=ExtResource("6_h23tw")]
+[node name="Label4" type="Label" parent="Control/Slides/BiggerSlide"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -368.0
-offset_top = -184.0
-offset_right = -35.0
-offset_bottom = 256.0
+offset_left = -350.0
+offset_top = -145.0
+offset_right = 350.0
+offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("9_2ed47")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Testes Automatizados com Python
+de Forma Simples e Eficiente"
+label_settings = SubResource("LabelSettings_02wvv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/Slides/BiggerSlide"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -420.5
+offset_top = -14.0
+offset_right = 420.5
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Professora: Diego Sauter Possamai
+Curso: Engenharia de Software 5ª fase"
+label_settings = SubResource("LabelSettings_lt220")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/Slides/BiggerSlide"]
+layout_mode = 0
+offset_left = 199.0
+offset_top = 388.0
+offset_right = 939.0
+offset_bottom = 619.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Alunos:
+Andrey Garcia dos Santos
+João Miguel de Castro Menna"
+label_settings = SubResource("LabelSettings_8m7q1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BiggerSlide2" parent="Control/Slides" instance=ExtResource("6_m0vo0")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 73.0
+offset_top = 41.0
+offset_right = 1207.0
+offset_bottom = 679.0
+grow_horizontal = 1
+grow_vertical = 1
+text_appear = 0.01
+
+[node name="Label" type="Label" parent="Control/Slides/BiggerSlide2"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 31.0
+offset_right = 278.0
+offset_bottom = 108.0
+text = "Sumário"
+label_settings = SubResource("LabelSettings_vu7gd")
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control/Slides/BiggerSlide2"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 111.0
+offset_right = 846.0
+offset_bottom = 166.0
+text = "Assuntos abordados nesta apresentação:"
+label_settings = SubResource("LabelSettings_bx7a1")
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/Slides/BiggerSlide2"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 166.0
+offset_right = 519.0
+offset_bottom = 216.0
+text = "01- O que é PyTest?"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Slides/BiggerSlide2"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 216.0
+offset_right = 543.0
+offset_bottom = 266.0
+text = "02 - Por que usar PyTest?"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Control/Slides/BiggerSlide2"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 266.0
+offset_right = 633.0
+offset_bottom = 316.0
+text = "03 - Instalação e primeiro teste"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="Control/Slides/BiggerSlide2"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 319.0
+offset_right = 718.0
+offset_bottom = 369.0
+text = "04 - Estrutura básica"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="Control/Slides/BiggerSlide2"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 369.0
+offset_right = 876.0
+offset_bottom = 419.0
+text = "05 - Fixtures (reutilização)"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label10" type="Label" parent="Control/Slides/BiggerSlide2"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 419.0
+offset_right = 499.0
+offset_bottom = 469.0
+text = "06 - Pipeline exemplo"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label11" type="Label" parent="Control/Slides/BiggerSlide2"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 469.0
+offset_right = 499.0
+offset_bottom = 519.0
+text = "07 - Boas Práticas"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label12" type="Label" parent="Control/Slides/BiggerSlide2"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 519.0
+offset_right = 499.0
+offset_bottom = 569.0
+text = "08 - Dúvidas"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="BiggerSlide3" parent="Control/Slides" instance=ExtResource("6_m0vo0")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 73.0
+offset_top = 41.0
+offset_right = 1207.0
+offset_bottom = 679.0
+grow_horizontal = 1
+grow_vertical = 1
+text_appear = 0.01
+
+[node name="Label" type="Label" parent="Control/Slides/BiggerSlide3"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 31.0
+offset_right = 278.0
+offset_bottom = 108.0
+text = "O que é PyTest?"
+label_settings = SubResource("LabelSettings_vu7gd")
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/Slides/BiggerSlide3"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 127.0
+offset_right = 479.0
+offset_bottom = 177.0
+text = "- PyTest é um framework de testes para Python."
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Slides/BiggerSlide3"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 177.0
+offset_right = 503.0
+offset_bottom = 227.0
+text = "- Foco em simplicidade, legibilidade e poder."
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Control/Slides/BiggerSlide3"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 227.0
+offset_right = 593.0
+offset_bottom = 277.0
+text = "- Suporte a:"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="Control/Slides/BiggerSlide3"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 280.0
+offset_right = 743.0
+offset_bottom = 330.0
+text = "- Testes simples e complexos;"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="Control/Slides/BiggerSlide3"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 330.0
+offset_right = 901.0
+offset_bottom = 380.0
+text = "- Fixtures reutilizáveis;"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label10" type="Label" parent="Control/Slides/BiggerSlide3"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 380.0
+offset_right = 524.0
+offset_bottom = 430.0
+text = "- Plugins e integrações."
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="BiggerSlide4" parent="Control/Slides" instance=ExtResource("6_m0vo0")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 73.0
+offset_top = 41.0
+offset_right = 1207.0
+offset_bottom = 679.0
+grow_horizontal = 1
+grow_vertical = 1
+text_appear = 0.01
+
+[node name="Label" type="Label" parent="Control/Slides/BiggerSlide4"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 31.0
+offset_right = 278.0
+offset_bottom = 108.0
+text = "Por que usar PyTest?"
+label_settings = SubResource("LabelSettings_vu7gd")
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/Slides/BiggerSlide4"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 127.0
+offset_right = 479.0
+offset_bottom = 177.0
+text = "✅ Sintaxe simples e legível"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Slides/BiggerSlide4"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 177.0
+offset_right = 503.0
+offset_bottom = 227.0
+text = "✅ Excelente suporte para testes escaláveis"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Control/Slides/BiggerSlide4"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 227.0
+offset_right = 593.0
+offset_bottom = 277.0
+text = "✅ Fácil integração com pipelines de CI/CD"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="Control/Slides/BiggerSlide4"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 280.0
+offset_right = 791.0
+offset_bottom = 330.0
+text = "✅ Comunidade ativa e ampla documentação"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="BiggerSlide5" parent="Control/Slides" instance=ExtResource("6_m0vo0")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 73.0
+offset_top = 41.0
+offset_right = 1207.0
+offset_bottom = 679.0
+grow_horizontal = 1
+grow_vertical = 1
+text_appear = 0.01
+
+[node name="Label" type="Label" parent="Control/Slides/BiggerSlide5"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 31.0
+offset_right = 278.0
+offset_bottom = 108.0
+text = "Por que usar PyTest?"
+label_settings = SubResource("LabelSettings_vu7gd")
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/Slides/BiggerSlide5"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 127.0
+offset_right = 479.0
+offset_bottom = 177.0
+text = "📌 Comparando com unittest:"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Slides/BiggerSlide5"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 177.0
+offset_right = 575.0
+offset_bottom = 227.0
+text = "- Menos verboso"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Control/Slides/BiggerSlide5"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 227.0
+offset_right = 665.0
+offset_bottom = 277.0
+text = "- Menos boilerplate"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="Control/Slides/BiggerSlide5"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 280.0
+offset_right = 863.0
+offset_bottom = 330.0
+text = "- Mais extensível"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="BiggerSlide6" parent="Control/Slides" instance=ExtResource("6_m0vo0")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 73.0
+offset_top = 41.0
+offset_right = 1207.0
+offset_bottom = 679.0
+grow_horizontal = 1
+grow_vertical = 1
+text_appear = 0.01
+
+[node name="Label" type="Label" parent="Control/Slides/BiggerSlide6"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 15.0
+offset_right = 744.0
+offset_bottom = 92.0
+text = "Instalação e primeiro teste"
+label_settings = SubResource("LabelSettings_vu7gd")
+vertical_alignment = 1
+
+[node name="TerminalInstallPytest" parent="Control/Slides/BiggerSlide6" instance=ExtResource("9_m0vo0")]
+layout_mode = 1
+offset_left = 21.0
+offset_top = 99.0
+offset_right = -21.0
+offset_bottom = -24.0
+
+[node name="BiggerSlide7" parent="Control/Slides" instance=ExtResource("6_m0vo0")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 73.0
+offset_top = 41.0
+offset_right = 1207.0
+offset_bottom = 679.0
+grow_horizontal = 1
+grow_vertical = 1
+text_appear = 0.01
+
+[node name="Label" type="Label" parent="Control/Slides/BiggerSlide7"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 15.0
+offset_right = 744.0
+offset_bottom = 92.0
+text = "Instalação e primeiro teste"
+label_settings = SubResource("LabelSettings_vu7gd")
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="Control/Slides/BiggerSlide7"]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 138.0
+offset_right = 942.0
+offset_bottom = 188.0
+text = "test_math.py"
+label_settings = SubResource("LabelSettings_vsyg5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SlideImage" parent="Control/Slides/BiggerSlide7" instance=ExtResource("6_h23tw")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -546.0
+offset_top = -284.0
+offset_right = 543.0
+offset_bottom = 414.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_02wvv")
 expand_mode = 1
 
-[node name="Label2" type="Label" parent="Control/Slides/Slide13"]
+[node name="BiggerSlide8" parent="Control/Slides" instance=ExtResource("6_m0vo0")]
 layout_mode = 0
-offset_left = 432.0
-offset_top = 116.0
-offset_right = 883.0
-offset_bottom = 161.0
-text = "- Escrito por: Robert C. Martin
-- Vulgo: Uncle Bob
-
-- Conceito fundamental para
-desenvolvimento de software
-de alta qualidade e fácil
-manutenção."
-label_settings = SubResource("LabelSettings_vsyg5")
-vertical_alignment = 1
-
-[node name="Slide16" parent="Control/Slides" instance=ExtResource("5_p84bp")]
-visible = false
-layout_mode = 1
-enter_animation = 1
-exit_animation = 1
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 73.0
+offset_top = 41.0
+offset_right = 1207.0
+offset_bottom = 679.0
+grow_horizontal = 1
+grow_vertical = 1
 text_appear = 0.01
 
-[node name="Label" type="Label" parent="Control/Slides/Slide16"]
+[node name="Label" type="Label" parent="Control/Slides/BiggerSlide8"]
 layout_mode = 0
-offset_left = 82.0
-offset_top = 47.0
-offset_right = 676.0
-offset_bottom = 108.0
-text = "O que é Clean Code?"
+offset_left = 21.0
+offset_top = 15.0
+offset_right = 744.0
+offset_bottom = 92.0
+text = "Instalação e primeiro teste"
 label_settings = SubResource("LabelSettings_vu7gd")
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Control/Slides/Slide16"]
-layout_mode = 0
-offset_left = 82.0
-offset_top = 116.0
-offset_right = 754.0
-offset_bottom = 407.0
-text = "O Código Limpo é:
-- (Legibilidade) Fácil de ler e entender.
-- (Manutenibilidade) Fácil de modificar e refatorar.
-- (Testabilidade) Simples de testar.
-- (Simplicidade) Evita complexidade desnecessária."
-label_settings = SubResource("LabelSettings_vsyg5")
-
-[node name="Slide19" parent="Control/Slides" instance=ExtResource("5_p84bp")]
-visible = false
+[node name="TerminalRunPytest" parent="Control/Slides/BiggerSlide8" instance=ExtResource("11_jjoou")]
 layout_mode = 1
-enter_animation = 1
-exit_animation = 1
-text_appear = 0.01
-
-[node name="Label" type="Label" parent="Control/Slides/Slide19"]
-layout_mode = 0
-offset_left = 82.0
-offset_top = 47.0
-offset_right = 676.0
-offset_bottom = 108.0
-text = "Importância do Clean Code"
-label_settings = SubResource("LabelSettings_vu7gd")
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="Control/Slides/Slide19"]
-layout_mode = 0
-offset_left = 82.0
-offset_top = 116.0
-offset_right = 754.0
-offset_bottom = 407.0
-text = "- Código claro reduz a chance de bugs
-- Facilidade de colaboração
-- Manutenção a longo prazo
-- Velocidade de desenvolvimento"
-label_settings = SubResource("LabelSettings_vsyg5")
-
-[node name="Slide20" parent="Control/Slides" instance=ExtResource("5_p84bp")]
-visible = false
-layout_mode = 1
-enter_animation = 1
-text_appear = 0.01
-
-[node name="Label" type="Label" parent="Control/Slides/Slide20"]
-layout_mode = 0
-offset_left = 82.0
-offset_top = 47.0
-offset_right = 676.0
-offset_bottom = 108.0
-text = "Alguns princípios do Clean Code"
-label_settings = SubResource("LabelSettings_vu7gd")
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="Control/Slides/Slide20"]
-layout_mode = 0
-offset_left = 82.0
-offset_top = 116.0
-offset_right = 754.0
-offset_bottom = 407.0
-text = "- Retirado de:"
-label_settings = SubResource("LabelSettings_vsyg5")
-
-[node name="LinkButton" type="LinkButton" parent="Control/Slides/Slide20"]
-layout_mode = 0
-offset_left = 88.0
-offset_top = 170.0
-offset_right = 806.0
-offset_bottom = 210.0
-theme_override_colors/font_color = Color(0, 0, 0.67451, 1)
-theme_override_font_sizes/font_size = 26
-text = "https://github.com/ryanmcdermott/clean-code-javascript"
-uri = "https://github.com/ryanmcdermott/clean-code-javascript"
+offset_left = 31.0
+offset_top = 101.0
+offset_right = -31.0
+offset_bottom = -25.0
 
 [node name="Slide21" parent="Control/Slides" instance=ExtResource("5_p84bp")]
 visible = false
