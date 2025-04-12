@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b6cf3b6h8e6lt"]
+[gd_scene load_steps=25 format=3 uid="uid://b6cf3b6h8e6lt"]
 
 [ext_resource type="PackedScene" uid="uid://upvucuou2f1j" path="res://prefabs/slideshow/SlideshowParticles.tscn" id="1_pdjoh"]
 [ext_resource type="PackedScene" uid="uid://b4f6mv66o5eb0" path="res://prefabs/slideshow/SlideshowBlinker.tscn" id="2_n6jdq"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bd7cfcaq6e1ru" path="res://prefabs/slideshow/SlideshowSideParticles.tscn" id="3_w41wi"]
 [ext_resource type="Script" uid="uid://bafntcwe1ny7l" path="res://scripts/slideshow/SlideControl.gd" id="3_wqglq"]
 [ext_resource type="PackedScene" uid="uid://b6p2bbmgff661" path="res://prefabs/game/Arkanoid.tscn" id="4_daue3"]
-[ext_resource type="PackedScene" uid="uid://c464hdyhdchl6" path="res://prefabs/slideshow/slide.tscn" id="5_p84bp"]
 [ext_resource type="PackedScene" uid="uid://bckxllfl2iaih" path="res://prefabs/slideshow/SlideImage.tscn" id="6_h23tw"]
 [ext_resource type="PackedScene" uid="uid://bo0ye11d1y0jn" path="res://prefabs/slideshow/bigger_slide.tscn" id="6_m0vo0"]
 [ext_resource type="Texture2D" uid="uid://d2q7dsaajxcnv" path="res://images/presentation/logo_catolica.png" id="7_wu8gi"]
@@ -64,7 +63,8 @@ bg_color = Color(0.164706, 0.164706, 0.164706, 0.960784)
 [sub_resource type="SystemFont" id="SystemFont_y3lwy"]
 font_names = PackedStringArray("Noto Mono")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b1cii"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epleg"]
+bg_color = Color(1, 1, 1, 0)
 
 [node name="slideshow" type="Node"]
 
@@ -111,7 +111,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="BiggerSlide" parent="Control/Slides" instance=ExtResource("6_m0vo0")]
-visible = false
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -314,6 +313,16 @@ offset_top = 519.0
 offset_right = 499.0
 offset_bottom = 569.0
 text = "08 - Dúvidas"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label13" type="Label" parent="Control/Slides/BiggerSlide2"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 569.0
+offset_right = 499.0
+offset_bottom = 619.0
+text = "09 - Conclusão"
 label_settings = SubResource("LabelSettings_vsyg5")
 vertical_alignment = 1
 
@@ -856,7 +865,7 @@ text = "[color=red]name:[/color] [color=yellowgreen]Python Tests[/color]
     - [color=red]name:[/color] 🐍 Setup do Python
       [color=red]uses:[/color] actions/setup-python@v4
       [color=red]with:[/color]
-        [color=red]python-version:[/color] '3.11'
+        [color=red]python-version:[/color] '3.13'
 
     - [color=red]name:[/color] 📦 Instalar dependências
       [color=red]run:[/color] |
@@ -981,6 +990,7 @@ label_settings = SubResource("LabelSettings_vsyg5")
 vertical_alignment = 1
 
 [node name="BiggerSlide14" parent="Control/Slides" instance=ExtResource("6_m0vo0")]
+visible = false
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -1063,24 +1073,126 @@ offset_top = 506.0
 offset_right = 858.0
 offset_bottom = 609.0
 text = "🔹 Sim, mas com pytest-xdist, é possível rodar
-      em paralelo"
+      em paralelo."
 label_settings = SubResource("LabelSettings_vsyg5")
 vertical_alignment = 1
 
-[node name="Slide12" parent="Control/Slides" instance=ExtResource("5_p84bp")]
+[node name="BiggerSlide15" parent="Control/Slides" instance=ExtResource("6_m0vo0")]
 visible = false
-layout_mode = 1
-theme_override_styles/panel = SubResource("StyleBoxEmpty_b1cii")
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 73.0
+offset_top = 41.0
+offset_right = 1207.0
+offset_bottom = 679.0
+grow_horizontal = 1
+grow_vertical = 1
 text_appear = 0.01
 
-[node name="Label" type="Label" parent="Control/Slides/Slide12"]
+[node name="Label" type="Label" parent="Control/Slides/BiggerSlide15"]
 layout_mode = 0
-offset_left = 82.0
-offset_top = 257.0
+offset_left = 52.0
+offset_top = 31.0
+offset_right = 278.0
+offset_bottom = 108.0
+text = "Conclusão"
+label_settings = SubResource("LabelSettings_vu7gd")
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/Slides/BiggerSlide15"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 127.0
+offset_right = 479.0
+offset_bottom = 177.0
+text = "✅ Pytest é simples, poderoso e flexível"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Slides/BiggerSlide15"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 188.0
 offset_right = 822.0
-offset_bottom = 318.0
+offset_bottom = 238.0
+text = "✅ Ideal para projetos pequenos ou grandes"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="Control/Slides/BiggerSlide15"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 250.0
+offset_right = 791.0
+offset_bottom = 300.0
+text = "✅ Foco em produtividade e clareza"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="Control/Slides/BiggerSlide15"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 316.0
+offset_right = 819.0
+offset_bottom = 366.0
+text = "✅ Integra bem com ferramentas modernas"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="BiggerSlide16" parent="Control/Slides" instance=ExtResource("6_m0vo0")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 73.0
+offset_top = 41.0
+offset_right = 1207.0
+offset_bottom = 679.0
+grow_horizontal = 1
+grow_vertical = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_epleg")
+text_appear = 0.01
+
+[node name="Label" type="Label" parent="Control/Slides/BiggerSlide16"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -290.5
+offset_top = -103.0
+offset_right = 290.5
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Obrigado por assistir!"
 label_settings = SubResource("LabelSettings_vu7gd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Control/Slides/BiggerSlide16"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -25.0
+offset_right = 240.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Espaço aberto para dúvidas"
+label_settings = SubResource("LabelSettings_vsyg5")
 horizontal_alignment = 1
 vertical_alignment = 1
 
