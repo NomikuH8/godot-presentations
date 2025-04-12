@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b6cf3b6h8e6lt"]
+[gd_scene load_steps=26 format=3 uid="uid://b6cf3b6h8e6lt"]
 
 [ext_resource type="PackedScene" uid="uid://upvucuou2f1j" path="res://prefabs/slideshow/SlideshowParticles.tscn" id="1_pdjoh"]
 [ext_resource type="PackedScene" uid="uid://b4f6mv66o5eb0" path="res://prefabs/slideshow/SlideshowBlinker.tscn" id="2_n6jdq"]
@@ -10,17 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://bckxllfl2iaih" path="res://prefabs/slideshow/SlideImage.tscn" id="6_h23tw"]
 [ext_resource type="PackedScene" uid="uid://bo0ye11d1y0jn" path="res://prefabs/slideshow/bigger_slide.tscn" id="6_m0vo0"]
 [ext_resource type="Texture2D" uid="uid://d2q7dsaajxcnv" path="res://images/presentation/logo_catolica.png" id="7_wu8gi"]
-[ext_resource type="PackedScene" uid="uid://dlqmffopmus3b" path="res://prefabs/interactive/terminal/terminal_install_pytest.tscn" id="9_m0vo0"]
+[ext_resource type="PackedScene" uid="uid://dlqmffopmus3b" path="res://prefabs/interactive/terminal/pytest/terminal_install_pytest.tscn" id="9_m0vo0"]
 [ext_resource type="Texture2D" uid="uid://dye27ll6wn6r4" path="res://images/presentation/pytest/test_soma.png" id="10_02wvv"]
-[ext_resource type="Texture2D" uid="uid://drdxuox22igxf" path="res://images/presentation/clean_code/meaningful_names.png" id="10_3jqto"]
-[ext_resource type="Texture2D" uid="uid://movxx7vtm8ia" path="res://images/presentation/clean_code/code_never_perfect.png" id="10_b861v"]
-[ext_resource type="Texture2D" uid="uid://dg1ssghu485mm" path="res://images/presentation/clean_code/unecessary_comments.png" id="11_1let4"]
-[ext_resource type="PackedScene" uid="uid://cgi8sy6pfy882" path="res://prefabs/interactive/terminal/terminal_run_pytest.tscn" id="11_jjoou"]
-[ext_resource type="Texture2D" uid="uid://3rydnm7lxhow" path="res://images/presentation/clean_code/bad_unneeded_context.png" id="12_mc46b"]
-[ext_resource type="Texture2D" uid="uid://cu3oapk1xl44x" path="res://images/presentation/clean_code/good_unneeded_context.png" id="13_y3lwy"]
-[ext_resource type="Texture2D" uid="uid://cg0wmge2mnc8q" path="res://images/presentation/clean_code/clean_sql.png" id="14_y3lwy"]
-[ext_resource type="Texture2D" uid="uid://b1q314qtvqpaj" path="res://images/presentation/clean_code/condition_inversion.png" id="15_ciuri"]
-[ext_resource type="Texture2D" uid="uid://bo2j37xhri1p5" path="res://images/presentation/clean_code/magic_numbers.png" id="16_2ed47"]
+[ext_resource type="PackedScene" uid="uid://cgi8sy6pfy882" path="res://prefabs/interactive/terminal/pytest/terminal_run_pytest.tscn" id="11_jjoou"]
+[ext_resource type="PackedScene" uid="uid://dgy6ptnx4dtuk" path="res://prefabs/interactive/terminal/pytest/terminal_run_pytest_with_error.tscn" id="12_nbnht"]
+[ext_resource type="Texture2D" uid="uid://dsdkm86qjteo1" path="res://images/presentation/pytest/fixtures.png" id="13_mc46b"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mo4q6"]
 font_size = 66
@@ -64,8 +58,11 @@ font_color = Color(0.882353, 0.882353, 0.882353, 1)
 outline_size = 5
 outline_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ed47"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mc46b"]
+bg_color = Color(0.164706, 0.164706, 0.164706, 0.960784)
+
+[sub_resource type="SystemFont" id="SystemFont_y3lwy"]
+font_names = PackedStringArray("Noto Mono")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b1cii"]
 
@@ -184,7 +181,7 @@ offset_bottom = 117.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Professora: Diego Sauter Possamai
+text = "Professor: Diego Sauter Possamai
 Curso: Engenharia de Software 5ª fase"
 label_settings = SubResource("LabelSettings_lt220")
 horizontal_alignment = 1
@@ -605,7 +602,6 @@ offset_right = 942.0
 offset_bottom = 188.0
 text = "test_math.py"
 label_settings = SubResource("LabelSettings_vsyg5")
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SlideImage" parent="Control/Slides/BiggerSlide7" instance=ExtResource("6_h23tw")]
@@ -625,6 +621,7 @@ texture = ExtResource("10_02wvv")
 expand_mode = 1
 
 [node name="BiggerSlide8" parent="Control/Slides" instance=ExtResource("6_m0vo0")]
+visible = false
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -656,397 +653,419 @@ offset_top = 101.0
 offset_right = -31.0
 offset_bottom = -25.0
 
-[node name="Slide21" parent="Control/Slides" instance=ExtResource("5_p84bp")]
+[node name="BiggerSlide9" parent="Control/Slides" instance=ExtResource("6_m0vo0")]
 visible = false
-layout_mode = 1
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 73.0
+offset_top = 41.0
+offset_right = 1207.0
+offset_bottom = 679.0
+grow_horizontal = 1
+grow_vertical = 1
 text_appear = 0.01
 
-[node name="Label" type="Label" parent="Control/Slides/Slide21"]
+[node name="Label" type="Label" parent="Control/Slides/BiggerSlide9"]
 layout_mode = 0
-offset_left = 82.0
-offset_top = 47.0
-offset_right = 676.0
-offset_bottom = 108.0
-text = "Alguns princípios do Clean Code"
+offset_left = 21.0
+offset_top = 15.0
+offset_right = 744.0
+offset_bottom = 92.0
+text = "Como fica o erro?"
 label_settings = SubResource("LabelSettings_vu7gd")
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Control/Slides/Slide21"]
-layout_mode = 0
-offset_left = 82.0
-offset_top = 116.0
-offset_right = 754.0
-offset_bottom = 407.0
-text = "Nomeação significativa:
-- Os nomes de variáveis, funções e classes devem ser
-expressivos.
-- Não tenha medo de nomes grandes!"
-label_settings = SubResource("LabelSettings_vsyg5")
-
-[node name="SlideImage" parent="Control/Slides/Slide21" instance=ExtResource("6_h23tw")]
+[node name="TerminalRunPytestWithError" parent="Control/Slides/BiggerSlide9" instance=ExtResource("12_nbnht")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -384.0
-offset_top = 0.0
-offset_right = 384.0
-offset_bottom = 265.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("10_3jqto")
-expand_mode = 1
+offset_left = 32.0
+offset_top = 102.0
+offset_right = -32.0
+offset_bottom = -16.0
 
-[node name="Slide22" parent="Control/Slides" instance=ExtResource("5_p84bp")]
+[node name="BiggerSlide10" parent="Control/Slides" instance=ExtResource("6_m0vo0")]
 visible = false
-layout_mode = 1
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 73.0
+offset_top = 41.0
+offset_right = 1207.0
+offset_bottom = 679.0
+grow_horizontal = 1
+grow_vertical = 1
 text_appear = 0.01
 
-[node name="Label" type="Label" parent="Control/Slides/Slide22"]
+[node name="Label" type="Label" parent="Control/Slides/BiggerSlide10"]
 layout_mode = 0
-offset_left = 82.0
-offset_top = 47.0
-offset_right = 676.0
+offset_left = 52.0
+offset_top = 31.0
+offset_right = 278.0
 offset_bottom = 108.0
-text = "Alguns princípios do Clean Code"
+text = "Estrutura básica"
 label_settings = SubResource("LabelSettings_vu7gd")
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Control/Slides/Slide22"]
+[node name="Label3" type="Label" parent="Control/Slides/BiggerSlide10"]
 layout_mode = 0
-offset_left = 82.0
-offset_top = 116.0
-offset_right = 754.0
-offset_bottom = 407.0
-text = "Comentários desnecessários:
-- Evite comentários que falam o óbvio.
-- O código deve ser autoexplicativo, se precisa de
-comentários para entender, é hora de refatorar."
+offset_left = 52.0
+offset_top = 127.0
+offset_right = 479.0
+offset_bottom = 177.0
+text = "- Arquivo começa com test_"
 label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="Control/Slides/Slide22"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -432.0
-offset_top = -77.0
-offset_right = -44.0
-offset_bottom = -38.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Exemplo no próximo slide >>"
+[node name="Label4" type="Label" parent="Control/Slides/BiggerSlide10"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 177.0
+offset_right = 503.0
+offset_bottom = 227.0
+text = "- Funções de teste começam com test_"
 label_settings = SubResource("LabelSettings_vsyg5")
-horizontal_alignment = 2
-vertical_alignment = 2
+vertical_alignment = 1
 
-[node name="Slide23" parent="Control/Slides" instance=ExtResource("5_p84bp")]
+[node name="Label5" type="Label" parent="Control/Slides/BiggerSlide10"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 227.0
+offset_right = 593.0
+offset_bottom = 277.0
+text = "- Usa assert do próprio Python"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="Control/Slides/BiggerSlide10"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 280.0
+offset_right = 791.0
+offset_bottom = 330.0
+text = "- Output intuitivo em caso de erro"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="BiggerSlide11" parent="Control/Slides" instance=ExtResource("6_m0vo0")]
 visible = false
-layout_mode = 1
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 73.0
+offset_top = 41.0
+offset_right = 1207.0
+offset_bottom = 679.0
+grow_horizontal = 1
+grow_vertical = 1
 text_appear = 0.01
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/Slides/Slide23"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 46.0
-offset_top = 32.0
-offset_right = -45.0
-offset_bottom = -32.0
-grow_horizontal = 2
-grow_vertical = 2
-horizontal_scroll_mode = 3
+[node name="Label" type="Label" parent="Control/Slides/BiggerSlide11"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 15.0
+offset_right = 744.0
+offset_bottom = 92.0
+text = "Fixtures (reutilização)"
+label_settings = SubResource("LabelSettings_vu7gd")
+vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Control/Slides/Slide23/ScrollContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Slides/BiggerSlide11"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 102.0
+offset_right = 1110.0
+offset_bottom = 619.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/Slides/BiggerSlide11/ScrollContainer"]
 layout_mode = 2
-texture = ExtResource("11_1let4")
+texture = ExtResource("13_mc46b")
 
-[node name="Slide24" parent="Control/Slides" instance=ExtResource("5_p84bp")]
+[node name="BiggerSlide12" parent="Control/Slides" instance=ExtResource("6_m0vo0")]
 visible = false
-layout_mode = 1
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 73.0
+offset_top = 41.0
+offset_right = 1207.0
+offset_bottom = 679.0
+grow_horizontal = 1
+grow_vertical = 1
 text_appear = 0.01
 
-[node name="Label" type="Label" parent="Control/Slides/Slide24"]
+[node name="Label" type="Label" parent="Control/Slides/BiggerSlide12"]
 layout_mode = 0
-offset_left = 82.0
-offset_top = 47.0
-offset_right = 676.0
-offset_bottom = 108.0
-text = "Alguns princípios do Clean Code"
+offset_left = 21.0
+offset_top = 15.0
+offset_right = 744.0
+offset_bottom = 92.0
+text = "Pipeline de exemplo"
 label_settings = SubResource("LabelSettings_vu7gd")
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Control/Slides/Slide24"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Slides/BiggerSlide12"]
 layout_mode = 0
-offset_left = 82.0
-offset_top = 116.0
-offset_right = 796.0
-offset_bottom = 239.0
-text = "Não adicione contexto desnecessário:
-- Se uma classe ou objeto te diz algo, não a repita
-no nome da variável."
-label_settings = SubResource("LabelSettings_vsyg5")
+offset_left = 21.0
+offset_top = 102.0
+offset_right = 1110.0
+offset_bottom = 619.0
 
-[node name="SlideImage" parent="Control/Slides/Slide24" instance=ExtResource("6_h23tw")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -443.0
-offset_top = -55.0
-offset_right = 16.0
-offset_bottom = 289.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("12_mc46b")
-
-[node name="SlideImage2" parent="Control/Slides/Slide24" instance=ExtResource("6_h23tw")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 0.0
-offset_top = -55.0
-offset_right = 445.0
-offset_bottom = 289.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("13_y3lwy")
-
-[node name="Label3" type="Label" parent="Control/Slides/Slide24"]
-layout_mode = 0
-offset_left = 356.0
-offset_top = 258.0
-offset_right = 426.0
-offset_bottom = 297.0
-text = "Ruim"
-label_settings = SubResource("LabelSettings_vsyg5")
-
-[node name="Label4" type="Label" parent="Control/Slides/Slide24"]
-layout_mode = 0
-offset_left = 812.0
-offset_top = 258.0
-offset_right = 874.0
-offset_bottom = 297.0
-text = "Bom"
-label_settings = SubResource("LabelSettings_vsyg5")
-
-[node name="Panel" type="Panel" parent="Control/Slides/Slide24"]
-layout_mode = 0
-offset_left = 441.0
-offset_top = 245.0
-offset_right = 448.0
-offset_bottom = 589.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_2ed47")
-
-[node name="Slide25" parent="Control/Slides" instance=ExtResource("5_p84bp")]
-visible = false
-layout_mode = 1
-exit_animation = 1
-text_appear = 0.01
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/Slides/Slide25"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 46.0
-offset_top = 32.0
-offset_right = -45.0
-offset_bottom = -32.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="Control/Slides/Slide25/ScrollContainer"]
+[node name="Panel" type="Panel" parent="Control/Slides/BiggerSlide12/ScrollContainer"]
 layout_mode = 2
-texture = ExtResource("14_y3lwy")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_mc46b")
 
-[node name="Slide26" parent="Control/Slides" instance=ExtResource("5_p84bp")]
-visible = false
-layout_mode = 1
-enter_animation = 1
-text_appear = 0.01
-
-[node name="Label" type="Label" parent="Control/Slides/Slide26"]
-layout_mode = 0
-offset_left = 82.0
-offset_top = 47.0
-offset_right = 676.0
-offset_bottom = 108.0
-text = "Técnicas gerais que ajudam o CC"
-label_settings = SubResource("LabelSettings_vu7gd")
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="Control/Slides/Slide26"]
-layout_mode = 0
-offset_left = 82.0
-offset_top = 116.0
-offset_right = 796.0
-offset_bottom = 197.0
-text = "Inversão de condição:
-- Diminui o aninhamento de condições."
-label_settings = SubResource("LabelSettings_vsyg5")
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/Slides/Slide26"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 46.0
-offset_top = 209.0
-offset_right = -45.0
-offset_bottom = -32.0
-grow_horizontal = 2
-grow_vertical = 2
-horizontal_scroll_mode = 3
-
-[node name="TextureRect" type="TextureRect" parent="Control/Slides/Slide26/ScrollContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Slides/BiggerSlide12/ScrollContainer/Panel"]
 layout_mode = 2
-texture = ExtResource("15_ciuri")
+offset_right = 1089.0
+offset_bottom = 517.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/normal_font = SubResource("SystemFont_y3lwy")
+theme_override_font_sizes/normal_font_size = 42
+bbcode_enabled = true
+text = "[color=red]name:[/color] [color=yellowgreen]Python Tests[/color]
 
-[node name="Slide27" parent="Control/Slides" instance=ExtResource("5_p84bp")]
+[color=red]on:[/color]
+  [color=red]push:[/color]
+    [color=red]branches:[/color] [ [color=yellowgreen]main[/color] ]
+  [color=red]pull_request:[/color]
+    [color=red]branches:[/color] [ [color=yellowgreen]main[/color] ]
+[color=yellowgreen]
+[color=red]jobs:[/color]
+  [color=red]test:[/color]
+    [color=red]runs-on:[/color] ubuntu-latest
+
+    [color=red]steps:[/color]
+    - [color=red]name:[/color] ⬇️ Checkout do código
+      [color=red]uses:[/color] actions/checkout@v3
+
+    - [color=red]name:[/color] 🐍 Setup do Python
+      [color=red]uses:[/color] actions/setup-python@v4
+      [color=red]with:[/color]
+        [color=red]python-version:[/color] '3.11'
+
+    - [color=red]name:[/color] 📦 Instalar dependências
+      [color=red]run:[/color] |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - [color=red]name:[/color] 🧪 Rodar testes com Pytest
+      [color=red]run:[/color] |
+        pytest --junitxml=report.xml
+
+    - [color=red]name:[/color] 📄 Publicar Relatório de Testes (JUnit)
+      [color=red]uses:[/color] actions/upload-artifact@v3
+      [color=red]with:[/color]
+        [color=red]name:[/color] pytest-report
+        [color=red]path:[/color] report.xml
+
+    - [color=red]name:[/color] ✅ Verificar cobertura de testes (opcional)
+      [color=red]run:[/color] |
+        pip install pytest-cov
+        pytest --cov=. --cov-report=xml
+
+    - [color=red]name:[/color] 📈 Publicar Relatório de Cobertura (opcional)
+      [color=red]uses:[/color] actions/upload-artifact@v3
+      [color=red]with:[/color]
+        [color=red]name:[/color] coverage-report
+        [color=red]path:[/color] coverage.xml[/color]"
+
+[node name="BiggerSlide13" parent="Control/Slides" instance=ExtResource("6_m0vo0")]
 visible = false
-layout_mode = 1
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 73.0
+offset_top = 41.0
+offset_right = 1207.0
+offset_bottom = 679.0
+grow_horizontal = 1
+grow_vertical = 1
 text_appear = 0.01
 
-[node name="Label" type="Label" parent="Control/Slides/Slide27"]
+[node name="Label" type="Label" parent="Control/Slides/BiggerSlide13"]
 layout_mode = 0
-offset_left = 82.0
-offset_top = 47.0
-offset_right = 676.0
+offset_left = 52.0
+offset_top = 31.0
+offset_right = 278.0
 offset_bottom = 108.0
-text = "Técnicas gerais que ajudam o CC"
+text = "Boas práticas"
 label_settings = SubResource("LabelSettings_vu7gd")
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Control/Slides/Slide27"]
+[node name="Label3" type="Label" parent="Control/Slides/BiggerSlide13"]
 layout_mode = 0
-offset_left = 82.0
-offset_top = 116.0
-offset_right = 796.0
-offset_bottom = 197.0
-text = "Extração de função:
-- Separe grandes funções em funções menores."
+offset_left = 52.0
+offset_top = 127.0
+offset_right = 479.0
+offset_bottom = 177.0
+text = "🧹 Organização:"
 label_settings = SubResource("LabelSettings_vsyg5")
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/Slides/Slide27"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 46.0
-offset_top = 209.0
-offset_right = -45.0
-offset_bottom = -32.0
-grow_horizontal = 2
-grow_vertical = 2
-horizontal_scroll_mode = 3
-
-[node name="TextureRect" type="TextureRect" parent="Control/Slides/Slide27/ScrollContainer"]
-layout_mode = 2
-texture = ExtResource("15_ciuri")
-
-[node name="Slide28" parent="Control/Slides" instance=ExtResource("5_p84bp")]
-visible = false
-layout_mode = 1
-text_appear = 0.01
-
-[node name="Label" type="Label" parent="Control/Slides/Slide28"]
-layout_mode = 0
-offset_left = 82.0
-offset_top = 47.0
-offset_right = 676.0
-offset_bottom = 108.0
-text = "Técnicas gerais que ajudam o CC"
-label_settings = SubResource("LabelSettings_vu7gd")
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Control/Slides/Slide28"]
+[node name="Label4" type="Label" parent="Control/Slides/BiggerSlide13"]
 layout_mode = 0
-offset_left = 82.0
-offset_top = 116.0
-offset_right = 796.0
-offset_bottom = 197.0
-text = "Evite números mágicos:
-- Deixam o código enigmatico."
+offset_left = 52.0
+offset_top = 177.0
+offset_right = 503.0
+offset_bottom = 227.0
+text = "- Separar testes por módulo"
 label_settings = SubResource("LabelSettings_vsyg5")
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/Slides/Slide28"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 132.0
-offset_top = 209.0
-offset_right = -132.0
-offset_bottom = -41.0
-grow_horizontal = 2
-grow_vertical = 2
-horizontal_scroll_mode = 3
-
-[node name="TextureRect" type="TextureRect" parent="Control/Slides/Slide28/ScrollContainer"]
-layout_mode = 2
-texture = ExtResource("16_2ed47")
-
-[node name="Slide17" parent="Control/Slides" instance=ExtResource("5_p84bp")]
-visible = false
-layout_mode = 1
-enter_animation = 1
-exit_animation = 1
-text_appear = 0.01
-
-[node name="Label" type="Label" parent="Control/Slides/Slide17"]
-layout_mode = 0
-offset_left = 82.0
-offset_top = 47.0
-offset_right = 676.0
-offset_bottom = 108.0
-text = "Conclusão"
-label_settings = SubResource("LabelSettings_vu7gd")
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Control/Slides/Slide17"]
+[node name="Label5" type="Label" parent="Control/Slides/BiggerSlide13"]
 layout_mode = 0
-offset_left = 82.0
-offset_top = 116.0
-offset_right = 795.0
-offset_bottom = 155.0
-text = "- Nenhum código é perfeito, por mais que siga o livro."
+offset_left = 52.0
+offset_top = 227.0
+offset_right = 593.0
+offset_bottom = 277.0
+text = "- Nomear funções e arquivos com clareza"
 label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
 
-[node name="Slide18" parent="Control/Slides" instance=ExtResource("5_p84bp")]
-visible = false
-layout_mode = 1
-exit_animation = 3
+[node name="Label8" type="Label" parent="Control/Slides/BiggerSlide13"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 316.0
+offset_right = 791.0
+offset_bottom = 366.0
+text = "🧪 Testar:"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="Control/Slides/BiggerSlide13"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 366.0
+offset_right = 791.0
+offset_bottom = 416.0
+text = "- Casos esperados"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label10" type="Label" parent="Control/Slides/BiggerSlide13"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 416.0
+offset_right = 791.0
+offset_bottom = 466.0
+text = "- Casos de erro"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label11" type="Label" parent="Control/Slides/BiggerSlide13"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 466.0
+offset_right = 791.0
+offset_bottom = 516.0
+text = "- Comportamentos extremos"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="BiggerSlide14" parent="Control/Slides" instance=ExtResource("6_m0vo0")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 73.0
+offset_top = 41.0
+offset_right = 1207.0
+offset_bottom = 679.0
+grow_horizontal = 1
+grow_vertical = 1
 text_appear = 0.01
 
-[node name="Label" type="Label" parent="Control/Slides/Slide18"]
+[node name="Label" type="Label" parent="Control/Slides/BiggerSlide14"]
 layout_mode = 0
-offset_left = 82.0
-offset_top = 47.0
-offset_right = 676.0
+offset_left = 52.0
+offset_top = 31.0
+offset_right = 278.0
 offset_bottom = 108.0
-text = "Conclusão"
+text = "Dúvidas frequentes"
 label_settings = SubResource("LabelSettings_vu7gd")
 vertical_alignment = 1
 
-[node name="SlideImage" parent="Control/Slides/Slide18" instance=ExtResource("6_h23tw")]
+[node name="Label3" type="Label" parent="Control/Slides/BiggerSlide14"]
 layout_mode = 0
-offset_left = 170.0
-offset_top = 125.0
-offset_right = 735.0
-offset_bottom = 549.0
-texture = ExtResource("10_b861v")
-expand_mode = 1
+offset_left = 52.0
+offset_top = 127.0
+offset_right = 479.0
+offset_bottom = 177.0
+text = "❓ Posso usar com Django ou Flask?"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Control/Slides/BiggerSlide14"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 177.0
+offset_right = 503.0
+offset_bottom = 227.0
+text = "🔹 Sim, existem plugins e integrações para 
+      frameworks web."
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="Control/Slides/BiggerSlide14"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 316.0
+offset_right = 791.0
+offset_bottom = 366.0
+text = "❓ Dá para ver cobertura de testes?"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="Control/Slides/BiggerSlide14"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 366.0
+offset_right = 791.0
+offset_bottom = 416.0
+text = "🔹 Sim, usando o pytest-cov."
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label10" type="Label" parent="Control/Slides/BiggerSlide14"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 456.0
+offset_right = 791.0
+offset_bottom = 506.0
+text = "❓ Os testes rodam sequencialmente?"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
+
+[node name="Label11" type="Label" parent="Control/Slides/BiggerSlide14"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 506.0
+offset_right = 858.0
+offset_bottom = 609.0
+text = "🔹 Sim, mas com pytest-xdist, é possível rodar
+      em paralelo"
+label_settings = SubResource("LabelSettings_vsyg5")
+vertical_alignment = 1
 
 [node name="Slide12" parent="Control/Slides" instance=ExtResource("5_p84bp")]
 visible = false

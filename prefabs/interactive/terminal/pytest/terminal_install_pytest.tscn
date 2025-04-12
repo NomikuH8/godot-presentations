@@ -6,6 +6,7 @@
 
 [sub_resource type="SystemFont" id="SystemFont_adilm"]
 font_names = PackedStringArray("Noto Mono")
+subpixel_positioning = 0
 
 [node name="TerminalInstallPytest" type="Control"]
 layout_mode = 3

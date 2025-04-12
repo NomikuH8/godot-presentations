@@ -6,6 +6,7 @@
 
 [sub_resource type="SystemFont" id="SystemFont_bq7tj"]
 font_names = PackedStringArray("Noto Mono")
+subpixel_positioning = 0
 
 [node name="TerminalRunPytest" type="Control"]
 layout_mode = 3

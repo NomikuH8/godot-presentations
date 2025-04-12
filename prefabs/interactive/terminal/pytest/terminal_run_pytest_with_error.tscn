@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgy6ptnx4dtuk"]
+
+[ext_resource type="PackedScene" uid="uid://bxwrvad0c5dj4" path="res://prefabs/interactive/terminal/terminal.tscn" id="1_81eo5"]
+[ext_resource type="PackedScene" uid="uid://d33x8rlrsm85d" path="res://prefabs/interactive/terminal/terminal_input.tscn" id="2_3sxyg"]
+[ext_resource type="PackedScene" uid="uid://vqsqb5we706p" path="res://prefabs/interactive/terminal/enter_command_wait.tscn" id="3_gny1k"]
+
+[sub_resource type="SystemFont" id="SystemFont_bq7tj"]
+font_names = PackedStringArray("Noto Mono")
+subpixel_positioning = 0
+
+[node name="TerminalRunPytestWithError" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Terminal" parent="." instance=ExtResource("1_81eo5")]
+layout_mode = 1
+
+[node name="TerminalInput" parent="Terminal/ScrollContainer/Container" index="0" instance=ExtResource("2_3sxyg")]
+layout_mode = 2
+prompt = "[color=green]Andrey[/color] $"
+text_to_write = "pytest"
+
+[node name="EnterCommandWait" parent="Terminal/ScrollContainer/Container" index="1" instance=ExtResource("3_gny1k")]
+layout_mode = 2
+theme_override_fonts/normal_font = SubResource("SystemFont_bq7tj")
+theme_override_font_sizes/normal_font_size = 42
+text = "========== test session starts ===========
+platform win32 -- Python 3.13.0, pytest-8.3.5, pluggy-1.5.0
+rootdir: C:\\pytest_test
+plugins: anyio-4.7.0
+collected 1 item"
+autowrap_mode = 1
+wait_amount = 0.01
+
+[node name="EnterCommandWait2" parent="Terminal/ScrollContainer/Container" index="2" instance=ExtResource("3_gny1k")]
+layout_mode = 2
+theme_override_fonts/normal_font = SubResource("SystemFont_bq7tj")
+theme_override_font_sizes/normal_font_size = 42
+text = "test_math.py [color=red]F                      [100%][/color]"
+autowrap_mode = 1
+
+[node name="EnterCommandWait3" parent="Terminal/ScrollContainer/Container" index="3" instance=ExtResource("3_gny1k")]
+layout_mode = 2
+theme_override_fonts/normal_font = SubResource("SystemFont_bq7tj")
+theme_override_font_sizes/normal_font_size = 42
+text = "
+================ FAILURES ================[color=red]
+_______________ test_soma ________________[/color]
+
+    [color=cyan]def[/color] [color=yellowgreen]test_soma[/color]():
+>       [color=cyan]assert[/color] [color=cyan]2[/color] + [color=cyan]2[/color] == [color=cyan]5[/color]
+[color=red]E       assert (2 + 2) == 5[/color]
+
+[color=red]test_math.py[/color]:2: AssertionError
+[color=cyan]======== short test summary info =========[/color]
+[color=red]FAILED[/color] test_math.py::test_soma - assert (2 + 2) == 5
+[color=red]=========== 1 failed in [wave]0.09s[/wave] ============[/color]"
+autowrap_mode = 1
+wait_amount = 0.04
+
+[editable path="Terminal"]

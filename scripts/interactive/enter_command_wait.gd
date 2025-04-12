@@ -12,7 +12,7 @@ signal wait_finished()
 
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if started:
 		visible = true
 		await get_tree().create_timer(wait_amount).timeout
