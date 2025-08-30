@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlqmffopmus3b"]
+[gd_scene load_steps=6 format=3 uid="uid://dlqmffopmus3b"]
 
 [ext_resource type="PackedScene" uid="uid://bxwrvad0c5dj4" path="res://prefabs/interactive/terminal/terminal.tscn" id="1_e32cc"]
 [ext_resource type="PackedScene" uid="uid://d33x8rlrsm85d" path="res://prefabs/interactive/terminal/terminal_input.tscn" id="2_qnrtf"]
 [ext_resource type="PackedScene" uid="uid://vqsqb5we706p" path="res://prefabs/interactive/terminal/enter_command_wait.tscn" id="3_8woc2"]
+
+[sub_resource type="SystemFont" id="SystemFont_qanhl"]
+font_names = PackedStringArray("Consolas")
 
 [sub_resource type="SystemFont" id="SystemFont_adilm"]
 font_names = PackedStringArray("Noto Mono")
@@ -21,7 +24,8 @@ layout_mode = 1
 
 [node name="Input" parent="Terminal/ScrollContainer/Container" index="0" instance=ExtResource("2_qnrtf")]
 layout_mode = 2
-prompt = "[color=green]Andrey[/color] $"
+theme_override_fonts/normal_font = SubResource("SystemFont_qanhl")
+prompt = "[color=green]Menna[/color] $"
 text_to_write = "pip install pytest"
 
 [node name="EnterCommandWait" parent="Terminal/ScrollContainer/Container" index="1" instance=ExtResource("3_8woc2")]

@@ -180,8 +180,8 @@ offset_bottom = 117.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Professor: Diego Sauter Possamai
-Curso: Engenharia de Software 5ª fase"
+text = "Professor: Janaína Fontana Biffi Duarte
+Curso: Engenharia de Software 6ª fase"
 label_settings = SubResource("LabelSettings_lt220")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -193,8 +193,7 @@ offset_top = 388.0
 offset_right = 939.0
 offset_bottom = 619.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Alunos:
-Andrey Garcia dos Santos
+text = "Aluno:
 João Miguel de Castro Menna"
 label_settings = SubResource("LabelSettings_8m7q1")
 horizontal_alignment = 1
